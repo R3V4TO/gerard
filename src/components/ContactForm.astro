@@ -1,0 +1,55 @@
+<form id="contact-form" class="space-y-5" method="POST" action="/api/contact" novalidate>
+  <div class="hidden" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+  <div>
+    <label for="name" class="field-label mb-2 block">Name</label>
+    <input type="text" id="name" name="name" required autocomplete="name" class="input-field input-field--light" />
+  </div>
+  <div>
+    <label for="email" class="field-label mb-2 block">Email</label>
+    <input type="email" id="email" name="email" required autocomplete="email" class="input-field input-field--light" />
+  </div>
+  <div>
+    <label for="message" class="field-label mb-2 block">Project brief</label>
+    <textarea id="message" name="message" required rows="5" class="input-field input-field--light resize-y" placeholder="What are you building? Timeline, platform, constraints…"></textarea>
+  </div>
+  <div class="flex flex-wrap items-center gap-4 pt-2">
+    <button type="submit" class="btn-solid cursor-pointer border-0">Send inquiry</button>
+    <p id="form-status" class="text-sm text-muted" role="status" aria-live="polite"></p>
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!status) return;
+    status.textContent = 'Sending…';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      let result: { success?: boolean; message?: string } = {};
+      try {
+        result = (await response.json()) as { success?: boolean; message?: string };
+      } catch {
+        status.textContent = `Server error (${response.status}). Email hello@versacarte.com directly.`;
+        return;
+      }
+      if (response.ok && result.success) {
+        status.textContent = 'Received — we will reply from hello@versacarte.com.';
+        form.reset();
+      } else {
+        status.textContent = result.message ?? 'Something went wrong. Try again or email directly.';
+      }
+    } catch {
+      status.textContent = 'Network issue — try again when online.';
+    }
+  });
+</script>

@@ -1,0 +1,66 @@
+---
+import company from '../data/company.json';
+---
+
+<footer class="site-footer">
+  <div class="container-wide footer-studio">
+    <div class="footer-studio__grid">
+      <div>
+        <p class="footer-studio__logo">{company.name}</p>
+        <p class="footer-studio__tagline">{company.tagline}</p>
+        <p class="mt-2 text-sm text-dark-muted">{company.address}</p>
+        <p class="mt-1">
+          <a href={`mailto:${company.email}`}>{company.email}</a>
+        </p>
+      </div>
+      <div class="footer-studio__cols">
+        <div>
+          <p class="footer-studio__heading">Studio</p>
+          <ul>
+            <li><a href="/#vision">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/help">Help</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-studio__heading">Elsewhere</p>
+          <ul>
+            <li><a href={company.labsUrl} target="_blank" rel="noopener noreferrer">Labs</a></li>
+            <li><a href={company.helpUrl} target="_blank" rel="noopener noreferrer">Help center</a></li>
+            <li><a href={company.portfolioUrl} target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-newsletter">
+    <div class="container-wide">
+      <p class="footer-newsletter__title">{company.footer.newsletterTitle}</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email" required class="input-field" placeholder="Email" autocomplete="email" />
+        <label class="checkbox-row">
+          <input type="checkbox" name="subscribe" required />
+          <span>{company.footer.newsletterConsent}</span>
+        </label>
+        <button type="submit" class="btn-light w-fit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="container-wide">
+      <p>© {new Date().getFullYear()} {company.name}. Built in Nairobi.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.reset();
+  });
+</script>

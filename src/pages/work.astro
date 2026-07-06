@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import company from '../data/company.json';
+---
+
+<BaseLayout
+  title={`Work — ${company.name}`}
+  description="VersaRent, FileSendNX, Smart Traffic Control — shipped apps and systems."
+>
+  <section class="section-studio pt-32">
+    <div class="container-main">
+      <p class="section-label" data-reveal>Work</p>
+      <h1 class="section-studio__title" data-reveal>Product case studies</h1>
+      <p class="section-studio__body" data-reveal>
+        Selected work owned or shipped by the studio.
+        <a href={company.portfolioUrl}>Founder portfolio →</a>
+      </p>
+      <div class="work-grid mt-12" data-stagger>
+        {
+          company.work.items.map((item) => (
+            <WorkCard
+              title={item.title}
+              teaser={item.teaser}
+              status={item.status}
+              stack={item.stack}
+              image={item.image}
+              slug={item.slug}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

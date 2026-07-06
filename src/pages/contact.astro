@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import company from '../data/company.json';
+---
+
+<BaseLayout
+  title={`Contact — ${company.name}`}
+  description="Book a discovery call for mobile, web, IoT, and backend projects."
+>
+  <section class="section-studio pt-32">
+    <div class="container-main">
+      <p class="section-label" data-reveal>Contact</p>
+      <h1 class="section-studio__title" data-reveal>Start a project</h1>
+      <p class="section-studio__body" data-reveal>
+        Tell us what you're building — platform, timeline, and constraints. We reply from {company.email}.
+      </p>
+      <div class="mt-12 max-w-xl" data-reveal>
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,126 @@
+{
+  "name": "VersaCarte",
+  "tagline": "App & web development studio",
+  "domain": "versacarte.com",
+  "labsUrl": "https://labs.versacarte.com",
+  "helpUrl": "https://help.versacarte.com",
+  "portfolioUrl": "https://owner.versacarte.com",
+  "email": "hello@versacarte.com",
+  "phone": "",
+  "address": "Nairobi, Kenya",
+  "location": "Nairobi, Kenya",
+  "founder": "Gerard",
+  "category": "App & Web Studio",
+  "availability": "Accepting select engagements for Q3 2026",
+  "hero": {
+    "title": "Business-ready applications and web platforms, built end-to-end",
+    "subtitle": "Mobile products, modern web apps, IoT telemetry, and cloud backends — from a Nairobi engineering studio that ships.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80&auto=format&fit=crop",
+    "imageAlt": "Developer workspace with laptop showing code"
+  },
+  "vision": {
+    "label": "Studio",
+    "title": "Engineering discipline applied to product delivery",
+    "body": "VersaCarte combines electrical systems thinking with full-stack development. We build mobile apps, business web platforms, and field-ready IoT systems — documented like engineering deliverables, not throwaway MVPs.",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
+    "imageAlt": "Development team collaborating at a desk"
+  },
+  "services": {
+    "label": "Services",
+    "title": "Pick what your product needs from the menu",
+    "items": [
+      {
+        "id": "mobile",
+        "title": "Mobile applications",
+        "body": "React Native and Expo for iOS and Android — marketplaces, field tools, and consumer apps with Supabase or custom backends.",
+        "href": "/services#mobile"
+      },
+      {
+        "id": "web",
+        "title": "Web platforms",
+        "body": "Astro and React sites, dashboards, and internal portals — performance, SEO, and conversion-focused architecture.",
+        "href": "/services#web"
+      },
+      {
+        "id": "iot",
+        "title": "IoT & embedded",
+        "body": "ESP8266/32 telemetry, ultrasonic sensing, and MQTT ingest — the same patterns behind traffic monitoring and tank-level prototypes.",
+        "href": "/services#iot"
+      },
+      {
+        "id": "cloud",
+        "title": "Cloud & backend",
+        "body": "PostgreSQL, serverless APIs, and Cloudflare Pages Functions that keep clients thin and business rules server-side.",
+        "href": "/services#cloud"
+      },
+      {
+        "id": "engineering",
+        "title": "Systems engineering",
+        "body": "SCADA-aware specs, energy monitoring design, and BOQ-grade documentation from an electrical engineering background.",
+        "href": "/services#engineering"
+      }
+    ]
+  },
+  "why": {
+    "label": "Why VersaCarte",
+    "title": "One team from schematic to App Store review",
+    "body": "Clients get firmware, API, and mobile UI under one roof — not three vendors who hand off blame. We design for intermittent power, mobile money, and mid-range devices common in East Africa.",
+    "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&auto=format&fit=crop",
+    "imageAlt": "Developers reviewing work on large monitors"
+  },
+  "stats": {
+    "title": "VersaCarte in numbers",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80&auto=format&fit=crop",
+    "items": [
+      { "value": 3, "suffix": "+", "label": "Products shipped" },
+      { "value": 5, "suffix": "", "label": "Service lines" },
+      { "value": 48, "suffix": "hr", "label": "Discovery turnaround" },
+      { "value": 100, "suffix": "%", "label": "Documented handoffs" }
+    ]
+  },
+  "work": {
+    "label": "Work",
+    "title": "Apps and systems we've shipped or are building",
+    "body": "Proof the studio builds — not only advises. Detailed case studies live on the founder portfolio.",
+    "items": [
+      {
+        "slug": "versarent",
+        "title": "VersaRent",
+        "status": "In development",
+        "teaser": "Mobile property management for Kenyan landlords and tenants.",
+        "stack": ["React Native", "Expo", "Supabase"],
+        "image": "/images/versarent.svg"
+      },
+      {
+        "slug": "filesendnx",
+        "title": "FileSendNX",
+        "status": "Shipped",
+        "teaser": "Secure file transfer — upload, share, and track without friction.",
+        "stack": ["React Native", "TypeScript"],
+        "image": "/images/filesendnx.svg"
+      },
+      {
+        "slug": "smart-traffic",
+        "title": "Smart Traffic Control",
+        "status": "Shipped",
+        "teaser": "Sensor-driven intersection monitoring with live analytics dashboard.",
+        "stack": ["Arduino", "ESP8266", "Python"],
+        "image": "/images/smart-traffic.svg"
+      }
+    ]
+  },
+  "stack": [
+    "React Native", "Expo", "TypeScript", "Astro", "React", "Supabase",
+    "PostgreSQL", "Cloudflare", "ESP8266", "MQTT", "Python", ".NET"
+  ],
+  "footer": {
+    "newsletterTitle": "Studio updates — tools, launches, and engineering notes.",
+    "newsletterConsent": "Yes, send me occasional VersaCarte updates."
+  },
+  "nav": [
+    { "href": "#vision", "label": "Studio" },
+    { "href": "#services", "label": "Services" },
+    { "href": "#work", "label": "Work" },
+    { "href": "#contact", "label": "Contact" }
+  ]
+}

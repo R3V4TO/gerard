@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  teaser: string;
+  status: string;
+  stack: string[];
+  image: string;
+  slug: string;
+}
+
+const { title, teaser, status, stack, image, slug } = Astro.props;
+---
+
+<article class="work-card" id={slug} data-reveal-scale>
+  <div class="work-card__media">
+    <img src={image} alt="" class="work-card__logo" loading="lazy" />
+  </div>
+  <div class="work-card__body">
+    <span class="work-card__status">{status}</span>
+    <h3 class="work-card__title">{title}</h3>
+    <p class="work-card__teaser">{teaser}</p>
+    <div class="work-card__stack">
+      {stack.map((s) => <span>{s}</span>)}
+    </div>
+    <a href="/work" class="link-arrow mt-5">Case study</a>
+  </div>
+</article>

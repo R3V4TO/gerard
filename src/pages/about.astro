@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import company from '../data/company.json';
+---
+
+<BaseLayout title={`About — ${company.name}`}>
+  <section class="section-studio pt-32">
+    <div class="container-main">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="section-label" data-reveal>Studio</p>
+          <h1 class="section-studio__title" data-reveal>{company.vision.title}</h1>
+          <p class="section-studio__body" data-reveal>{company.vision.body}</p>
+          <p class="mt-6 text-sm text-muted" data-reveal>
+            Led by {company.founder} — electrical engineer and full-stack developer in {company.location}.
+          </p>
+        </div>
+        <div class="overflow-hidden" data-reveal>
+          <PhotoPanel src={company.vision.image} alt={company.vision.imageAlt} overlay="section" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

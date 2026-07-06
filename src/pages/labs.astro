@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import company from '../data/company.json';
+---
+
+<BaseLayout title={`Labs — ${company.name}`}>
+  <section class="section-studio pt-32">
+    <div class="container-main">
+      <p class="section-label" data-reveal>Labs</p>
+      <h1 class="section-studio__title" data-reveal>Free tools & technical articles</h1>
+      <p class="section-studio__body" data-reveal>
+        VersaCarte Labs hosts browser utilities and deep-dive engineering content — separate from client work.
+      </p>
+      <a href={company.labsUrl} class="btn-solid mt-8" target="_blank" rel="noopener noreferrer">
+        Visit Labs
+      </a>
+    </div>
+  </section>
+</BaseLayout>

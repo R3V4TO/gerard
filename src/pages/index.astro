@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import TechMarquee from '../components/TechMarquee.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import WorkCard from '../components/WorkCard.astro';
+import company from '../data/company.json';
+
+const heroLines = company.hero.title.split(', ');
+---
+
+<BaseLayout>
+  <section id="hero" class="hero-studio scroll-mt-24">
+    <PhotoPanel
+      src={company.hero.image}
+      alt={company.hero.imageAlt}
+      overlay="hero"
+      class="hero-studio__bg"
+    />
+    <div class="container-wide hero-studio__content">
+      <p class="hero-studio__chip" data-hero-line>{company.availability}</p>
+      <h1 class="hero-studio__title">
+        <span class="hero-studio__title-lead" data-hero-line>{heroLines[0]},</span>
+        <span class="hero-studio__title-accent" data-hero-line>{heroLines[1] ?? ''}</span>
+      </h1>
+      <p class="hero-studio__subtitle" data-hero-line>{company.hero.subtitle}</p>
+      <div class="hero-studio__actions" data-hero-line>
+        <a href="/contact" class="btn-solid">Start a project</a>
+        <a href="#work" class="btn-light">See our work</a>
+      </div>
+    </div>
+    <div class="hero-studio__scroll" aria-hidden="true">
+      <span class="hero-studio__scroll-line"></span>
+    </div>
+  </section>
+
+  <TechMarquee />
+
+  <section id="vision" class="section-studio scroll-mt-24">
+    <div class="container-wide vision-split">
+      <div class="vision-split__photo" data-reveal>
+        <PhotoPanel
+          src={company.vision.image}
+          alt={company.vision.imageAlt}
+          overlay="section"
+        />
+      </div>
+      <div class="vision-split__copy">
+        <p class="section-label" data-reveal>{company.vision.label}</p>
+        <h2 class="section-studio__title" data-reveal>{company.vision.title}</h2>
+        <p class="section-studio__body" data-reveal>{company.vision.body}</p>
+        <a href="/about" class="link-arrow mt-8" data-reveal>About the studio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section-studio section-studio--gray scroll-mt-24">
+    <div class="container-wide">
+      <p class="section-label" data-reveal>{company.services.label}</p>
+      <h2 class="section-studio__title" data-reveal>{company.services.title}</h2>
+      <div class="service-grid service-grid--five" data-stagger data-stagger-motion>
+        {
+          company.services.items.map((item, i) => (
+            <ServiceCard
+              id={item.id}
+              title={item.title}
+              body={item.body}
+              href={item.href}
+              index={i}
+            />
+          ))
+        }
+      </div>
+      <p class="mt-10 text-center" data-reveal>
+        <a href="/services" class="link-arrow">Full services breakdown</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="why" class="section-studio scroll-mt-24">
+    <div class="container-wide why-split">
+      <div>
+        <p class="section-label" data-reveal>{company.why.label}</p>
+        <h2 class="section-studio__title" data-reveal>{company.why.title}</h2>
+        <p class="section-studio__body" data-reveal>{company.why.body}</p>
+        <ul class="why-list" data-reveal>
+          <li>End-to-end — firmware to mobile UI to cloud rules</li>
+          <li>Documented — architecture you can audit and hand off</li>
+          <li>Regional context — mobile money, power, mid-range devices</li>
+        </ul>
+      </div>
+      <div class="why-split__photo" data-reveal>
+        <PhotoPanel
+          src={company.why.image}
+          alt={company.why.imageAlt}
+          overlay="section"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="numbers" class="section-studio section-studio--stats scroll-mt-24">
+    <PhotoPanel
+      src={company.stats.image}
+      alt=""
+      overlay="stats"
+      class="section-studio__stats-bg"
+    />
+    <div class="container-wide section-studio__stats-content">
+      <h2 class="section-studio__title section-studio__title--light" data-reveal>{company.stats.title}</h2>
+      <div class="stats-grid" data-stagger>
+        {
+          company.stats.items.map((item) => (
+            <div class="stat-item stat-item--light">
+              <p class="stat-item__value">
+                <span data-count={item.value} data-suffix={item.suffix}>0{item.suffix}</span>
+              </p>
+              <p class="stat-item__label">{item.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section-studio section-studio--gray scroll-mt-24">
+    <div class="container-wide">
+      <p class="section-label" data-reveal>{company.work.label}</p>
+      <h2 class="section-studio__title" data-reveal>{company.work.title}</h2>
+      <p class="section-studio__body" data-reveal>{company.work.body}</p>
+      <div class="work-grid" data-stagger-motion>
+        {
+          company.work.items.map((item) => (
+            <WorkCard
+              title={item.title}
+              teaser={item.teaser}
+              status={item.status}
+              stack={item.stack}
+              image={item.image}
+              slug={item.slug}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-studio scroll-mt-24 pb-24">
+    <div class="container-wide">
+      <div class="contact-panel" data-reveal-scale>
+        <p class="section-label">Contact</p>
+        <h2 class="section-studio__title mt-4">Tell us what you're building</h2>
+        <p class="section-studio__body mt-4">
+          Discovery calls for mobile, web, IoT, and backend scope. Based in {company.location}.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="btn-solid">Book a discovery call</a>
+          <a href={`mailto:${company.email}`} class="btn">{company.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

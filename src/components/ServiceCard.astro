@@ -1,0 +1,31 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  body: string;
+  href: string;
+  index: number;
+}
+
+const { id, title, body, href, index } = Astro.props;
+
+const icons: Record<string, string> = {
+  mobile: 'M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M10 18h4',
+  web: 'M4 6h16v12H4z M4 9h16 M8 15h2 M12 15h4',
+  iot: 'M12 3v3 M12 18v3 M3 12h3 M18 12h3 M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0z',
+  cloud: 'M7 18h11a4 4 0 0 0 0-8 5 5 0 0 0-9.7-1.5A3.5 3.5 0 0 0 7 18z',
+  engineering: 'M4 19h16 M6 16V8l6-4 6 4v8 M9 16v-4h6v4',
+};
+---
+
+<article class="service-card" id={id} data-tilt-card>
+  <div class="service-card__top">
+    <span class="service-card__index">0{index + 1}</span>
+    <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d={icons[id] ?? icons.web} stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+  <h3 class="service-card__title">{title}</h3>
+  <p class="service-card__body">{body}</p>
+  <a href={href} class="link-arrow mt-6">Explore</a>
+</article>
