@@ -159,10 +159,19 @@
 [data-theme="dark"] .pricing-card,
 [data-theme="dark"] .testimonial-card,
 [data-theme="dark"] .product-card,
-[data-theme="dark"] .contact-panel,
 [data-theme="dark"] .faq-item,
 [data-theme="dark"] .blog-card {
   @apply bg-surface;
+}
+
+[data-theme="dark"] .contact-panel {
+  background-color: var(--color-surface);
+  background-image: linear-gradient(135deg, rgb(255 255 255 / 0.03), transparent 50%);
+}
+
+[data-theme="dark"] .contact-panel .field-label,
+[data-theme="dark"] .contact-panel .checkbox-row {
+  color: var(--color-muted);
 }
 
 [data-theme="dark"] .pricing-card--highlight {
@@ -186,7 +195,7 @@
 }
 
 .site-header__nav {
-  @apply flex flex-wrap items-center justify-end gap-4 sm:gap-5;
+  @apply hidden items-center justify-end gap-4 sm:gap-5 lg:flex lg:flex-wrap;
 }
 
 .site-header__nav a:not(.btn-solid) {
@@ -200,6 +209,83 @@
 
 .site-header__cta {
   @apply hidden px-4 py-2 sm:inline-flex;
+}
+
+.site-header__menu-btn {
+  @apply relative z-[60] flex h-11 w-11 items-center justify-center border border-line bg-canvas text-ink transition-colors duration-200 lg:hidden;
+}
+
+.site-header__menu-btn:hover {
+  @apply border-ink;
+}
+
+.site-header__menu-icon {
+  @apply flex w-[18px] flex-col gap-[5px];
+}
+
+.site-header__menu-line {
+  @apply block h-0.5 w-full bg-ink transition-transform duration-200;
+  transform-origin: center;
+}
+
+.site-header.is-menu-open .site-header__menu-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.is-menu-open .site-header__menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-menu-open .site-header__menu-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-header__mobile-nav {
+  @apply fixed inset-x-0 top-[4.25rem] z-40 border-b border-line bg-canvas/95 backdrop-blur-md lg:hidden;
+  max-height: calc(100vh - 4.25rem);
+  overflow-y: auto;
+}
+
+.site-header__mobile-panel {
+  @apply mx-auto flex w-full max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8;
+}
+
+.site-header__mobile-link {
+  @apply border-b border-line px-2 py-3.5 text-sm font-medium uppercase tracking-widest text-ink no-underline transition-colors;
+}
+
+.site-header__mobile-link:hover,
+.site-header__mobile-link.is-active {
+  @apply text-muted;
+}
+
+.site-header__mobile-cta {
+  @apply mt-4 w-full justify-center;
+}
+
+body.is-menu-open {
+  overflow: hidden;
+}
+
+[data-theme="dark"] .site-header__menu-btn {
+  @apply border-white/20 bg-dark/90 text-white;
+}
+
+[data-theme="dark"] .site-header__menu-line {
+  @apply bg-white;
+}
+
+[data-theme="dark"] .site-header__mobile-nav {
+  @apply border-white/10 bg-dark/95;
+}
+
+[data-theme="dark"] .site-header__mobile-link {
+  @apply border-white/10 text-white;
+}
+
+[data-theme="dark"] .site-header__mobile-link:hover,
+[data-theme="dark"] .site-header__mobile-link.is-active {
+  @apply text-dark-muted;
 }
 
 /* Photo panels */
@@ -575,29 +661,82 @@
 }
 
 .input-field {
-  @apply w-full border border-white/20 bg-transparent px-4 py-3 text-sm text-white placeholder:text-dark-muted;
+  width: 100%;
+  border-width: 1px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
-.input-field:focus {
+/* Dark surfaces: footer newsletter, hero waitlist */
+.input-field:not(.input-field--light) {
+  border-color: rgb(255 255 255 / 0.2);
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-field:not(.input-field--light)::placeholder {
+  color: var(--color-dark-muted);
+}
+
+.input-field:not(.input-field--light):focus {
   outline: 1px solid white;
   border-color: white;
 }
 
-.checkbox-row {
-  @apply flex items-start gap-3 text-sm text-dark-muted;
+/* Light surfaces: contact form, lead magnet */
+.input-field--light,
+.input-field.input-field--light {
+  border-color: var(--color-line);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
 }
 
-.footer-bar {
-  @apply border-t border-white/10 py-6 text-center text-xs text-dark-muted;
+.input-field--light::placeholder,
+.input-field.input-field--light::placeholder {
+  color: var(--color-muted);
 }
 
-.input-field--light {
-  @apply border-line text-ink placeholder:text-muted;
-}
-
-.input-field--light:focus {
+.input-field--light:focus,
+.input-field.input-field--light:focus {
   outline: 1px solid var(--color-ink);
   border-color: var(--color-ink);
+}
+
+[data-theme="dark"] .input-field--light,
+[data-theme="dark"] .input-field.input-field--light {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  border-color: var(--color-line);
+}
+
+[data-theme="dark"] .input-field--light option,
+[data-theme="dark"] .input-field.input-field--light option {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.input-field--light:-webkit-autofill,
+.input-field--light:-webkit-autofill:hover,
+.input-field--light:-webkit-autofill:focus,
+.input-field.input-field--light:-webkit-autofill,
+.input-field.input-field--light:-webkit-autofill:hover,
+.input-field.input-field--light:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-ink);
+  box-shadow: 0 0 0 1000px var(--color-canvas) inset;
+  caret-color: var(--color-ink);
+  transition: background-color 9999s ease-out;
+}
+
+[data-theme="dark"] .input-field--light:-webkit-autofill,
+[data-theme="dark"] .input-field--light:-webkit-autofill:hover,
+[data-theme="dark"] .input-field--light:-webkit-autofill:focus,
+[data-theme="dark"] .input-field.input-field--light:-webkit-autofill,
+[data-theme="dark"] .input-field.input-field--light:-webkit-autofill:hover,
+[data-theme="dark"] .input-field.input-field--light:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-ink);
+  box-shadow: 0 0 0 1000px var(--color-surface) inset;
+  caret-color: var(--color-ink);
 }
 
 .field-label {
@@ -1463,10 +1602,12 @@
   color: var(--color-ink);
 }
 
-[data-theme="dark"] .input-field--light {
-  background: var(--color-surface);
-  color: var(--color-ink);
-  border-color: var(--color-line);
+.checkbox-row {
+  @apply flex items-start gap-3 text-sm text-dark-muted;
+}
+
+.footer-bar {
+  @apply border-t border-white/10 py-6 text-center text-xs text-dark-muted;
 }
 
 @media print {

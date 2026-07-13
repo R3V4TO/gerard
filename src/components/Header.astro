@@ -3,6 +3,14 @@ import company from '../data/company.json';
 
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onHome = path === '/';
+
+function isNavActive(itemHref: string): boolean {
+  if (itemHref === '/') return path === '/';
+  if (itemHref === '/blog') return path.startsWith('/blog');
+  if (itemHref === '/work') return path.startsWith('/work');
+  if (itemHref === '/guide/web-app-vs-mobile') return path.startsWith('/guide');
+  return path === itemHref;
+}
 ---
 
 <header class="site-header" data-header>
@@ -14,6 +22,7 @@ const onHome = path === '/';
       </a>
       <span class="site-header__category">{company.category}</span>
     </div>
+
     <nav class="site-header__nav" aria-label="Main">
       {
         company.nav.map((item) => {
@@ -30,15 +39,79 @@ const onHome = path === '/';
       <a href="/help" class:list={[{ 'is-active': path === '/help' }]}>Help</a>
       <a href="/contact" class="btn-solid site-header__cta" data-i18n="hero.cta.start">Start a project</a>
     </nav>
+
+    <button
+      type="button"
+      class="site-header__menu-btn"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="site-mobile-nav"
+      aria-label="Open menu"
+    >
+      <span class="site-header__menu-icon" aria-hidden="true">
+        <span class="site-header__menu-line"></span>
+        <span class="site-header__menu-line"></span>
+        <span class="site-header__menu-line"></span>
+      </span>
+    </button>
   </div>
+
+  <nav id="site-mobile-nav" class="site-header__mobile-nav" data-mobile-nav hidden aria-label="Mobile">
+    <div class="site-header__mobile-panel">
+      {
+        company.mobileNav.map((item) => (
+          <a
+            href={item.href}
+            class:list={['site-header__mobile-link', { 'is-active': isNavActive(item.href) }]}
+            data-mobile-nav-link
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href="/contact" class="btn-solid site-header__mobile-cta" data-mobile-nav-link data-i18n="hero.cta.start">
+        Start a project
+      </a>
+    </div>
+  </nav>
 </header>
 
 <script>
   const header = document.querySelector<HTMLElement>('[data-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const mobileNav = document.querySelector<HTMLElement>('[data-mobile-nav]');
+
   const onScroll = (): void => {
     if (!header) return;
     header.classList.toggle('is-scrolled', window.scrollY > 48);
   };
+
+  const setMenuOpen = (open: boolean): void => {
+    if (!header || !toggle || !mobileNav) return;
+    header.classList.toggle('is-menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileNav.hidden = !open;
+    document.body.classList.toggle('is-menu-open', open);
+  };
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = header?.classList.contains('is-menu-open') ?? false;
+    setMenuOpen(!isOpen);
+  });
+
+  document.querySelectorAll<HTMLAnchorElement>('[data-mobile-nav-link]').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenuOpen(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('(min-width: 1024px)').matches) setMenuOpen(false);
+  });
+
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 </script>

@@ -169,5 +169,19 @@
     { "href": "#work", "label": "Work", "pageHref": "/#work" },
     { "href": "/pricing", "label": "Pricing", "pageHref": "/pricing" },
     { "href": "#contact", "label": "Contact", "pageHref": "/#contact" }
+  ],
+  "mobileNav": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Work", "href": "/work" },
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Help", "href": "/help" },
+    { "label": "Labs", "href": "/labs" },
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Planning guide", "href": "/guide/web-app-vs-mobile" },
+    { "label": "Terms", "href": "/terms" },
+    { "label": "Privacy", "href": "/privacy" }
   ]
 }
