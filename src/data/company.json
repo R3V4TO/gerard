@@ -1,6 +1,14 @@
 {
   "name": "VersaCarte",
   "tagline": "App & web development studio",
+  "logo": {
+    "full": "/images/versacarte-logo.png",
+    "trimmed": "/images/versacarte-logo-trimmed.png",
+    "light": "/images/versacarte-logo-light.png",
+    "mark": "/images/versacarte-logo-mark.png",
+    "icon": "/images/versacarte-logo-icon.png",
+    "wordmark": "/images/versacarte-logo-wordmark.png"
+  },
   "specialization": "The engineering studio for businesses worldwide that need mobile apps, IoT connectivity and modern cloud backends",
   "domain": "versacarte.com",
   "labsUrl": "https://labs.versacarte.com",

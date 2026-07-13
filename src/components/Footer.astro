@@ -7,7 +7,17 @@ import SubscribeForm from './SubscribeForm.astro';
   <div class="container-wide footer-studio">
     <div class="footer-studio__grid">
       <div>
-        <p class="footer-studio__logo">{company.name}</p>
+        <a href="/" class="footer-studio__logo-link">
+          <img
+            src={company.logo.light}
+            alt={company.name}
+            class="footer-studio__logo-img"
+            width="160"
+            height="46"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
         <p class="footer-studio__tagline">{company.tagline}</p>
         <p class="mt-2 text-sm text-dark-muted">{company.address}</p>
         <p class="mt-1">

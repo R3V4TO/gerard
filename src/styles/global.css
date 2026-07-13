@@ -183,7 +183,29 @@
 }
 
 .site-header__brand {
-  @apply flex items-center gap-3 text-sm font-bold uppercase tracking-[0.14em] text-ink no-underline;
+  @apply flex items-center no-underline;
+}
+
+.site-header__logo {
+  display: block;
+  height: 2.35rem;
+  width: auto;
+  max-width: 9.5rem;
+  object-fit: contain;
+}
+
+.site-header__logo--light {
+  display: none;
+}
+
+body[data-home] .site-header:not(.is-scrolled) .site-header__logo--dark,
+[data-theme="dark"] .site-header .site-header__logo--dark {
+  display: none;
+}
+
+body[data-home] .site-header:not(.is-scrolled) .site-header__logo--light,
+[data-theme="dark"] .site-header .site-header__logo--light {
+  display: block;
 }
 
 .site-header__mark {
@@ -703,6 +725,18 @@ body.is-menu-open {
 
 .footer-studio__grid {
   @apply grid gap-12 lg:grid-cols-2;
+}
+
+.footer-studio__logo-link {
+  @apply inline-block no-underline;
+}
+
+.footer-studio__logo-img {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+  max-width: 11rem;
+  object-fit: contain;
 }
 
 .footer-studio__logo {

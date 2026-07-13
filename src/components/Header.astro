@@ -17,8 +17,25 @@ function isNavActive(itemHref: string): boolean {
   <div class="container-wide site-header__inner">
     <div class="flex items-center gap-4">
       <a href="/" class="site-header__brand">
-        <span class="site-header__mark">V</span>
-        <span>{company.name}</span>
+        <img
+          src={company.logo.trimmed}
+          alt=""
+          class="site-header__logo site-header__logo--dark"
+          width="138"
+          height="40"
+          loading="eager"
+          decoding="async"
+          aria-hidden="true"
+        />
+        <img
+          src={company.logo.light}
+          alt={company.name}
+          class="site-header__logo site-header__logo--light"
+          width="138"
+          height="40"
+          loading="eager"
+          decoding="async"
+        />
       </a>
       <span class="site-header__category">{company.category}</span>
     </div>

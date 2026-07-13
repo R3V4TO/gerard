@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "images:png": "node scripts/svg-to-png.mjs",
+    "logos:build": "node scripts/build-logos.mjs",
     "preview": "astro preview",
     "cf:preview": "npm run build && wrangler pages dev dist --compatibility-date=2024-12-01",
     "cf:deploy": "npm run build && wrangler pages deploy dist --project-name=versacarte"
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260702.1",
+    "sharp": "^0.35.3",
     "wrangler": "^4.107.0"
   }
 }
