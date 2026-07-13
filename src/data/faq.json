@@ -1,0 +1,29 @@
+{
+  "title": "Frequently asked questions",
+  "items": [
+    {
+      "question": "How long does a typical project take?",
+      "answer": "Landing pages ship in 1 to 2 weeks. Mobile apps and web platforms usually run 6 to 12 weeks depending on scope. IoT systems vary, and we provide a milestone timeline after discovery."
+    },
+    {
+      "question": "Do you work with clients outside my country?",
+      "answer": "Yes. We are a remote-first studio and work with businesses across Europe, Africa, the Americas, and Asia. We align with your time zone and communicate asynchronously when needed."
+    },
+    {
+      "question": "What happens after the project is delivered?",
+      "answer": "You receive documented source code, deployment credentials, and a handoff session. Retainer packages are also available for ongoing maintenance, hosting, and feature work."
+    },
+    {
+      "question": "Do you integrate payment gateways?",
+      "answer": "Yes. We regularly integrate Stripe, Paystack, Flutterwave, M-Pesa, and other regional payment providers, and we design flows for variable connectivity and diverse devices."
+    },
+    {
+      "question": "What is your payment structure?",
+      "answer": "Typically 40% to start, 40% at the midpoint milestone, and 20% on delivery. Productized services are 50/50, and retainers are billed monthly in advance."
+    },
+    {
+      "question": "Can you work with our existing team or codebase?",
+      "answer": "Absolutely. We can augment your team, audit existing architecture, or take over a stalled project. Discovery calls are free and help us assess fit."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+---
+import company from '../data/company.json';
+import SubscribeForm from './SubscribeForm.astro';
+---
+
+<footer class="site-footer">
+  <div class="container-wide footer-studio">
+    <div class="footer-studio__grid">
+      <div>
+        <p class="footer-studio__logo">{company.name}</p>
+        <p class="footer-studio__tagline">{company.tagline}</p>
+        <p class="mt-2 text-sm text-dark-muted">{company.address}</p>
+        <p class="mt-1">
+          <a href={`mailto:${company.email}`}>{company.email}</a>
+        </p>
+        <div class="social-links">
+          <a href={company.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={company.social.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <div class="partner-badges">
+          {company.partnerships.map((p) => (
+            <span class="partner-badge">{p.label}</span>
+          ))}
+        </div>
+      </div>
+      <div class="footer-studio__cols">
+        <div>
+          <p class="footer-studio__heading">Studio</p>
+          <ul>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/help">Help</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-studio__heading">Elsewhere</p>
+          <ul>
+            <li><a href="/labs">Labs</a></li>
+            <li><a href={company.helpUrl} target="_blank" rel="noopener noreferrer">Help center</a></li>
+            <li><a href={company.portfolioUrl} target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+            <li><a href="/guide/web-app-vs-mobile">Planning guide</a></li>
+          </ul>
+          <p class="footer-studio__heading mt-8">Legal</p>
+          <ul>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-newsletter">
+    <div class="container-wide">
+      <p class="footer-newsletter__title">{company.footer.newsletterTitle}</p>
+      <p class="mt-2 text-sm text-dark-muted">{company.footer.newsletterSubtitle}</p>
+      <SubscribeForm
+        formId="newsletter-form"
+        statusId="newsletter-status"
+        source="footer"
+        buttonLabel="Subscribe"
+        consentText={company.footer.newsletterConsent}
+      />
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="container-wide">
+      <p>© {new Date().getFullYear()} {company.name}. Serving clients worldwide.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+{
+  "slug": "smart-traffic",
+  "title": "Smart Traffic Control",
+  "status": "Shipped",
+  "tagline": "Sensor-driven intersection monitoring with live analytics",
+  "stack": ["Arduino", "ESP8266", "Python", "MQTT"],
+  "hero": "/images/smart-traffic.svg",
+  "cover": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=80&auto=format&fit=crop",
+  "problem": {
+    "title": "The problem",
+    "body": "Urban intersections in growing East African cities lack real-time traffic data. Manual counts are expensive and outdated within weeks. City planners need continuous flow metrics to justify signal timing changes."
+  },
+  "approach": {
+    "title": "Our approach",
+    "body": "Ultrasonic sensors on ESP8266 nodes measure vehicle presence at each approach. Data streams via MQTT to a Python ingest service, aggregating into a live dashboard with peak-hour heatmaps and anomaly alerts for blocked lanes."
+  },
+  "technologies": {
+    "title": "Technologies",
+    "items": [
+      "ESP8266 firmware with ultrasonic ranging",
+      "MQTT broker for low-bandwidth telemetry",
+      "Python ingest + PostgreSQL time-series storage",
+      "Web dashboard with real-time charts",
+      "Alert thresholds for congestion events"
+    ]
+  },
+  "outcome": {
+    "title": "Outcome",
+    "body": "Deployed as a university capstone with production-grade documentation. Demonstrated 94% detection accuracy in controlled tests. Architecture spec adopted as reference design for municipal pilot discussions."
+  },
+  "metrics": [
+    { "value": "94%", "label": "Detection accuracy" },
+    { "value": "4", "label": "Sensor nodes" },
+    { "value": "Live", "label": "Dashboard uptime" }
+  ]
+}

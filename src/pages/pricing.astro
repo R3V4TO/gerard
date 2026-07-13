@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingCard from '../components/PricingCard.astro';
+import company from '../data/company.json';
+import pricing from '../data/pricing.json';
+---
+
+<BaseLayout
+  title={`Pricing | ${company.name}`}
+  description="Project tiers, retainer packages, and productized services in Kenyan Shillings."
+>
+  <section class="section-studio pt-32">
+    <div class="container-wide">
+      <p class="section-label" data-reveal>{pricing.label}</p>
+      <h1 class="section-studio__title" data-reveal>{pricing.title}</h1>
+      <p class="section-studio__body" data-reveal>{pricing.subtitle}</p>
+
+      <div class="pricing-grid" data-stagger-motion>
+        {pricing.tiers.map((tier) => (
+          <PricingCard {...tier} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-studio section-studio--gray">
+    <div class="container-wide">
+      <p class="section-label" data-reveal>{pricing.retainers.label}</p>
+      <h2 class="section-studio__title" data-reveal>{pricing.retainers.title}</h2>
+      <p class="section-studio__body" data-reveal>{pricing.retainers.subtitle}</p>
+      <div class="retainer-grid" data-stagger-motion>
+        {pricing.retainers.items.map((item) => (
+          <article class="retainer-card">
+            <h3 class="text-lg font-semibold">{item.name}</h3>
+            <p class="mt-2 text-2xl font-bold">{item.price}</p>
+            <p class="mt-3 text-sm text-muted">{item.description}</p>
+            <ul class="mt-4 space-y-1 text-sm text-muted">
+              {item.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a href="/contact?type=retainer" class="btn mt-6">Discuss retainer</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-studio pb-24">
+    <div class="container-wide">
+      <p class="section-label" data-reveal>{pricing.products.label}</p>
+      <h2 class="section-studio__title" data-reveal>{pricing.products.title}</h2>
+      <div class="product-grid" data-stagger-motion>
+        {pricing.products.items.map((item) => (
+          <article class="product-card">
+            <p class="text-xs font-semibold uppercase tracking-widest text-accent-warm">{item.timeline}</p>
+            <h3 class="mt-3 text-lg font-semibold">{item.name}</h3>
+            <p class="mt-2 text-2xl font-bold">{item.price}</p>
+            <p class="mt-3 text-sm text-muted">{item.description}</p>
+            <a href={item.ctaHref} class="btn-solid mt-6">{item.cta}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

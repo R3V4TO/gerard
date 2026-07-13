@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import company from '../../data/company.json';
+import { guideMeta, guideSections } from '../../data/planning-guide';
+---
+
+<BaseLayout
+  title={`${guideMeta.title} | ${company.name}`}
+  description={guideMeta.subtitle}
+>
+  <article class="guide-page section-studio pt-32 pb-24">
+    <div class="container-main guide-page__inner">
+      <header class="guide-page__header" data-reveal>
+        <p class="section-label">Free planning guide</p>
+        <h1 class="section-studio__title">{guideMeta.title}</h1>
+        <p class="section-studio__body">{guideMeta.subtitle}</p>
+        <p class="mt-4 text-sm text-muted">
+          By {guideMeta.author} · Version {guideMeta.version} · {guideMeta.updated}
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href={guideMeta.downloadPath} class="btn-solid" download>Download printable copy</a>
+          <button type="button" class="btn cursor-pointer border-ink" id="guide-print">Print / save as PDF</button>
+        </div>
+      </header>
+
+      <div class="guide-page__content mt-16">
+        {
+          guideSections.map((section) => (
+            <section id={section.id} class="guide-section" data-reveal>
+              <h2 class="guide-section__title">{section.title}</h2>
+              {section.content?.map((p) => <p class="guide-section__body">{p}</p>)}
+              {section.bullets && (
+                <ul class="guide-section__list">
+                  {section.bullets.map((item) => <li>{item}</li>)}
+                </ul>
+              )}
+              {section.table && (
+                <div class="guide-table-wrap">
+                  <table class="guide-table">
+                    <thead>
+                      <tr>
+                        {section.table[0].map((cell) => <th>{cell}</th>)}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.slice(1).map((row) => (
+                        <tr>
+                          {row.map((cell) => <td>{cell}</td>)}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              {section.checklist && (
+                <div class="guide-checklist">
+                  {section.checklist.map((row) => (
+                    <div class="guide-checklist__row">
+                      <p>{row.web}</p>
+                      <p>{row.mobile}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {section.note && <p class="guide-section__note">{section.note}</p>}
+            </section>
+          ))
+        }
+      </div>
+
+      <footer class="guide-page__footer contact-panel mt-16" data-reveal>
+        <h2 class="text-xl font-semibold">Ready to talk through your product?</h2>
+        <p class="mt-3 text-sm text-muted">
+          Bring this guide to a free discovery call and we will help you choose the right platform and scope v1.
+        </p>
+        <a href="/contact" class="btn-solid mt-6">Book a discovery call</a>
+      </footer>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  document.getElementById('guide-print')?.addEventListener('click', () => window.print());
+</script>

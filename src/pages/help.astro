@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import company from '../data/company.json';
+import help from '../data/help.json';
+import faq from '../data/faq.json';
+---
+
+<BaseLayout
+  title={`Help | ${company.name}`}
+  description="VersaCarte help center for products, studio services, Labs tools, and support."
+>
+  <section class="section-studio pt-32">
+    <div class="container-main">
+      <p class="section-label" data-reveal>Help</p>
+      <h1 class="section-studio__title" data-reveal>{help.title}</h1>
+      <p class="section-studio__body" data-reveal>{help.intro}</p>
+      <p class="mt-3 text-sm text-muted" data-reveal>{help.responseTime}</p>
+
+      <div class="mt-8 flex flex-wrap gap-4" data-reveal>
+        <a href={company.helpUrl} class="btn-solid" target="_blank" rel="noopener noreferrer">
+          Open full help center
+        </a>
+        <a href="/contact" class="btn">Contact the studio</a>
+        <a href={`mailto:${company.email}`} class="btn">{company.email}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-studio section-studio--gray">
+    <div class="container-main">
+      <h2 class="text-2xl font-semibold" data-reveal>{faq.title}</h2>
+      <div class="faq-list" data-reveal>
+        {faq.items.map((item) => (
+          <details class="faq-item bg-white">
+            <summary>{item.question}</summary>
+            <p class="faq-item__answer">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-studio pb-24">
+    <div class="container-main">
+      <div class="grid gap-12 lg:grid-cols-3">
+        {
+          help.categories.map((category) => (
+            <div data-reveal>
+              <h2 class="text-sm font-semibold uppercase tracking-widest text-muted">{category.title}</h2>
+              <ul class="mt-5 space-y-4">
+                {
+                  category.items.map((item) => (
+                    <li>
+                      <a
+                        href={item.href}
+                        class="help-link group block no-underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span class="help-link__title">{item.title}</span>
+                        <span class="help-link__desc">{item.description}</span>
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="contact-panel mt-16" data-reveal>
+        <h2 class="text-xl font-semibold">Still need help?</h2>
+        <p class="mt-3 text-sm text-muted">
+          Browse all articles on <a href={company.helpUrl}>help.versacarte.com</a> or send a message through
+          the <a href="/contact">contact form</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

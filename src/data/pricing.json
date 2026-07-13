@@ -1,0 +1,110 @@
+{
+  "label": "Pricing",
+  "title": "Clear ranges. No surprise invoices.",
+  "subtitle": "Rough project tiers in Kenyan Shillings. Every engagement starts with a discovery call to confirm scope before we quote.",
+  "tiers": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "tagline": "Simple websites & landing pages",
+      "range": "KES 50,000 – 150,000",
+      "timeline": "2–4 weeks",
+      "features": [
+        "Marketing site or landing page (up to 6 pages)",
+        "Mobile-responsive, SEO-ready Astro build",
+        "Contact form & basic analytics",
+        "One round of revisions after launch"
+      ],
+      "cta": "Get a website quote",
+      "ctaHref": "/contact?type=web&package=starter",
+      "highlighted": false
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "tagline": "Web apps & mobile products",
+      "range": "KES 200,000 – 600,000",
+      "timeline": "6–12 weeks",
+      "features": [
+        "React Native app or full web application",
+        "Supabase backend, auth & database design",
+        "Payment gateway integration where required",
+        "Staging environment & documented handoff"
+      ],
+      "cta": "Discuss your app",
+      "ctaHref": "/contact?type=mobile&package=standard",
+      "highlighted": true
+    },
+    {
+      "id": "enterprise",
+      "name": "Custom",
+      "tagline": "IoT, full-stack & systems engineering",
+      "range": "KES 600,000+",
+      "timeline": "Scoped per project",
+      "features": [
+        "IoT telemetry and SCADA-aware dashboards",
+        "Multi-service architecture & firmware",
+        "Enterprise compliance and SLA options",
+        "Dedicated engineering lead"
+      ],
+      "cta": "Book enterprise scoping",
+      "ctaHref": "/contact?type=iot&package=enterprise",
+      "highlighted": false
+    }
+  ],
+  "retainers": {
+    "label": "Retainer packages",
+    "title": "Ongoing support that compounds",
+    "subtitle": "Convert one-time launches into predictable monthly partnerships.",
+    "items": [
+      {
+        "name": "Maintenance Plan",
+        "price": "KES 15,000/mo",
+        "description": "For existing clients and covers hosting oversight, security patches, minor fixes, and priority email support.",
+        "features": ["Up to 4 hours/month", "Uptime monitoring", "Dependency updates", "48hr response SLA"]
+      },
+      {
+        "name": "Growth Plan",
+        "price": "KES 35,000/mo",
+        "description": "For active products that need regular feature work, analytics review, and backend tuning.",
+        "features": ["Up to 12 hours/month", "Feature additions", "Performance reviews", "Monthly status call"]
+      },
+      {
+        "name": "Embedded Engineer",
+        "price": "Custom",
+        "description": "Part-time engineering capacity so VersaCarte works as an extension of your team without full-time overhead.",
+        "features": ["20–80 hrs/month", "Slack access", "Sprint planning", "Architecture advisory"]
+      }
+    ]
+  },
+  "products": {
+    "label": "Productized services",
+    "title": "Fixed scope. Fixed price. Fast delivery.",
+    "items": [
+      {
+        "name": "Launch Ready Landing Page",
+        "price": "KES 45,000",
+        "timeline": "7 days",
+        "description": "Single-page marketing site with hero, features, contact form, and conversion-focused CTA so you can start collecting leads quickly.",
+        "cta": "Order landing page",
+        "ctaHref": "/contact?type=web&product=landing-page"
+      },
+      {
+        "name": "Supabase Backend Setup",
+        "price": "KES 60,000",
+        "timeline": "10 days",
+        "description": "Auth, RLS policies, database schema, Edge Functions, and a documented API for your mobile or web client.",
+        "cta": "Order backend setup",
+        "ctaHref": "/contact?type=cloud&product=supabase-setup"
+      },
+      {
+        "name": "IoT Sensor Dashboard",
+        "price": "KES 80,000",
+        "timeline": "14 days",
+        "description": "MQTT ingest, live charts, alert thresholds, and a mobile-friendly dashboard for field telemetry.",
+        "cta": "Order IoT dashboard",
+        "ctaHref": "/contact?type=iot&product=iot-dashboard"
+      }
+    ]
+  }
+}

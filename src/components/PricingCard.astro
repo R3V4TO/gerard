@@ -1,0 +1,25 @@
+---
+interface Props {
+  name: string;
+  tagline: string;
+  range: string;
+  timeline: string;
+  features: string[];
+  cta: string;
+  ctaHref: string;
+  highlighted?: boolean;
+}
+
+const { name, tagline, range, timeline, features, cta, ctaHref, highlighted = false } = Astro.props;
+---
+
+<article class:list={['pricing-card', { 'pricing-card--highlight': highlighted }]}>
+  <p class="text-xs font-semibold uppercase tracking-widest text-muted">{tagline}</p>
+  <h3 class="pricing-card__name mt-3">{name}</h3>
+  <p class="pricing-card__range">{range}</p>
+  <p class="mt-2 text-xs uppercase tracking-widest text-accent-cyan">{timeline}</p>
+  <ul class="pricing-card__features">
+    {features.map((f) => <li>{f}</li>)}
+  </ul>
+  <a href={ctaHref} class:list={['mt-8', highlighted ? 'btn-solid' : 'btn']}>{cta}</a>
+</article>

@@ -1,0 +1,44 @@
+---
+import company from '../data/company.json';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const onHome = path === '/';
+---
+
+<header class="site-header" data-header>
+  <div class="container-wide site-header__inner">
+    <div class="flex items-center gap-4">
+      <a href="/" class="site-header__brand">
+        <span class="site-header__mark">V</span>
+        <span>{company.name}</span>
+      </a>
+      <span class="site-header__category">{company.category}</span>
+    </div>
+    <nav class="site-header__nav" aria-label="Main">
+      {
+        company.nav.map((item) => {
+          const href = onHome ? item.href : (item.pageHref ?? item.href);
+          const isActive = path === href.replace(/#.*$/, '') || (href === '/about' && path === '/about');
+          return (
+            <a href={href} class:list={[{ 'is-active': isActive }]} data-i18n={`nav.${item.label.toLowerCase()}`}>
+              {item.label}
+            </a>
+          );
+        })
+      }
+      <a href="/blog" class:list={[{ 'is-active': path.startsWith('/blog') }]}>Blog</a>
+      <a href="/help" class:list={[{ 'is-active': path === '/help' }]}>Help</a>
+      <a href="/contact" class="btn-solid site-header__cta" data-i18n="hero.cta.start">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const onScroll = (): void => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 48);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>

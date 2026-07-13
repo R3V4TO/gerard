@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import company from '../data/company.json';
+---
+
+<BaseLayout
+  title={`About us | ${company.name}`}
+  description={company.about.body}
+>
+  <section class="section-studio pt-32">
+    <div class="container-wide">
+      <p class="section-label" data-reveal>{company.about.label}</p>
+      <h1 class="section-studio__title" data-reveal>{company.about.title}</h1>
+      <p class="section-studio__body" data-reveal>{company.about.body}</p>
+      <p class="section-studio__body mt-6" data-reveal>{company.about.mission}</p>
+    </div>
+  </section>
+
+  <section class="section-studio section-studio--gray">
+    <div class="container-wide">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div data-reveal>
+          <h2 class="text-2xl font-semibold">How we work</h2>
+          <p class="section-studio__body mt-4">
+            VersaCarte is led by {company.founder}, an electrical engineer and full-stack developer
+            who believes software should be built with the same rigor as physical systems. We work
+            with startups, SMEs, and enterprise teams across time zones, and we communicate in plain
+            language so stakeholders always know where a project stands.
+          </p>
+          <ul class="why-list mt-8">
+            {company.about.values.map((value) => <li>{value}</li>)}
+          </ul>
+          <a href="/contact" class="btn-solid mt-10">Work with us</a>
+        </div>
+        <div class="overflow-hidden" data-reveal>
+          <PhotoPanel src={company.about.image} alt={company.about.imageAlt} overlay="section" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-studio pb-24">
+    <div class="container-wide">
+      <h2 class="text-2xl font-semibold" data-reveal>Global reach, local understanding</h2>
+      <p class="section-studio__body mt-4" data-reveal>
+        We have delivered projects for clients who need multi-currency payments, multilingual
+        interfaces, offline-capable mobile apps, and IoT systems that run in demanding environments.
+        Whether you are launching in one market or expanding into several, we design for how people
+        actually use software, not just how it looks in a demo.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4" data-reveal>
+        <a href="/services" class="btn">Our services</a>
+        <a href="/work" class="btn">View our work</a>
+        <a href="/pricing" class="btn">See pricing</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

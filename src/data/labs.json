@@ -1,0 +1,30 @@
+{
+  "label": "Labs",
+  "title": "Experimental tools & open work",
+  "subtitle": "Browser utilities, prototypes, and engineering experiments from the VersaCarte studio. Full interactive tools live on Labs.",
+  "items": [
+    {
+      "name": "MQTT Topic Explorer",
+      "description": "Debug MQTT subscriptions and payloads during IoT development with no install required.",
+      "status": "Beta",
+      "href": "https://labs.versacarte.com"
+    },
+    {
+      "name": "Supabase RLS Playground",
+      "description": "Test Row Level Security policies before deploying to production.",
+      "status": "Coming soon",
+      "href": "https://labs.versacarte.com"
+    },
+    {
+      "name": "Payment Flow Simulator",
+      "description": "Mock checkout and wallet flows for development without live transactions.",
+      "status": "Planned",
+      "href": "https://labs.versacarte.com"
+    }
+  ],
+  "openSource": {
+    "title": "Open source",
+    "description": "Selected utilities and starter templates are published on GitHub for the developer community.",
+    "href": "https://github.com/versacarte"
+  }
+}

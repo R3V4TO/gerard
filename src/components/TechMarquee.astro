@@ -1,0 +1,15 @@
+---
+import company from '../data/company.json';
+
+const items = [...company.stack, ...company.stack];
+---
+
+<div class="tech-marquee" aria-hidden="true">
+  <div class="tech-marquee__track" data-marquee-track>
+    {
+      items.map((item) => (
+        <span class="tech-marquee__item">{item}</span>
+      ))
+    }
+  </div>
+</div>

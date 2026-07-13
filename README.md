@@ -14,7 +14,7 @@ cd sites/company
 npm install
 npm run dev
 npm run build
-npm run cf:preview   # static + /api/contact locally
+npm run cf:preview   # static + /api/contact and /api/subscribe locally
 npm run cf:deploy    # Cloudflare project: versacarte-company
 ```
 
@@ -27,7 +27,7 @@ Full checklist: **[CLOUDFLARE.md](./CLOUDFLARE.md)**
 | Root directory | `sites/company` |
 | Build command | `npm run build` |
 | Output | `dist` |
-| Secret | `WEB3FORMS_ACCESS_KEY` |
+| Secret | `WEB3FORMS_ACCESS_KEY` (required), `RESEND_API_KEY` (optional, sends guide by email) |
 
 ## Pages
 
@@ -38,6 +38,7 @@ Full checklist: **[CLOUDFLARE.md](./CLOUDFLARE.md)**
 | `/work` | Product case studies |
 | `/about` | Studio background |
 | `/contact` | Inquiry form → `/api/contact` |
+| `/guide/web-app-vs-mobile` | Free planning guide (web vs mobile) |
 | `/help` | Help gateway → [help.versacarte.com](https://help.versacarte.com) |
 | `/labs` | Link to Labs |
 

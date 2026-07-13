@@ -1,0 +1,23 @@
+---
+import testimonials from '../data/testimonials.json';
+---
+
+<section id="testimonials" class="section-studio scroll-mt-24">
+  <div class="container-wide">
+    <p class="section-label" data-reveal>{testimonials.label}</p>
+    <h2 class="section-studio__title" data-reveal>{testimonials.title}</h2>
+    <div class="testimonial-grid" data-stagger-motion>
+      {
+        testimonials.items.map((item) => (
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card__quote">"{item.quote}"</p>
+            <footer class="mt-6">
+              <p class="testimonial-card__author">{item.author}</p>
+              <p class="testimonial-card__role">{item.role} · {item.context}</p>
+            </footer>
+          </blockquote>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+---
+interface Props {
+  formId: string;
+  statusId: string;
+  source: string;
+  buttonLabel?: string;
+  buttonClass?: string;
+  consentText: string;
+  showHoneypot?: boolean;
+  inputClass?: string;
+}
+
+const {
+  formId,
+  statusId,
+  source,
+  buttonLabel = 'Subscribe',
+  buttonClass = 'btn-light w-fit cursor-pointer border-0',
+  consentText,
+  showHoneypot = true,
+  inputClass = 'input-field',
+} = Astro.props;
+---
+
+<form class="subscribe-form space-y-4" id={formId}>
+  {showHoneypot && (
+    <div class="hidden" aria-hidden="true">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+  )}
+  <input type="email" name="email" required class={inputClass} placeholder="Email" autocomplete="email" />
+  <label class="checkbox-row">
+    <input type="checkbox" name="consent" required />
+    <span>{consentText}</span>
+  </label>
+  <input type="hidden" name="source" value={source} />
+  <button type="submit" class={buttonClass}>{buttonLabel}</button>
+  <p id={statusId} class="text-sm text-dark-muted subscribe-form__status" role="status"></p>
+  <div class="subscribe-form__success hidden" data-guide-success>
+    <p class="text-sm text-dark-muted">Your guide is ready:</p>
+    <a href="/guide/web-app-vs-mobile" class="link-arrow mt-2">Read online</a>
+    <a href="/downloads/versacarte-web-vs-mobile-guide.html" class="link-arrow mt-2 block" download>Download copy</a>
+  </div>
+</form>
+
+<script define:vars={{ formId, statusId }}>
+  const form = document.getElementById(formId);
+  const status = document.getElementById(statusId);
+  if (!form || !status) throw new Error('Subscribe form elements missing');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Subscribing…';
+    status.classList.remove('text-accent-cyan');
+    const successBox = form.querySelector('[data-guide-success]');
+    successBox?.classList.add('hidden');
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        status.textContent = result.message ?? 'Subscribed. Check your inbox for the guide.';
+        if (result.guideUrl && successBox) {
+          const links = successBox.querySelectorAll('a');
+          if (links[0]) links[0].href = result.guideUrl;
+          if (links[1] && result.downloadUrl) links[1].href = result.downloadUrl;
+          successBox.classList.remove('hidden');
+        }
+        form.reset();
+      } else {
+        status.textContent = result.message ?? 'Something went wrong. Try again.';
+      }
+    } catch {
+      status.textContent = 'Network issue. Try again when online.';
+    }
+  });
+</script>
+

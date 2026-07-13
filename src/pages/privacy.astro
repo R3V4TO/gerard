@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import company from '../data/company.json';
+
+const updated = 'July 13, 2026';
+---
+
+<BaseLayout
+  title={`Privacy Policy | ${company.name}`}
+  description="How VersaCarte collects, uses, and protects your personal information."
+>
+  <section class="section-studio pt-32 pb-24">
+    <div class="container-main legal-prose">
+      <p class="section-label" data-reveal>Legal</p>
+      <h1 class="section-studio__title" data-reveal>Privacy Policy</h1>
+      <p class="text-sm text-muted" data-reveal>Last updated: {updated}</p>
+
+      <div class="prose-studio mt-12" data-reveal>
+        <h2>1. Who we are</h2>
+        <p>
+          VersaCarte ({company.domain}) is an app and web development studio. For privacy inquiries,
+          contact us at <a href={`mailto:${company.email}`}>{company.email}</a>.
+        </p>
+
+        <h2>2. Information we collect</h2>
+        <p>We may collect the following when you interact with our site or services:</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5">
+          <li>Name and email address when you submit a contact form, newsletter signup, or resource download</li>
+          <li>Project details you voluntarily provide in inquiries</li>
+          <li>Technical data such as IP address, browser type, and pages visited through analytics tools</li>
+        </ul>
+
+        <h2>3. How we use your information</h2>
+        <p>We use your information to:</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5">
+          <li>Respond to inquiries and deliver requested services</li>
+          <li>Send studio updates if you have opted in</li>
+          <li>Improve our website and understand how visitors use it</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>4. Legal basis</h2>
+        <p>
+          We process personal data based on your consent (for example, newsletter subscriptions),
+          our legitimate interest in operating and improving our business, and contractual necessity
+          when you engage our services.
+        </p>
+
+        <h2>5. Sharing and processors</h2>
+        <p>
+          We do not sell your personal data. We may share information with trusted service providers
+          such as email delivery, form handling, hosting, and analytics platforms, only as needed to
+          operate our site and services.
+        </p>
+
+        <h2>6. Data retention</h2>
+        <p>
+          We retain contact and project information for as long as needed to fulfill the purpose for
+          which it was collected, or as required by law. You may request deletion of your data at any
+          time.
+        </p>
+
+        <h2>7. Your rights</h2>
+        <p>
+          Depending on your location, you may have the right to access, correct, delete, or restrict
+          processing of your personal data, and to withdraw consent where applicable. Contact us to
+          exercise these rights.
+        </p>
+
+        <h2>8. Cookies and analytics</h2>
+        <p>
+          We may use cookies and privacy-focused analytics to understand site usage. You can control
+          cookies through your browser settings. Where required, we will request consent before
+          enabling non-essential tracking.
+        </p>
+
+        <h2>9. International transfers</h2>
+        <p>
+          As a remote-first studio serving clients worldwide, your data may be processed in
+          countries other than your own. We take reasonable steps to ensure appropriate safeguards
+          are in place.
+        </p>
+
+        <h2>10. Changes</h2>
+        <p>
+          We may update this policy from time to time. The date at the top of this page indicates
+          when it was last revised.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

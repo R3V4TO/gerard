@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import company from '../../data/company.json';
+import versarent from '../../data/case-studies/versarent.json';
+import smartTraffic from '../../data/case-studies/smart-traffic.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'versarent' } },
+    { params: { slug: 'smart-traffic' } },
+  ];
+}
+
+const studies: Record<string, typeof versarent> = {
+  versarent,
+  'smart-traffic': smartTraffic,
+};
+
+const { slug } = Astro.params;
+const study = studies[slug!];
+---
+
+<BaseLayout
+  title={`${study.title} | Case Study | ${company.name}`}
+  description={study.tagline}
+>
+  <section class="case-hero">
+    <div class="container-wide">
+      <div class="case-hero__visual" data-reveal>
+        <img src={study.cover ?? study.hero} alt={study.tagline} class="case-hero__img" loading="eager" width="1200" height="500" />
+        <div class="case-hero__logo">
+          <img src={study.hero} alt="" width="64" height="40" />
+        </div>
+      </div>
+      <p class="section-label mt-10" data-reveal>Case study</p>
+      <h1 class="section-studio__title" data-reveal>{study.title}</h1>
+      <p class="section-studio__body" data-reveal>{study.tagline}</p>
+      <div class="mt-4 flex flex-wrap gap-2" data-reveal>
+        <span class="text-xs font-semibold uppercase tracking-widest text-muted">{study.status}</span>
+        {study.stack.map((s) => (
+          <span class="border border-line px-2 py-0.5 text-[0.65rem] uppercase tracking-wider text-muted">{s}</span>
+        ))}
+      </div>
+      <div class="case-metrics" data-stagger>
+        {study.metrics.map((m) => (
+          <div>
+            <p class="case-metric__value">{m.value}</p>
+            <p class="text-xs uppercase tracking-widest text-muted">{m.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-studio">
+    <div class="container-main max-w-3xl">
+      <h2 class="text-2xl font-semibold" data-reveal>{study.problem.title}</h2>
+      <p class="section-studio__body" data-reveal>{study.problem.body}</p>
+
+      <h2 class="mt-12 text-2xl font-semibold" data-reveal>{study.approach.title}</h2>
+      <p class="section-studio__body" data-reveal>{study.approach.body}</p>
+
+      <h2 class="mt-12 text-2xl font-semibold" data-reveal>{study.technologies.title}</h2>
+      <ul class="mt-4 space-y-2 text-muted" data-reveal>
+        {study.technologies.items.map((item) => <li>{item}</li>)}
+      </ul>
+
+      <h2 class="mt-12 text-2xl font-semibold" data-reveal>{study.outcome.title}</h2>
+      <p class="section-studio__body" data-reveal>{study.outcome.body}</p>
+
+      <div class="mt-12 flex flex-wrap gap-4" data-reveal>
+        <a href="/contact" class="btn-solid">Start a similar project</a>
+        <a href="/work" class="btn">All work</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

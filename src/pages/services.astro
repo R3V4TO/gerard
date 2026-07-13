@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import company from '../data/company.json';
+---
+
+<BaseLayout
+  title={`Services | ${company.name}`}
+  description="Mobile apps, web platforms, IoT, cloud backends, and systems engineering."
+>
+  <section class="section-studio pt-32">
+    <div class="container-main">
+      <p class="section-label" data-reveal>Services</p>
+      <h1 class="section-studio__title" data-reveal>Pick from the menu</h1>
+      <p class="section-studio__body" data-reveal>
+        Engagements are scoped per product and include discovery, build, and handoff with documentation you can audit.
+      </p>
+      <div class="service-grid service-grid--five mt-12" data-stagger>
+        {
+          company.services.items.map((item, i) => (
+            <ServiceCard
+              id={item.id}
+              title={item.title}
+              body={item.body}
+              href={`#${item.id}`}
+              cta={item.cta}
+              ctaHref={item.ctaHref}
+              index={i}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

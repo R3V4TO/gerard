@@ -1,0 +1,31 @@
+{
+  "label": "Studio updates",
+  "title": "Engineering notes from the studio",
+  "subtitle": "Technical articles on mobile, IoT, and backend work for global product teams.",
+  "posts": [
+    {
+      "slug": "react-native-supabase-kenya",
+      "title": "Building React Native apps with Supabase",
+      "excerpt": "Auth flows, RLS policies, and payment integration patterns that work on mid-range devices and intermittent networks.",
+      "date": "2026-05-15",
+      "readTime": "8 min",
+      "tags": ["React Native", "Supabase", "Mobile"]
+    },
+    {
+      "slug": "iot-mqtt-east-africa",
+      "title": "IoT telemetry with MQTT at scale",
+      "excerpt": "ESP8266 sensor nodes, resilient connectivity, and dashboard design for field deployments in demanding environments.",
+      "date": "2026-04-02",
+      "readTime": "10 min",
+      "tags": ["IoT", "MQTT", "ESP8266"]
+    },
+    {
+      "slug": "astro-cloudflare-performance",
+      "title": "Shipping sub-second sites with Astro and Cloudflare",
+      "excerpt": "How we hit 95+ Lighthouse scores for studio and client marketing sites through image strategy, edge caching, and Core Web Vitals.",
+      "date": "2026-03-10",
+      "readTime": "6 min",
+      "tags": ["Astro", "Cloudflare", "Performance"]
+    }
+  ]
+}

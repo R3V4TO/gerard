@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import company from '../../data/company.json';
+import { blogPosts } from '../../data/blog-posts';
+
+export function getStaticPaths() {
+  return Object.keys(blogPosts).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const post = blogPosts[slug!];
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const paragraphs = post.content.split('\n\n');
+---
+
+<BaseLayout title={`${post.title} | ${company.name}`} description={paragraphs[0]}>
+  <article class="section-studio pt-32 pb-24">
+    <div class="container-main">
+      <p class="section-label" data-reveal>Blog</p>
+      <h1 class="section-studio__title" data-reveal>{post.title}</h1>
+      <p class="mt-4 text-sm text-muted" data-reveal>{post.date} · {post.readTime}</p>
+      <div class="mt-4 flex flex-wrap gap-2" data-reveal>
+        {post.tags.map((tag) => (
+          <span class="border border-line px-2 py-0.5 text-[0.65rem] uppercase tracking-wider text-accent-cyan">{tag}</span>
+        ))}
+      </div>
+
+      <div class="prose-studio mt-12" data-reveal>
+        {paragraphs.map((block) => {
+          if (block.startsWith('## ')) {
+            return <h2>{block.replace('## ', '')}</h2>;
+          }
+          return <p>{block}</p>;
+        })}
+      </div>
+
+      <a href="/blog" class="link-arrow mt-12">← All articles</a>
+    </div>
+  </article>
+</BaseLayout>

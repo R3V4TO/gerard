@@ -1,0 +1,52 @@
+{
+  "title": "Help & support",
+  "intro": "Answers for VersaCarte products, studio services, and Labs tools. Full articles live on the help center.",
+  "responseTime": "We typically reply within 2–3 business days.",
+  "categories": [
+    {
+      "title": "Getting started",
+      "items": [
+        {
+          "title": "What is VersaCarte?",
+          "description": "Overview of the app studio, products, and support channels.",
+          "href": "https://help.versacarte.com/getting-started/what-is-versacarte"
+        },
+        {
+          "title": "Contact support",
+          "description": "How to reach us and what to expect after you write in.",
+          "href": "https://help.versacarte.com/getting-started/contact-support"
+        }
+      ]
+    },
+    {
+      "title": "Products",
+      "items": [
+        {
+          "title": "VersaRent overview",
+          "description": "What VersaRent is, who it is for, and current availability.",
+          "href": "https://help.versacarte.com/products/versarent-overview"
+        },
+        {
+          "title": "FileSendNX: sharing files",
+          "description": "How FileSendNX works and common troubleshooting tips.",
+          "href": "https://help.versacarte.com/products/filesendnx-sharing"
+        }
+      ]
+    },
+    {
+      "title": "Studio & Labs",
+      "items": [
+        {
+          "title": "Hiring VersaCarte for a project",
+          "description": "What to include in a studio inquiry and how engagements work.",
+          "href": "https://help.versacarte.com/studio/hiring-versacarte"
+        },
+        {
+          "title": "Labs tools: privacy & offline use",
+          "description": "How VersaCarte Labs browser tools handle your data.",
+          "href": "https://help.versacarte.com/labs/tools-privacy"
+        }
+      ]
+    }
+  ]
+}

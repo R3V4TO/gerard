@@ -1,0 +1,25 @@
+---
+import resources from '../data/resources.json';
+import SubscribeForm from './SubscribeForm.astro';
+---
+
+<div class="lead-magnet" data-reveal>
+  <div>
+    <p class="section-label">Free resource</p>
+    <h3 class="mt-3 text-xl font-semibold">{resources.title}</h3>
+    <p class="mt-3 text-sm text-muted">{resources.subtitle}</p>
+    <a href={resources.guideUrl} class="link-arrow mt-4">Preview the guide</a>
+  </div>
+  <div>
+    <SubscribeForm
+      formId="lead-magnet-form"
+      statusId="lead-status"
+      source="lead-magnet"
+      buttonLabel={resources.downloadLabel}
+      buttonClass="btn-solid cursor-pointer border-0"
+      consentText={resources.consent}
+      inputClass="input-field input-field--light"
+    />
+  </div>
+</div>
+

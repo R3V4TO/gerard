@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web App vs Mobile App Decision Guide | VersaCarte</title>
+  <style>
+    :root { --ink: #0a0a0a; --muted: #5c5c5c; --line: #dcdcdc; --surface: #f5f5f5; }
+    * { box-sizing: border-box; }
+    body { font-family: Georgia, "Times New Roman", serif; color: var(--ink); line-height: 1.7; margin: 0; padding: 48px 24px; max-width: 720px; margin-inline: auto; letter-spacing: 0.012em; }
+    h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 0.5rem; letter-spacing: 0.03em; }
+    h2 { font-size: 1.35rem; margin: 2.5rem 0 1rem; border-top: 1px solid var(--line); padding-top: 1.5rem; letter-spacing: 0.02em; }
+    p { margin: 0 0 1rem; color: var(--muted); }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
+    .brand { font-family: Arial, sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); }
+    ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--muted); }
+    li { margin-bottom: 0.35rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0; }
+    th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: var(--surface); font-family: Arial, sans-serif; }
+    .note { border-left: 3px solid #0891b2; padding-left: 1rem; font-style: italic; margin: 1rem 0; }
+    .check { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0.5rem 0; font-size: 0.9rem; }
+    .check span { border: 1px solid var(--line); padding: 8px; color: var(--muted); }
+    .cta { margin-top: 2.5rem; padding: 1.5rem; background: var(--surface); font-family: Arial, sans-serif; font-size: 0.9rem; }
+    @media print { body { padding: 24px; } }
+  </style>
+</head>
+<body>
+  <p class="brand">VersaCarte · App & Web Studio</p>
+  <h1>Web App vs Mobile App Decision Guide</h1>
+  <p class="meta">A practical framework for teams evaluating their first digital product · Version 1.0 · July 2026</p>
+
+  <h2>Introduction</h2>
+  <p>You have an idea, a budget, and a deadline. The first fork in the road is usually platform: should you build a web application or a native mobile app?</p>
+  <p>There is no universal right answer. The best choice depends on who your users are, how often they need your product, what device capabilities you require, and how quickly you need to ship.</p>
+
+  <h2>When a web app is the better choice</h2>
+  <p>A web app runs in the browser. Users visit a URL, log in if needed, and use your product without installing anything from an app store.</p>
+  <ul>
+    <li>Your users are on laptops and desktops as much as phones</li>
+    <li>You need to ship fast and iterate without app store review delays</li>
+    <li>SEO and shareable links matter for discovery</li>
+    <li>You want one codebase to reach every device with a browser</li>
+    <li>Your product is used occasionally rather than multiple times per day</li>
+    <li>You need admin panels, internal tools, or B2B workflows</li>
+  </ul>
+  <p class="note">Modern web apps can be installable (PWAs) and feel app-like on mobile. For many MVPs, a well-built web app is enough to validate demand before investing in native mobile.</p>
+
+  <h2>When a mobile app is the better choice</h2>
+  <p>A mobile app is installed from the App Store or Google Play. It can use device hardware deeply and stay present on the user's home screen.</p>
+  <ul>
+    <li>Users will open your product daily or several times per week</li>
+    <li>Push notifications are a core retention channel</li>
+    <li>Camera, GPS, Bluetooth, or background sync are central to the product</li>
+    <li>You are building a consumer product where app store presence builds trust</li>
+    <li>Offline-first usage is required</li>
+    <li>You need the polish users expect from top-tier mobile products</li>
+  </ul>
+  <p class="note">Cross-platform frameworks like React Native and Expo let you ship iOS and Android from one codebase.</p>
+
+  <h2>Side-by-side comparison</h2>
+  <table>
+    <tr><th>Factor</th><th>Web app</th><th>Mobile app</th></tr>
+    <tr><td>Time to first launch</td><td>Often faster</td><td>Longer (stores, review)</td></tr>
+    <tr><td>Discovery</td><td>SEO, ads, direct links</td><td>App store search, ads</td></tr>
+    <tr><td>Updates</td><td>Instant for all users</td><td>Store review for native changes</td></tr>
+    <tr><td>Device access</td><td>Browser APIs</td><td>Full camera, GPS, push</td></tr>
+    <tr><td>Cost to build MVP</td><td>Typically lower</td><td>Typically higher</td></tr>
+    <tr><td>Best for</td><td>B2B, dashboards, tools</td><td>Consumer, field, daily-use</td></tr>
+  </table>
+
+  <h2>Hybrid options</h2>
+  <ul>
+    <li>PWA: a web app that can be installed and work offline for basic flows</li>
+    <li>Web first, mobile later: validate with a web MVP, then expand</li>
+    <li>Mobile first, web portal later: common for field apps that need an admin dashboard</li>
+    <li>Shared backend: one API layer for web and mobile clients</li>
+  </ul>
+
+  <h2>Decision checklist</h2>
+  <p>Mostly left leans web. Mostly right leans mobile.</p>
+  <div class="check"><span>Users find us through Google</span><span>Users search in app stores</span></div>
+  <div class="check"><span>We update features monthly</span><span>Push notifications are essential</span></div>
+  <div class="check"><span>Desktop is the primary device</span><span>Phone is the primary device</span></div>
+  <div class="check"><span>We are testing demand first</span><span>Users already want this on mobile</span></div>
+  <div class="check"><span>B2B or internal audience</span><span>Consumers or field teams</span></div>
+
+  <h2>Next steps</h2>
+  <p>Write a one-page brief: who the user is, the main job your product does, must-have features for v1, and your target launch date. Bring it to a discovery call with a studio you trust.</p>
+
+  <div class="cta">
+    <strong>VersaCarte</strong> builds web platforms, mobile apps, and connected systems for teams worldwide.<br />
+    hello@versacarte.com · versacarte.com
+  </div>
+</body>
+</html>

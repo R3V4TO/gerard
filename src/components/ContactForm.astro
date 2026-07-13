@@ -1,0 +1,117 @@
+---
+const params = Astro.url.searchParams;
+const prefillType = params.get('type') ?? '';
+const prefillPackage = params.get('package') ?? '';
+const prefillProduct = params.get('product') ?? '';
+---
+
+<form id="contact-form" class="space-y-5" method="POST" action="/api/contact" novalidate>
+  <div class="hidden" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="name" class="field-label mb-2 block">Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" class="input-field input-field--light" />
+    </div>
+    <div>
+      <label for="email" class="field-label mb-2 block">Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email" class="input-field input-field--light" />
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="projectType" class="field-label mb-2 block">Project type</label>
+      <select id="projectType" name="projectType" required class="input-field input-field--light">
+        <option value="">Select…</option>
+        <option value="mobile" selected={prefillType === 'mobile'}>Mobile app</option>
+        <option value="web" selected={prefillType === 'web'}>Website / web app</option>
+        <option value="iot" selected={prefillType === 'iot'}>IoT / embedded</option>
+        <option value="cloud" selected={prefillType === 'cloud'}>Cloud / backend</option>
+        <option value="engineering" selected={prefillType === 'engineering'}>Systems engineering</option>
+        <option value="retainer" selected={prefillType === 'retainer'}>Retainer / maintenance</option>
+      </select>
+    </div>
+    <div>
+      <label for="budget" class="field-label mb-2 block">Approximate budget</label>
+      <select id="budget" name="budget" class="input-field input-field--light">
+        <option value="">Select range…</option>
+        <option value="under-150k">Under KES 150,000</option>
+        <option value="150k-600k">KES 150,000 – 600,000</option>
+        <option value="600k-plus">KES 600,000+</option>
+        <option value="retainer">Monthly retainer</option>
+        <option value="unsure">Not sure yet</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label for="timeline" class="field-label mb-2 block">Timeline</label>
+    <select id="timeline" name="timeline" class="input-field input-field--light">
+      <option value="">Select…</option>
+      <option value="urgent">ASAP (under 4 weeks)</option>
+      <option value="1-3months">1–3 months</option>
+      <option value="3-6months">3–6 months</option>
+      <option value="flexible">Flexible / exploring</option>
+    </select>
+  </div>
+
+  {(prefillPackage || prefillProduct) && (
+    <input type="hidden" name="package" value={prefillPackage || prefillProduct} />
+  )}
+
+  <div>
+    <label for="message" class="field-label mb-2 block">Project brief</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="5"
+      class="input-field input-field--light resize-y"
+      placeholder="What are you building? Users, integrations, constraints…"
+    >{prefillPackage ? `Interested in the ${prefillPackage} package.` : prefillProduct ? `Interested in: ${prefillProduct}` : ''}</textarea>
+  </div>
+
+  <input type="hidden" name="formType" value="inquiry" />
+
+  <div class="flex flex-wrap items-center gap-4 pt-2">
+    <button type="submit" class="btn-solid cursor-pointer border-0">Send inquiry</button>
+    <p id="form-status" class="text-sm text-muted" role="status" aria-live="polite"></p>
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!status) return;
+    status.textContent = 'Sending…';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      let result: { success?: boolean; message?: string } = {};
+      try {
+        result = (await response.json()) as { success?: boolean; message?: string };
+      } catch {
+        status.textContent = `Server error (${response.status}). Email hello@versacarte.com directly.`;
+        return;
+      }
+      if (response.ok && result.success) {
+        status.textContent = 'Received. We will reply from hello@versacarte.com.';
+        form.reset();
+      } else {
+        status.textContent = result.message ?? 'Something went wrong. Try again or email directly.';
+      }
+    } catch {
+      status.textContent = 'Network issue. Try again when online.';
+    }
+  });
+</script>

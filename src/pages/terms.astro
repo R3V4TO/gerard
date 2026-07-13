@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import company from '../data/company.json';
+
+const updated = 'July 13, 2026';
+---
+
+<BaseLayout
+  title={`Terms of Service | ${company.name}`}
+  description="Terms of service for VersaCarte studio engagements and website use."
+>
+  <section class="section-studio pt-32 pb-24">
+    <div class="container-main legal-prose">
+      <p class="section-label" data-reveal>Legal</p>
+      <h1 class="section-studio__title" data-reveal>Terms of Service</h1>
+      <p class="text-sm text-muted" data-reveal>Last updated: {updated}</p>
+
+      <div class="prose-studio mt-12" data-reveal>
+        <h2>1. Agreement</h2>
+        <p>
+          By using the VersaCarte website ({company.domain}) or engaging our studio for services,
+          you agree to these Terms of Service. If you do not agree, please do not use our site or
+          services.
+        </p>
+
+        <h2>2. Services</h2>
+        <p>
+          VersaCarte provides software design, development, and related engineering services. Scope,
+          deliverables, timelines, and fees are defined in a separate statement of work or proposal
+          agreed before work begins.
+        </p>
+
+        <h2>3. Client responsibilities</h2>
+        <p>
+          You agree to provide timely feedback, access to required systems, and accurate project
+          information. Delays caused by missing inputs may affect delivery dates and may require a
+          revised schedule or fees.
+        </p>
+
+        <h2>4. Payment</h2>
+        <p>
+          Payment terms are specified in your proposal. Unless otherwise stated, invoices are due
+          within 14 days. We may pause work on overdue accounts until payment is received.
+        </p>
+
+        <h2>5. Intellectual property</h2>
+        <p>
+          Upon full payment, you receive ownership of custom deliverables defined in your agreement.
+          VersaCarte retains rights to pre-existing tools, libraries, and general know-how. We may
+          showcase completed work in our portfolio unless you request otherwise in writing.
+        </p>
+
+        <h2>6. Confidentiality</h2>
+        <p>
+          Both parties agree to keep confidential information private and to use it only for the
+          purpose of the engagement, except where disclosure is required by law.
+        </p>
+
+        <h2>7. Limitation of liability</h2>
+        <p>
+          Our liability is limited to the fees paid for the specific engagement giving rise to the
+          claim. We are not liable for indirect, incidental, or consequential damages.
+        </p>
+
+        <h2>8. Termination</h2>
+        <p>
+          Either party may terminate an engagement with written notice as defined in the statement
+          of work. You remain responsible for fees for work completed through the termination date.
+        </p>
+
+        <h2>9. Governing law</h2>
+        <p>
+          These terms are governed by applicable international commercial practice and the laws
+          specified in your signed agreement. For general website use, disputes will be handled in
+          good faith through direct communication first.
+        </p>
+
+        <h2>10. Contact</h2>
+        <p>
+          Questions about these terms? Email <a href={`mailto:${company.email}`}>{company.email}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

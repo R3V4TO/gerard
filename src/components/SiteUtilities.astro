@@ -1,0 +1,26 @@
+---
+import i18n from '../data/i18n.json';
+---
+
+<div class="site-utilities" aria-label="Site preferences">
+  <button type="button" class="utility-btn" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+  <label class="sr-only" for="lang-select">Language</label>
+  <select id="lang-select" class="utility-select" data-lang-select aria-label="Select language">
+    {i18n.languages.map((lang) => (
+      <option value={lang.code}>{lang.label}</option>
+    ))}
+  </select>
+</div>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>

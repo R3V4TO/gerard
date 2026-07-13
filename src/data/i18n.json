@@ -1,0 +1,100 @@
+{
+  "languages": [
+    { "code": "en", "label": "English" },
+    { "code": "sw", "label": "Kiswahili" },
+    { "code": "fr", "label": "Français" },
+    { "code": "es", "label": "Español" },
+    { "code": "de", "label": "Deutsch" },
+    { "code": "pt", "label": "Português" },
+    { "code": "ar", "label": "العربية" },
+    { "code": "zh", "label": "中文" }
+  ],
+  "en": {
+    "nav.about": "About",
+    "nav.services": "Services",
+    "nav.work": "Work",
+    "nav.pricing": "Pricing",
+    "nav.contact": "Contact",
+    "hero.cta.start": "Start a project",
+    "hero.cta.work": "See our work",
+    "contact.title": "Tell us what you're building",
+    "contact.cta": "Book a discovery call"
+  },
+  "sw": {
+    "nav.about": "Kuhusu",
+    "nav.services": "Huduma",
+    "nav.work": "Kazi",
+    "nav.pricing": "Bei",
+    "nav.contact": "Wasiliana",
+    "hero.cta.start": "Anza mradi",
+    "hero.cta.work": "Angalia kazi zetu",
+    "contact.title": "Tuambie unachojenga",
+    "contact.cta": "Panga simu ya ugunduzi"
+  },
+  "fr": {
+    "nav.about": "À propos",
+    "nav.services": "Services",
+    "nav.work": "Réalisations",
+    "nav.pricing": "Tarifs",
+    "nav.contact": "Contact",
+    "hero.cta.start": "Démarrer un projet",
+    "hero.cta.work": "Voir nos réalisations",
+    "contact.title": "Parlez-nous de votre projet",
+    "contact.cta": "Réserver un appel découverte"
+  },
+  "es": {
+    "nav.about": "Nosotros",
+    "nav.services": "Servicios",
+    "nav.work": "Proyectos",
+    "nav.pricing": "Precios",
+    "nav.contact": "Contacto",
+    "hero.cta.start": "Iniciar un proyecto",
+    "hero.cta.work": "Ver nuestro trabajo",
+    "contact.title": "Cuéntanos qué estás construyendo",
+    "contact.cta": "Reservar una llamada"
+  },
+  "de": {
+    "nav.about": "Über uns",
+    "nav.services": "Leistungen",
+    "nav.work": "Projekte",
+    "nav.pricing": "Preise",
+    "nav.contact": "Kontakt",
+    "hero.cta.start": "Projekt starten",
+    "hero.cta.work": "Unsere Arbeit ansehen",
+    "contact.title": "Erzählen Sie uns von Ihrem Vorhaben",
+    "contact.cta": "Erstgespräch buchen"
+  },
+  "pt": {
+    "nav.about": "Sobre",
+    "nav.services": "Serviços",
+    "nav.work": "Projetos",
+    "nav.pricing": "Preços",
+    "nav.contact": "Contato",
+    "hero.cta.start": "Iniciar um projeto",
+    "hero.cta.work": "Ver nosso trabalho",
+    "contact.title": "Conte-nos o que você está construindo",
+    "contact.cta": "Agendar uma chamada"
+  },
+  "ar": {
+    "nav.about": "من نحن",
+    "nav.services": "الخدمات",
+    "nav.work": "الأعمال",
+    "nav.pricing": "الأسعار",
+    "nav.contact": "تواصل",
+    "hero.cta.start": "ابدأ مشروعًا",
+    "hero.cta.work": "اطلع على أعمالنا",
+    "contact.title": "أخبرنا بما تبنيه",
+    "contact.cta": "احجز مكالمة استكشافية"
+  },
+  "zh": {
+    "nav.about": "关于我们",
+    "nav.services": "服务",
+    "nav.work": "作品",
+    "nav.pricing": "价格",
+    "nav.contact": "联系",
+    "hero.cta.start": "开始项目",
+    "hero.cta.work": "查看我们的作品",
+    "contact.title": "告诉我们您在构建什么",
+    "contact.cta": "预约探索通话"
+  }
+}
