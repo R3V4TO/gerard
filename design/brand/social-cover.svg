@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" fill="none" role="img" aria-label="VersaCarte social cover">
+  <rect width="1500" height="500" fill="#0A0A0A"/>
+  <circle cx="200" cy="120" r="180" fill="#0891B2" opacity="0.12"/>
+  <circle cx="1320" cy="380" r="220" fill="#D97706" opacity="0.1"/>
+  <rect x="120" y="160" width="64" height="64" fill="#FAFAFA"/>
+  <text x="152" y="204" text-anchor="middle" fill="#0A0A0A" font-family="system-ui, sans-serif" font-size="32" font-weight="700">V</text>
+  <text x="210" y="188" fill="#FAFAFA" font-family="Georgia, serif" font-size="56" letter-spacing="0.05em">VersaCarte</text>
+  <text x="210" y="232" fill="#A8A8A8" font-family="system-ui, sans-serif" font-size="18" letter-spacing="0.28em">APP &amp; WEB STUDIO</text>
+  <text x="120" y="340" fill="#FAFAFA" font-family="Georgia, serif" font-size="34">Business-ready applications and web platforms, built end-to-end</text>
+  <text x="120" y="390" fill="#A8A8A8" font-family="system-ui, sans-serif" font-size="16">versacarte.com</text>
+</svg>

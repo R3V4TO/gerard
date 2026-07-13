@@ -20,12 +20,16 @@ const {
   showHoneypot = true,
   inputClass = 'input-field',
 } = Astro.props;
+
+const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+const guideUrl = '/guide/web-app-vs-mobile';
+const downloadUrl = '/downloads/versacarte-web-vs-mobile-guide.html';
 ---
 
 <form class="subscribe-form space-y-4" id={formId}>
   {showHoneypot && (
     <div class="hidden" aria-hidden="true">
-      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" />
     </div>
   )}
   <input type="email" name="email" required class={inputClass} placeholder="Email" autocomplete="email" />
@@ -33,45 +37,74 @@ const {
     <input type="checkbox" name="consent" required />
     <span>{consentText}</span>
   </label>
-  <input type="hidden" name="source" value={source} />
   <button type="submit" class={buttonClass}>{buttonLabel}</button>
   <p id={statusId} class="text-sm text-dark-muted subscribe-form__status" role="status"></p>
   <div class="subscribe-form__success hidden" data-guide-success>
     <p class="text-sm text-dark-muted">Your guide is ready:</p>
-    <a href="/guide/web-app-vs-mobile" class="link-arrow mt-2">Read online</a>
-    <a href="/downloads/versacarte-web-vs-mobile-guide.html" class="link-arrow mt-2 block" download>Download copy</a>
+    <a href={guideUrl} class="link-arrow mt-2">Read online</a>
+    <a href={downloadUrl} class="link-arrow mt-2 block" download>Download copy</a>
   </div>
 </form>
 
-<script define:vars={{ formId, statusId }}>
+<script define:vars={{ formId, statusId, source, web3formsKey, guideUrl, downloadUrl }}>
   const form = document.getElementById(formId);
   const status = document.getElementById(statusId);
   if (!form || !status) throw new Error('Subscribe form elements missing');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!web3formsKey) {
+      status.textContent = 'Subscribe is not configured. Email hello@versacarte.com for the guide.';
+      return;
+    }
+
     status.textContent = 'Subscribing…';
-    status.classList.remove('text-accent-cyan');
     const successBox = form.querySelector('[data-guide-success]');
     successBox?.classList.add('hidden');
 
+    const data = new FormData(form);
+    const email = String(data.get('email') ?? '').trim();
+    const botcheck = String(data.get('botcheck') ?? '');
+
+    if (botcheck) return;
+
+    const message = [
+      'New mailing list subscriber',
+      `Email: ${email}`,
+      `Source: ${source}`,
+      'Guide: Web App vs Mobile App Decision Guide',
+      'Consent: yes',
+      `Guide URL: ${window.location.origin}${guideUrl}`,
+    ].join('\n');
+
     try {
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          name: email,
+          email,
+          subject: `Mailing list + guide: ${email}`,
+          message,
+          from_name: 'VersaCarte Subscribe',
+          replyto: email,
+          botcheck: '',
+        }),
       });
+
       const result = await response.json();
 
       if (response.ok && result.success) {
-        status.textContent = result.message ?? 'Subscribed. Check your inbox for the guide.';
-        if (result.guideUrl && successBox) {
-          const links = successBox.querySelectorAll('a');
-          if (links[0]) links[0].href = result.guideUrl;
-          if (links[1] && result.downloadUrl) links[1].href = result.downloadUrl;
-          successBox.classList.remove('hidden');
-        }
+        status.textContent = 'Subscribed. Your guide is ready below.';
+        successBox?.classList.remove('hidden');
         form.reset();
+
+        fetch('/api/send-guide', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ email }),
+        }).catch(() => {});
       } else {
         status.textContent = result.message ?? 'Something went wrong. Try again.';
       }
@@ -80,4 +113,3 @@ const {
     }
   });
 </script>
-

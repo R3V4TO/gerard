@@ -1,7 +1,7 @@
 {
   "label": "Labs",
   "title": "Experimental tools & open work",
-  "subtitle": "Browser utilities, prototypes, and engineering experiments from the VersaCarte studio. Full interactive tools live on Labs.",
+  "subtitle": "Browser utilities, prototypes and engineering experiments from the VersaCarte studio. Full interactive tools live on Labs.",
   "items": [
     {
       "name": "MQTT Topic Explorer",

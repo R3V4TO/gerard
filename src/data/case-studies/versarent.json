@@ -8,17 +8,17 @@
   "cover": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop",
   "problem": {
     "title": "The problem",
-    "body": "Landlords managing multiple units still rely on messaging threads, paper receipts, and manual rent tracking. Tenants miss payment deadlines, and landlords lose visibility into arrears until it is too late to act."
+    "body": "Landlords managing multiple units still rely on messaging threads, paper receipts and manual rent tracking. Tenants miss payment deadlines and landlords lose visibility into arrears until it is too late to act."
   },
   "approach": {
     "title": "Our approach",
-    "body": "We designed VersaRent as a mobile-first platform where landlords onboard properties from their phone, tenants receive push reminders, and payments reconcile automatically against unit ledgers. Supabase RLS ensures each landlord only sees their own portfolio."
+    "body": "We designed VersaRent as a mobile-first platform where landlords onboard properties from their phone, tenants receive push reminders and payments reconcile automatically against unit ledgers. Supabase RLS ensures each landlord only sees their own portfolio."
   },
   "technologies": {
     "title": "Technologies",
     "items": [
       "React Native + Expo for cross-platform iOS/Android",
-      "Supabase Auth, PostgreSQL, and Edge Functions",
+      "Supabase Auth, PostgreSQL and Edge Functions",
       "Regional payment gateway integration",
       "Push notifications via Expo Notifications",
       "Offline-first rent ledger with sync queue"

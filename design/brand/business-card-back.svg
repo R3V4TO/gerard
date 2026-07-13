@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" fill="none" role="img" aria-label="VersaCarte business card back">
+  <rect width="1050" height="600" fill="#0A0A0A"/>
+  <rect x="0" y="592" width="1050" height="8" fill="#0891B2"/>
+  <text x="525" y="220" text-anchor="middle" fill="#FAFAFA" font-family="Georgia, serif" font-size="38" letter-spacing="0.04em">Engineering discipline,</text>
+  <text x="525" y="272" text-anchor="middle" fill="#FAFAFA" font-family="Georgia, serif" font-size="38" letter-spacing="0.04em">product delivery.</text>
+  <text x="525" y="340" text-anchor="middle" fill="#A8A8A8" font-family="system-ui, sans-serif" font-size="15" letter-spacing="0.14em">MOBILE · WEB · IOT · CLOUD</text>
+  <rect x="405" y="400" width="240" height="1" fill="#2A2A2A"/>
+  <text x="525" y="448" text-anchor="middle" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="14" letter-spacing="0.2em">VERSACARTE.COM</text>
+</svg>

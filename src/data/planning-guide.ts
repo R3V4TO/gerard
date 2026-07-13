@@ -1,116 +1,156 @@
 export const guideMeta = {
   slug: 'web-app-vs-mobile',
-  title: 'Web App vs Mobile App Decision Guide',
-  subtitle: 'A practical framework for teams evaluating their first digital product',
+  title: 'Web App vs Mobile App',
+  titleAccent: 'Decision Guide',
+  subtitle: 'A visual planning handbook for teams evaluating their first digital product',
   author: 'VersaCarte',
   version: '1.0',
   updated: 'July 2026',
   path: '/guide/web-app-vs-mobile',
   downloadPath: '/downloads/versacarte-web-vs-mobile-guide.html',
+  coverImage:
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80&auto=format&fit=crop',
 };
 
-export const guideSections = [
+export const guideChapters = [
   {
+    num: '01',
     id: 'introduction',
     title: 'Introduction',
+    kicker: 'Start here',
+    image:
+      'https://images.unsplash.com/photo-1454165804603-c3d57bc86b40?w=900&q=80&auto=format&fit=crop',
     content: [
-      'You have an idea, a budget, and a deadline. The first fork in the road is usually platform: should you build a web application or a native mobile app?',
-      'There is no universal right answer. The best choice depends on who your users are, how often they need your product, what device capabilities you require, and how quickly you need to ship.',
-      'This guide walks you through the decision in plain language so you can align your team, brief a studio confidently, and avoid paying for the wrong platform first.',
+      'You have an idea, a budget and a deadline. The first fork in the road is usually platform: should you build a web application or a native mobile app?',
+      'There is no universal right answer. The best choice depends on who your users are, how often they need your product, what device capabilities you require and how quickly you need to ship.',
     ],
+    pullQuote: 'Choose the platform your users already live on — then ship where the evidence points.',
   },
   {
+    num: '02',
     id: 'web-app',
-    title: 'When a web app is the better choice',
+    title: 'When a web app wins',
+    kicker: 'Browser-first products',
+    image:
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=80&auto=format&fit=crop',
+    accent: 'web',
     content: [
-      'A web app runs in the browser. Users visit a URL, log in if needed, and use your product without installing anything from an app store.',
+      'A web app runs in the browser. Users visit a URL, log in if needed and use your product without installing anything from an app store.',
     ],
     bullets: [
-      'Your users are on laptops and desktops as much as phones',
-      'You need to ship fast and iterate weekly without app store review delays',
-      'SEO and shareable links matter for discovery (marketing sites, dashboards, portals)',
-      'You want one codebase to reach every device with a browser',
-      'Your product is used occasionally rather than multiple times per day',
-      'You need admin panels, internal tools, or B2B workflows',
+      'Users work on laptops and desktops as much as phones',
+      'You need to ship fast without app store review delays',
+      'SEO and shareable links matter for discovery',
+      'One codebase reaches every device with a browser',
+      'The product is used occasionally, not daily',
+      'You need admin panels, internal tools or B2B workflows',
     ],
-    note: 'Modern web apps can be installable (PWAs), work offline in limited ways, and feel app-like on mobile. For many MVPs, a well-built web app is enough to validate demand before investing in native mobile.',
+    note: 'Modern web apps can be installable (PWAs) and feel app-like on mobile. For many MVPs, a strong web app validates demand before native mobile investment.',
   },
   {
+    num: '03',
     id: 'mobile-app',
-    title: 'When a mobile app is the better choice',
+    title: 'When mobile wins',
+    kicker: 'App store products',
+    image:
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900&q=80&auto=format&fit=crop',
+    accent: 'mobile',
     content: [
-      'A mobile app is installed from the App Store or Google Play. It can use device hardware deeply and stay present on the user\'s home screen.',
+      'A mobile app is installed from the App Store or Google Play. It uses device hardware deeply and stays on the home screen.',
     ],
     bullets: [
-      'Users will open your product daily or several times per week',
-      'You need push notifications as a core retention channel',
-      'Camera, GPS, Bluetooth, NFC, or background sync are central to the product',
-      'You are building a consumer product where app store presence builds trust',
-      'Offline-first usage is required (field workers, travel, poor connectivity)',
-      'You need the polish and performance users expect from top-tier mobile products',
+      'Users open your product daily or several times per week',
+      'Push notifications are a core retention channel',
+      'Camera, GPS, Bluetooth or background sync are essential',
+      'App store presence builds consumer trust',
+      'Offline-first usage is required in the field',
+      'You need polish users expect from top-tier mobile apps',
     ],
-    note: 'Cross-platform frameworks like React Native and Expo let you ship iOS and Android from one codebase, which reduces cost compared to building twice natively.',
+    note: 'React Native and Expo ship iOS and Android from one codebase — far less costly than building twice natively.',
   },
   {
+    num: '04',
     id: 'comparison',
     title: 'Side-by-side comparison',
-    table: [
-      ['Factor', 'Web app', 'Mobile app'],
-      ['Time to first launch', 'Often faster', 'Longer (stores, review, devices)'],
-      ['Discovery', 'SEO, ads, direct links', 'App store search, ads, word of mouth'],
-      ['Updates', 'Instant for all users', 'Store review for native changes'],
-      ['Device access', 'Browser APIs, limited hardware', 'Full camera, GPS, push, background'],
-      ['Cost to build MVP', 'Typically lower', 'Typically higher'],
-      ['User habit', 'Bookmark or PWA install', 'Home screen icon, push alerts'],
-      ['Best for', 'B2B, dashboards, content, tools', 'Consumer, field, daily-use products'],
+    kicker: 'At a glance',
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop',
+    comparison: [
+      { label: 'Time to launch', web: 'Often faster', mobile: 'Longer (stores & review)' },
+      { label: 'Discovery', web: 'SEO, ads, direct links', mobile: 'App store search & ads' },
+      { label: 'Updates', web: 'Instant for all users', mobile: 'Store review cycles' },
+      { label: 'Device access', web: 'Browser APIs', mobile: 'Camera, GPS, push, background' },
+      { label: 'MVP cost', web: 'Typically lower', mobile: 'Typically higher' },
+      { label: 'Best for', web: 'B2B, dashboards, tools', mobile: 'Consumer & daily-use apps' },
     ],
   },
   {
+    num: '05',
     id: 'hybrid',
-    title: 'Hybrid options worth knowing',
-    content: [
-      'You do not always have to pick only one. Many successful products start on one platform and expand later.',
-    ],
-    bullets: [
-      'PWA (Progressive Web App): a web app that can be installed and work offline for basic flows',
-      'Web first, mobile later: validate with a web MVP, then build mobile once usage patterns are clear',
-      'Mobile first, web portal later: common for field apps that later need an admin dashboard on desktop',
-      'Shared backend: Supabase, Firebase, or custom APIs let web and mobile clients share the same data layer',
+    title: 'Hybrid paths',
+    kicker: 'You do not have to pick only one',
+    image:
+      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop',
+    cards: [
+      { title: 'PWA', body: 'Installable web app with limited offline support.' },
+      { title: 'Web first', body: 'Validate with a web MVP, then add mobile when patterns are clear.' },
+      { title: 'Mobile first', body: 'Field app now, admin dashboard on desktop later.' },
+      { title: 'Shared backend', body: 'One API for web and mobile clients (Supabase, Firebase, custom).' },
     ],
   },
   {
+    num: '06',
     id: 'costs',
-    title: 'Budget and timeline signals',
-    content: [
-      'Rough ranges vary by scope and region, but these patterns hold for most studio engagements:',
+    title: 'Budget & timeline',
+    kicker: 'Planning signals',
+    image:
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop',
+    timeline: [
+      { label: 'Landing page', time: '1–2 weeks', level: 1 },
+      { label: 'Full web app', time: '2–3 months', level: 2 },
+      { label: 'Mobile + backend', time: '3–4 months', level: 3 },
+      { label: 'IoT + dashboard', time: 'Scoped per project', level: 4 },
     ],
-    bullets: [
-      'Marketing landing page or simple web site: weeks, lower budget',
-      'Full web application with auth and database: mid budget, 2 to 3 months',
-      'Cross-platform mobile app with backend: higher budget, 3 to 4 months',
-      'IoT or hardware plus dashboard: scoped separately, often longest timeline',
-    ],
-    note: 'If your budget only supports one platform, ship where your core users already are. You can add the second platform after you have paying customers or clear usage data.',
+    note: 'If budget allows only one platform, ship where core users already are. Add the second platform after paying customers or clear usage data.',
   },
   {
+    num: '07',
     id: 'checklist',
     title: 'Decision checklist',
-    content: ['Score each statement. Mostly yes on the left column leans web. Mostly yes on the right leans mobile.'],
+    kicker: 'Score your team',
+    image:
+      'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=900&q=80&auto=format&fit=crop',
     checklist: [
-      { web: 'Users mainly find us through Google search', mobile: 'Users will search in the App Store or Play Store' },
-      { web: 'We need to update features several times per month', mobile: 'Push notifications are essential to retention' },
-      { web: 'Desktop or tablet is the primary work environment', mobile: 'Phone is the primary device' },
-      { web: 'We are testing demand before a large investment', mobile: 'We already know users want this on their phone' },
-      { web: 'Internal staff or B2B clients are the audience', mobile: 'Consumers or field teams are the audience' },
+      { web: 'Users find us through Google search', mobile: 'Users search in app stores' },
+      { web: 'We ship features several times per month', mobile: 'Push notifications drive retention' },
+      { web: 'Desktop or tablet is primary', mobile: 'Phone is primary' },
+      { web: 'We are testing demand first', mobile: 'Users expect a phone app' },
+      { web: 'B2B or internal audience', mobile: 'Consumers or field teams' },
     ],
   },
   {
+    num: '08',
     id: 'next-steps',
     title: 'Next steps',
+    kicker: 'From guide to action',
+    image:
+      'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&auto=format&fit=crop',
     content: [
-      'Once you have a lean answer, write a one-page brief: who the user is, the main job your product does, must-have features for v1, and your target launch date.',
-      'Bring that brief to a discovery call. A good studio will pressure-test your platform choice, suggest a phased roadmap, and quote based on documented scope rather than vague ideas.',
-      'VersaCarte builds web platforms, mobile apps, and connected systems for teams worldwide. If you want a second opinion on your decision, we offer free discovery calls.',
+      'Write a one-page brief: who the user is, the job your product does, must-have v1 features and your target launch date.',
+      'Bring that brief to a discovery call. A good studio pressure-tests your platform choice and quotes from documented scope.',
     ],
   },
 ];
+
+// Legacy export for any imports still using guideSections
+export const guideSections = guideChapters.map((ch) => ({
+  id: ch.id,
+  title: ch.title,
+  content: ch.content,
+  bullets: ch.bullets,
+  note: ch.note,
+  table: ch.comparison
+    ? [['Factor', 'Web app', 'Mobile app'], ...ch.comparison.map((r) => [r.label, r.web, r.mobile])]
+    : undefined,
+  checklist: ch.checklist,
+}));

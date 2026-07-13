@@ -60,13 +60,13 @@
       {
         "name": "Maintenance Plan",
         "price": "KES 15,000/mo",
-        "description": "For existing clients and covers hosting oversight, security patches, minor fixes, and priority email support.",
+        "description": "For existing clients and covers hosting oversight, security patches, minor fixes and priority email support.",
         "features": ["Up to 4 hours/month", "Uptime monitoring", "Dependency updates", "48hr response SLA"]
       },
       {
         "name": "Growth Plan",
         "price": "KES 35,000/mo",
-        "description": "For active products that need regular feature work, analytics review, and backend tuning.",
+        "description": "For active products that need regular feature work, analytics review and backend tuning.",
         "features": ["Up to 12 hours/month", "Feature additions", "Performance reviews", "Monthly status call"]
       },
       {
@@ -85,7 +85,7 @@
         "name": "Launch Ready Landing Page",
         "price": "KES 45,000",
         "timeline": "7 days",
-        "description": "Single-page marketing site with hero, features, contact form, and conversion-focused CTA so you can start collecting leads quickly.",
+        "description": "Single-page marketing site with hero, features, contact form and conversion-focused CTA so you can start collecting leads quickly.",
         "cta": "Order landing page",
         "ctaHref": "/contact?type=web&product=landing-page"
       },
@@ -93,7 +93,7 @@
         "name": "Supabase Backend Setup",
         "price": "KES 60,000",
         "timeline": "10 days",
-        "description": "Auth, RLS policies, database schema, Edge Functions, and a documented API for your mobile or web client.",
+        "description": "Auth, RLS policies, database schema, Edge Functions and a documented API for your mobile or web client.",
         "cta": "Order backend setup",
         "ctaHref": "/contact?type=cloud&product=supabase-setup"
       },
@@ -101,7 +101,7 @@
         "name": "IoT Sensor Dashboard",
         "price": "KES 80,000",
         "timeline": "14 days",
-        "description": "MQTT ingest, live charts, alert thresholds, and a mobile-friendly dashboard for field telemetry.",
+        "description": "MQTT ingest, live charts, alert thresholds and a mobile-friendly dashboard for field telemetry.",
         "cta": "Order IoT dashboard",
         "ctaHref": "/contact?type=iot&product=iot-dashboard"
       }

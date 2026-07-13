@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" fill="none" role="img" aria-label="VersaCarte email signature">
+  <rect width="600" height="160" fill="#FAFAFA"/>
+  <rect x="0" y="0" width="4" height="160" fill="#0A0A0A"/>
+  <rect x="24" y="24" width="40" height="40" fill="#0A0A0A"/>
+  <text x="44" y="50" text-anchor="middle" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="20" font-weight="700">V</text>
+  <text x="80" y="42" fill="#0A0A0A" font-family="Georgia, serif" font-size="22">Gerard</text>
+  <text x="80" y="62" fill="#5C5C5C" font-family="system-ui, sans-serif" font-size="11" letter-spacing="0.14em">VERSACARTE · FOUNDER</text>
+  <text x="24" y="98" fill="#0A0A0A" font-family="system-ui, sans-serif" font-size="12">hello@versacarte.com</text>
+  <text x="24" y="118" fill="#5C5C5C" font-family="system-ui, sans-serif" font-size="12">versacarte.com</text>
+  <text x="24" y="140" fill="#0891B2" font-family="system-ui, sans-serif" font-size="11" letter-spacing="0.12em">Mobile · Web · IoT · Cloud</text>
+</svg>

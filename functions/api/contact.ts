@@ -100,7 +100,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       const name = data.name?.trim();
       const brief = data.message?.trim();
       if (!name || !brief) {
-        return json({ success: false, message: 'Name, email, and project brief are required.' }, 400);
+        return json({ success: false, message: 'Name, email and project brief are required.' }, 400);
       }
       subject = `Studio inquiry from ${name} — ${data.projectType || 'general'}`;
       message = [

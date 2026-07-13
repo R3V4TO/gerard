@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" fill="none" role="img" aria-label="VersaCarte business card front">
+  <rect width="1050" height="600" fill="#FAFAFA"/>
+  <rect x="0" y="0" width="1050" height="8" fill="#0A0A0A"/>
+  <rect x="72" y="72" width="56" height="56" fill="#0A0A0A"/>
+  <text x="100" y="108" text-anchor="middle" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="28" font-weight="700">V</text>
+  <text x="148" y="98" fill="#0A0A0A" font-family="Georgia, serif" font-size="34" letter-spacing="0.08em">VersaCarte</text>
+  <text x="148" y="128" fill="#5C5C5C" font-family="system-ui, sans-serif" font-size="13" letter-spacing="0.28em">APP &amp; WEB STUDIO</text>
+  <text x="72" y="360" fill="#0A0A0A" font-family="Georgia, serif" font-size="42">Gerard</text>
+  <text x="72" y="404" fill="#5C5C5C" font-family="system-ui, sans-serif" font-size="16" letter-spacing="0.12em">FOUNDER · PRINCIPAL ENGINEER</text>
+  <text x="72" y="468" fill="#0A0A0A" font-family="system-ui, sans-serif" font-size="15">hello@versacarte.com</text>
+  <text x="72" y="498" fill="#5C5C5C" font-family="system-ui, sans-serif" font-size="15">versacarte.com</text>
+  <line x1="72" y1="520" x2="420" y2="520" stroke="#DCDCDC" stroke-width="1"/>
+  <text x="72" y="552" fill="#5C5C5C" font-family="system-ui, sans-serif" font-size="12" letter-spacing="0.18em">REMOTE-FIRST · WORLDWIDE</text>
+</svg>

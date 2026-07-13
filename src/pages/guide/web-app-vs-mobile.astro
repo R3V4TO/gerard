@@ -1,81 +1,171 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import company from '../../data/company.json';
-import { guideMeta, guideSections } from '../../data/planning-guide';
+import { guideMeta, guideChapters } from '../../data/planning-guide';
 ---
 
 <BaseLayout
-  title={`${guideMeta.title} | ${company.name}`}
+  title={`${guideMeta.title} ${guideMeta.titleAccent} | ${company.name}`}
   description={guideMeta.subtitle}
 >
-  <article class="guide-page section-studio pt-32 pb-24">
-    <div class="container-main guide-page__inner">
-      <header class="guide-page__header" data-reveal>
-        <p class="section-label">Free planning guide</p>
-        <h1 class="section-studio__title">{guideMeta.title}</h1>
-        <p class="section-studio__body">{guideMeta.subtitle}</p>
-        <p class="mt-4 text-sm text-muted">
-          By {guideMeta.author} · Version {guideMeta.version} · {guideMeta.updated}
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href={guideMeta.downloadPath} class="btn-solid" download>Download printable copy</a>
-          <button type="button" class="btn cursor-pointer border-ink" id="guide-print">Print / save as PDF</button>
+  <article class="guidebook">
+    <!-- Cover spread -->
+    <header class="guidebook-cover">
+      <div class="guidebook-cover__image">
+        <img src={guideMeta.coverImage} alt="" loading="eager" width="1400" height="700" />
+        <div class="guidebook-cover__shade"></div>
+      </div>
+      <div class="guidebook-cover__content container-wide">
+        <p class="guidebook-cover__series">VersaCarte · Product Planning Series · Vol. 1</p>
+        <h1 class="guidebook-cover__title">
+          {guideMeta.title}
+          <span>{guideMeta.titleAccent}</span>
+        </h1>
+        <p class="guidebook-cover__subtitle">{guideMeta.subtitle}</p>
+        <div class="guidebook-cover__meta">
+          <span>{guideMeta.author}</span>
+          <span>·</span>
+          <span>Edition {guideMeta.version}</span>
+          <span>·</span>
+          <span>{guideMeta.updated}</span>
         </div>
-      </header>
+        <div class="guidebook-cover__actions">
+          <a href={guideMeta.downloadPath} class="btn-solid" download>Download PDF-ready copy</a>
+          <button type="button" class="btn-light cursor-pointer border-white" id="guide-print">Print / save as PDF</button>
+        </div>
+      </div>
+    </header>
 
-      <div class="guide-page__content mt-16">
-        {
-          guideSections.map((section) => (
-            <section id={section.id} class="guide-section" data-reveal>
-              <h2 class="guide-section__title">{section.title}</h2>
-              {section.content?.map((p) => <p class="guide-section__body">{p}</p>)}
-              {section.bullets && (
-                <ul class="guide-section__list">
-                  {section.bullets.map((item) => <li>{item}</li>)}
+    <!-- Table of contents -->
+    <nav class="guidebook-toc section-studio--gray" aria-label="Table of contents">
+      <div class="container-wide">
+        <p class="section-label">Contents</p>
+        <ol class="guidebook-toc__list">
+          {guideChapters.map((ch) => (
+            <li>
+              <a href={`#${ch.id}`} class="guidebook-toc__link">
+                <span class="guidebook-toc__num">{ch.num}</span>
+                <span class="guidebook-toc__text">{ch.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Chapters -->
+    <div class="guidebook-body">
+      {
+        guideChapters.map((ch) => (
+          <section id={ch.id} class:list={['guidebook-chapter', ch.accent && `guidebook-chapter--${ch.accent}`]}>
+            <div class="guidebook-chapter__hero">
+              <img src={ch.image} alt="" class="guidebook-chapter__img" loading="lazy" width="900" height="500" />
+              <div class="guidebook-chapter__hero-overlay">
+                <span class="guidebook-chapter__num">{ch.num}</span>
+                <p class="guidebook-chapter__kicker">{ch.kicker}</p>
+                <h2 class="guidebook-chapter__title">{ch.title}</h2>
+              </div>
+            </div>
+
+            <div class="container-wide guidebook-chapter__inner">
+              {ch.content?.map((p) => <p class="guidebook-chapter__lead">{p}</p>)}
+
+              {ch.pullQuote && (
+                <blockquote class="guidebook-pullquote">
+                  <p>{ch.pullQuote}</p>
+                </blockquote>
+              )}
+
+              {ch.bullets && (
+                <ul class:list={['guidebook-bullets', ch.accent && `guidebook-bullets--${ch.accent}`]}>
+                  {ch.bullets.map((item) => (
+                    <li>
+                      <span class="guidebook-bullets__mark" aria-hidden="true"></span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               )}
-              {section.table && (
-                <div class="guide-table-wrap">
-                  <table class="guide-table">
-                    <thead>
-                      <tr>
-                        {section.table[0].map((cell) => <th>{cell}</th>)}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {section.table.slice(1).map((row) => (
-                        <tr>
-                          {row.map((cell) => <td>{cell}</td>)}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-              {section.checklist && (
-                <div class="guide-checklist">
-                  {section.checklist.map((row) => (
-                    <div class="guide-checklist__row">
-                      <p>{row.web}</p>
-                      <p>{row.mobile}</p>
+
+              {ch.comparison && (
+                <div class="guidebook-compare">
+                  <div class="guidebook-compare__head">
+                    <span>Factor</span>
+                    <span class="guidebook-compare__web">Web app</span>
+                    <span class="guidebook-compare__mobile">Mobile app</span>
+                  </div>
+                  {ch.comparison.map((row) => (
+                    <div class="guidebook-compare__row">
+                      <span class="guidebook-compare__label">{row.label}</span>
+                      <span class="guidebook-compare__web">{row.web}</span>
+                      <span class="guidebook-compare__mobile">{row.mobile}</span>
                     </div>
                   ))}
                 </div>
               )}
-              {section.note && <p class="guide-section__note">{section.note}</p>}
-            </section>
-          ))
-        }
-      </div>
 
-      <footer class="guide-page__footer contact-panel mt-16" data-reveal>
-        <h2 class="text-xl font-semibold">Ready to talk through your product?</h2>
-        <p class="mt-3 text-sm text-muted">
-          Bring this guide to a free discovery call and we will help you choose the right platform and scope v1.
-        </p>
-        <a href="/contact" class="btn-solid mt-6">Book a discovery call</a>
-      </footer>
+              {ch.cards && (
+                <div class="guidebook-cards">
+                  {ch.cards.map((card) => (
+                    <article class="guidebook-card">
+                      <h3>{card.title}</h3>
+                      <p>{card.body}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
+
+              {ch.timeline && (
+                <div class="guidebook-timeline">
+                  {ch.timeline.map((item) => (
+                    <div class="guidebook-timeline__item">
+                      <div class="guidebook-timeline__bar" style={`--level: ${item.level}`}></div>
+                      <div>
+                        <p class="guidebook-timeline__label">{item.label}</p>
+                        <p class="guidebook-timeline__time">{item.time}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {ch.checklist && (
+                <div class="guidebook-scorecard">
+                  <div class="guidebook-scorecard__head">
+                    <span>Lean web</span>
+                    <span>Lean mobile</span>
+                  </div>
+                  {ch.checklist.map((row) => (
+                    <div class="guidebook-scorecard__row">
+                      <p class="guidebook-scorecard__web">{row.web}</p>
+                      <p class="guidebook-scorecard__mobile">{row.mobile}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {ch.note && <aside class="guidebook-callout">{ch.note}</aside>}
+            </div>
+          </section>
+        ))
+      }
     </div>
+
+    <!-- Back cover CTA -->
+    <footer class="guidebook-back">
+      <div class="container-wide guidebook-back__inner">
+        <p class="section-label">Work with VersaCarte</p>
+        <h2 class="guidebook-back__title">Ready to turn this guide into a product plan?</h2>
+        <p class="guidebook-back__body">
+          Bring your answers to a free discovery call. We help teams worldwide choose the right platform and scope v1 with confidence.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-solid">Book a discovery call</a>
+          <a href="/pricing" class="btn">View pricing</a>
+        </div>
+        <p class="guidebook-back__brand mt-12">{company.name} · {company.email}</p>
+      </div>
+    </footer>
   </article>
 </BaseLayout>
 

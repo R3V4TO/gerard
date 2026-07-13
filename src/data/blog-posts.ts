@@ -5,7 +5,7 @@ export const blogPosts: Record<string, { title: string; date: string; readTime: 
     readTime: '8 min',
     tags: ['React Native', 'Supabase', 'Mobile'],
     content: `
-Product teams launching their first mobile app face a specific set of constraints: diverse Android devices, variable connectivity, and users who expect local payment methods from day one. Here is how we structure React Native and Supabase projects for global markets.
+Product teams launching their first mobile app face a specific set of constraints: diverse Android devices, variable connectivity and users who expect local payment methods from day one. Here is how we structure React Native and Supabase projects for global markets.
 
 ## Start with auth that works offline
 
@@ -13,7 +13,7 @@ Supabase Auth with PKCE flow handles token refresh gracefully. We cache the sess
 
 ## Design RLS policies before UI
 
-Row Level Security is not an afterthought. We write policies alongside the schema, test them in a playground, and document which roles access which tables. This prevents the common trap where everything works in dev but leaks in production.
+Row Level Security is not an afterthought. We write policies alongside the schema, test them in a playground and document which roles access which tables. This prevents the common trap where everything works in dev but leaks in production.
 
 ## Payment integration patterns
 
@@ -21,7 +21,7 @@ Checkout and wallet flows run server-side through Supabase Edge Functions. Never
 
 ## Performance on mid-range devices
 
-Keep bundle size under 15MB, lazy-load screens, and profile on representative hardware, not just flagship devices. React Native's Hermes engine helps, but image optimization and list virtualization matter more.
+Keep bundle size under 15MB, lazy-load screens and profile on representative hardware, not just flagship devices. React Native's Hermes engine helps but image optimization and list virtualization matter more.
 
 ## Takeaway
 
@@ -34,7 +34,7 @@ The stack is proven. The differentiator is designing for real-world infrastructu
     readTime: '10 min',
     tags: ['IoT', 'MQTT', 'ESP8266'],
     content: `
-Field IoT deployments mean planning for power cuts, cellular fallback, and technicians who may not have a laptop on site. MQTT is our default transport because it is lightweight, pub/sub native, and tolerant of intermittent connections.
+Field IoT deployments mean planning for power cuts, cellular fallback and technicians who may not have a laptop on site. MQTT is our default transport because it is lightweight, pub/sub native and tolerant of intermittent connections.
 
 ## Hardware choices
 
@@ -46,15 +46,15 @@ Hierarchical topics like \`site/{id}/node/{id}/telemetry\` keep ACL rules simple
 
 ## Dashboard requirements
 
-Operators need mobile-friendly dashboards. We build with Astro or React, WebSocket bridges to the broker, and alert thresholds that push to email or SMS because those are channels people actually check.
+Operators need mobile-friendly dashboards. We build with Astro or React, WebSocket bridges to the broker and alert thresholds that push to email or SMS because those are channels people actually check.
 
 ## Security
 
-TLS on MQTT (port 8883), per-device credentials, and broker ACLs that isolate tenants. No anonymous publish.
+TLS on MQTT (port 8883), per-device credentials and broker ACLs that isolate tenants. No anonymous publish.
 
 ## Takeaway
 
-The Smart Traffic Control project proved this architecture works at intersection scale. The same patterns apply to tank monitoring, cold chain, and energy metering.
+The Smart Traffic Control project proved this architecture works at intersection scale. The same patterns apply to tank monitoring, cold chain and energy metering.
     `.trim(),
   },
   'astro-cloudflare-performance': {
@@ -67,7 +67,7 @@ Enterprise clients and government agencies sometimes run Lighthouse audits befor
 
 ## Static-first with Astro
 
-Astro ships zero JavaScript by default. We add Motion only where animation adds value, such as hero reveals, count-ups, and scroll-triggered cards. Everything else is HTML and CSS.
+Astro ships zero JavaScript by default. We add Motion only where animation adds value, such as hero reveals, count-ups and scroll-triggered cards. Everything else is HTML and CSS.
 
 ## Image strategy
 
@@ -85,7 +85,7 @@ Cloudflare Pages with aggressive cache headers on \`/_astro/*\` and images. API 
 
 ## Takeaway
 
-Performance is a feature. Fast sites convert better, rank higher, and signal engineering discipline to technical buyers.
+Performance is a feature. Fast sites convert better, rank higher and signal engineering discipline to technical buyers.
     `.trim(),
   },
 };

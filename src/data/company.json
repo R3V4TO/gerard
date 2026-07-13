@@ -1,7 +1,7 @@
 {
   "name": "VersaCarte",
   "tagline": "App & web development studio",
-  "specialization": "The engineering studio for businesses worldwide that need mobile apps, IoT connectivity, and modern cloud backends",
+  "specialization": "The engineering studio for businesses worldwide that need mobile apps, IoT connectivity and modern cloud backends",
   "domain": "versacarte.com",
   "labsUrl": "https://labs.versacarte.com",
   "helpUrl": "https://help.versacarte.com",
@@ -25,26 +25,26 @@
   "about": {
     "label": "About us",
     "title": "A product studio built for global scale",
-    "body": "VersaCarte is a remote-first engineering studio that ships mobile applications, web platforms, and connected systems for clients across continents. We combine electrical systems thinking with full-stack development, and we document every deliverable so your team can own it long after launch.",
-    "mission": "Our mission is simple: help ambitious businesses turn complex ideas into reliable software that works in the real world, whether that means a consumer app in London, an IoT dashboard in Singapore, or an internal portal for a growing team in São Paulo.",
+    "body": "VersaCarte is a remote-first engineering studio that ships mobile applications, web platforms and connected systems for clients across continents. We combine electrical systems thinking with full-stack development and we document every deliverable so your team can own it long after launch.",
+    "mission": "Our mission is simple: help ambitious businesses turn complex ideas into reliable software that works in the real world, whether that means a consumer app in London, an IoT dashboard in Singapore or an internal portal for a growing team in São Paulo.",
     "values": [
       "End to end delivery from firmware and APIs to polished mobile UI",
-      "Documented architecture you can audit, extend, and hand off",
-      "Global perspective with support for local payments, languages, and connectivity"
+      "Documented architecture you can audit, extend and hand off",
+      "Global perspective with support for local payments, languages and connectivity"
     ],
     "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Development team collaborating at a desk"
   },
   "hero": {
     "title": "Business-ready applications and web platforms, built end-to-end",
-    "subtitle": "Mobile products, modern web apps, IoT telemetry, and cloud backends from an engineering studio that ships worldwide.",
+    "subtitle": "Mobile products, modern web apps, IoT telemetry and cloud backends from an engineering studio that ships worldwide.",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80&auto=format&fit=crop",
     "imageAlt": "Developer workspace with laptop showing code"
   },
   "vision": {
     "label": "Studio",
     "title": "Engineering discipline applied to product delivery",
-    "body": "VersaCarte combines electrical systems thinking with full-stack development. We build mobile apps, business web platforms, and field-ready IoT systems that are documented like engineering deliverables, not throwaway MVPs.",
+    "body": "VersaCarte combines electrical systems thinking with full-stack development. We build mobile apps, business web platforms and field-ready IoT systems that are documented like engineering deliverables, not throwaway MVPs.",
     "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Development team collaborating at a desk"
   },
@@ -55,7 +55,7 @@
       {
         "id": "mobile",
         "title": "Mobile applications",
-        "body": "React Native and Expo for iOS and Android, including marketplaces, field tools, and consumer apps with Supabase or custom backends.",
+        "body": "React Native and Expo for iOS and Android, including marketplaces, field tools and consumer apps with Supabase or custom backends.",
         "href": "/services#mobile",
         "cta": "Get a mobile quote",
         "ctaHref": "/contact?type=mobile"
@@ -63,7 +63,7 @@
       {
         "id": "web",
         "title": "Web platforms",
-        "body": "Astro and React sites, dashboards, and internal portals with performance, SEO, and conversion-focused architecture.",
+        "body": "Astro and React sites, dashboards and internal portals with performance, SEO and conversion-focused architecture.",
         "href": "/services#web",
         "cta": "Get a web quote",
         "ctaHref": "/contact?type=web"
@@ -71,7 +71,7 @@
       {
         "id": "iot",
         "title": "IoT & embedded",
-        "body": "ESP8266/32 telemetry, ultrasonic sensing, and MQTT ingest using the same patterns behind traffic monitoring and tank-level prototypes.",
+        "body": "ESP8266/32 telemetry, ultrasonic sensing and MQTT ingest using the same patterns behind traffic monitoring and tank-level prototypes.",
         "href": "/services#iot",
         "cta": "Get an IoT quote",
         "ctaHref": "/contact?type=iot"
@@ -79,7 +79,7 @@
       {
         "id": "cloud",
         "title": "Cloud & backend",
-        "body": "PostgreSQL, serverless APIs, and Cloudflare Pages Functions that keep clients thin and business rules server-side.",
+        "body": "PostgreSQL, serverless APIs and Cloudflare Pages Functions that keep clients thin and business rules server-side.",
         "href": "/services#cloud",
         "cta": "Discuss your backend",
         "ctaHref": "/contact?type=cloud"
@@ -87,7 +87,7 @@
       {
         "id": "engineering",
         "title": "Systems engineering",
-        "body": "SCADA-aware specs, energy monitoring design, and BOQ-grade documentation from an electrical engineering background.",
+        "body": "SCADA-aware specs, energy monitoring design and BOQ-grade documentation from an electrical engineering background.",
         "href": "/services#engineering",
         "cta": "Book engineering scoping",
         "ctaHref": "/contact?type=engineering"
@@ -97,7 +97,7 @@
   "why": {
     "label": "Why VersaCarte",
     "title": "One team from schematic to App Store review",
-    "body": "Clients get firmware, API, and mobile UI under one roof instead of three vendors who hand off blame. We design for real-world conditions including variable connectivity, diverse devices, and the payment methods your market expects.",
+    "body": "Clients get firmware, API and mobile UI under one roof instead of three vendors who hand off blame. We design for real-world conditions including variable connectivity, diverse devices and the payment methods your market expects.",
     "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Developers reviewing work on large monitors"
   },
@@ -132,12 +132,12 @@
         "slug": "filesendnx",
         "title": "FileSendNX",
         "status": "Shipped",
-        "teaser": "Secure file transfer so you can upload, share, and track without friction.",
+        "teaser": "Secure file transfer so you can upload, share and track without friction.",
         "problem": "Consultants needed secure file sharing without enterprise overhead.",
         "stack": ["React Native", "TypeScript"],
         "image": "/images/filesendnx.svg",
-        "cover": "https://images.unsplash.com/photo-1611467781112-ef976271f68b?w=900&q=80&auto=format&fit=crop",
-        "imageAlt": "Mobile file sharing interface concept for FileSendNX",
+        "cover": "/images/filesendnx-cover.svg",
+        "imageAlt": "FileSendNX secure file transfer app",
         "caseStudy": null
       },
       {
