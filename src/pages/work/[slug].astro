@@ -1,23 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import company from '../../data/company.json';
-import versarent from '../../data/case-studies/versarent.json';
-import smartTraffic from '../../data/case-studies/smart-traffic.json';
+import { caseStudies, type CaseStudy } from '../../data/case-studies';
 
 export function getStaticPaths() {
-  return [
-    { params: { slug: 'versarent' } },
-    { params: { slug: 'smart-traffic' } },
-  ];
+  return Object.entries(caseStudies).map(([slug, study]) => ({
+    params: { slug },
+    props: { study },
+  }));
 }
 
-const studies: Record<string, typeof versarent> = {
-  versarent,
-  'smart-traffic': smartTraffic,
-};
+interface Props {
+  study: CaseStudy;
+}
 
-const { slug } = Astro.params;
-const study = studies[slug!];
+const { study } = Astro.props;
 ---
 
 <BaseLayout

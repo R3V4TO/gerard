@@ -138,7 +138,7 @@
         "image": "/images/filesendnx.svg",
         "cover": "/images/filesendnx-cover.svg",
         "imageAlt": "FileSendNX secure file transfer app",
-        "caseStudy": null
+        "caseStudy": "/work/filesendnx"
       },
       {
         "slug": "smart-traffic",

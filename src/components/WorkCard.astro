@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { title, teaser, problem, status, stack, image, cover, imageAlt, slug, caseStudy } = Astro.props;
-const link = caseStudy ?? `/work#${slug}`;
+const link = caseStudy ?? `/work/${slug}`;
 const alt = imageAlt ?? `${title} project preview`;
 ---
 
