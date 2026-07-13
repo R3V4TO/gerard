@@ -191,7 +191,18 @@
 }
 
 .site-header__category {
-  @apply hidden text-xs uppercase tracking-widest text-muted lg:block;
+  @apply hidden sm:block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  opacity: 0.82;
+}
+
+[data-theme="dark"] .site-header__category {
+  color: #fafafa;
+  opacity: 0.92;
 }
 
 .site-header__nav {
@@ -625,7 +636,7 @@ body.is-menu-open {
 }
 
 .footer-studio__tagline {
-  @apply mt-2 text-sm text-dark-muted;
+  @apply mt-2 text-sm font-medium leading-relaxed tracking-wide text-white/85;
 }
 
 .footer-studio__cols {

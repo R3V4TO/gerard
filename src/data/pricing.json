@@ -1,13 +1,13 @@
 {
   "label": "Pricing",
   "title": "Clear ranges. No surprise invoices.",
-  "subtitle": "Rough project tiers in Kenyan Shillings. Every engagement starts with a discovery call to confirm scope before we quote.",
+  "subtitle": "Accessible project tiers in Kenyan Shillings. Every engagement starts with a free discovery call to confirm scope before we quote.",
   "tiers": [
     {
       "id": "starter",
       "name": "Starter",
       "tagline": "Simple websites & landing pages",
-      "range": "KES 50,000 – 150,000",
+      "range": "KES 25,000 – 75,000",
       "timeline": "2–4 weeks",
       "features": [
         "Marketing site or landing page (up to 6 pages)",
@@ -23,7 +23,7 @@
       "id": "standard",
       "name": "Standard",
       "tagline": "Web apps & mobile products",
-      "range": "KES 200,000 – 600,000",
+      "range": "KES 100,000 – 300,000",
       "timeline": "6–12 weeks",
       "features": [
         "React Native app or full web application",
@@ -39,7 +39,7 @@
       "id": "enterprise",
       "name": "Custom",
       "tagline": "IoT, full-stack & systems engineering",
-      "range": "KES 600,000+",
+      "range": "KES 300,000+",
       "timeline": "Scoped per project",
       "features": [
         "IoT telemetry and SCADA-aware dashboards",
@@ -59,13 +59,13 @@
     "items": [
       {
         "name": "Maintenance Plan",
-        "price": "KES 15,000/mo",
+        "price": "KES 8,000/mo",
         "description": "For existing clients and covers hosting oversight, security patches, minor fixes and priority email support.",
         "features": ["Up to 4 hours/month", "Uptime monitoring", "Dependency updates", "48hr response SLA"]
       },
       {
         "name": "Growth Plan",
-        "price": "KES 35,000/mo",
+        "price": "KES 18,000/mo",
         "description": "For active products that need regular feature work, analytics review and backend tuning.",
         "features": ["Up to 12 hours/month", "Feature additions", "Performance reviews", "Monthly status call"]
       },
@@ -83,7 +83,7 @@
     "items": [
       {
         "name": "Launch Ready Landing Page",
-        "price": "KES 45,000",
+        "price": "KES 25,000",
         "timeline": "7 days",
         "description": "Single-page marketing site with hero, features, contact form and conversion-focused CTA so you can start collecting leads quickly.",
         "cta": "Order landing page",
@@ -91,7 +91,7 @@
       },
       {
         "name": "Supabase Backend Setup",
-        "price": "KES 60,000",
+        "price": "KES 30,000",
         "timeline": "10 days",
         "description": "Auth, RLS policies, database schema, Edge Functions and a documented API for your mobile or web client.",
         "cta": "Order backend setup",
@@ -99,7 +99,7 @@
       },
       {
         "name": "IoT Sensor Dashboard",
-        "price": "KES 80,000",
+        "price": "KES 40,000",
         "timeline": "14 days",
         "description": "MQTT ingest, live charts, alert thresholds and a mobile-friendly dashboard for field telemetry.",
         "cta": "Order IoT dashboard",
