@@ -1,22 +1,10 @@
 ---
-import {
-  getOfferingOptions,
-  getPrefillMap,
-  resolveContactPrefill,
-} from '../data/contact-prefill';
+import { getOfferingOptions, getPrefillMap, getTypeDefaults } from '../data/contact-prefill';
 
-const prefill = resolveContactPrefill(Astro.url.searchParams);
-const prefillType = prefill?.projectType ?? Astro.url.searchParams.get('type') ?? '';
-const prefillBudget = prefill?.budget ?? '';
-const prefillTimeline = prefill?.timeline ?? '';
-const selectedOffering = prefill?.offeringSlug ?? '';
 const offeringOptions = getOfferingOptions();
 const prefillMap = getPrefillMap();
+const typeDefaults = getTypeDefaults();
 const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
-
-function isSelected(field: string, value: string): boolean {
-  return field === value;
-}
 ---
 
 <form id="contact-form" class="space-y-5" novalidate>
@@ -24,32 +12,23 @@ function isSelected(field: string, value: string): boolean {
     <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" />
   </div>
 
-  {
-    prefill && (
-      <p class="contact-prefill-note">
-        Suggested from pricing. Change any field below, including the package, before you send.
-      </p>
-    )
-  }
+  <p id="contact-prefill-note" class="contact-prefill-note hidden">
+    Suggested from pricing. Change any field below, including the package, before you send.
+  </p>
 
   <div>
     <label for="offeringSlug" class="field-label mb-2 block">
-      Interested in
-      {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+      Interested in <span id="offering-suggested-label" class="hidden font-normal text-muted">(suggested)</span>
     </label>
     <select id="offeringSlug" name="offeringSlug" class="input-field input-field--light">
-      <option value="" selected={!selectedOffering}>Other or custom project</option>
+      <option value="">Other or custom project</option>
       {
         offeringOptions.map((option) => (
-          <option value={option.slug} selected={isSelected(selectedOffering, option.slug)}>
-            {option.label}
-          </option>
+          <option value={option.slug}>{option.label}</option>
         ))
       }
     </select>
-    <p id="offering-price-hint" class="mt-2 text-xs text-muted">
-      {prefill?.priceLabel ?? ''}
-    </p>
+    <p id="offering-price-hint" class="mt-2 text-xs text-muted"></p>
     <button type="button" class="contact-apply-suggestion hidden" id="apply-offering-suggestion">
       Apply suggested details for this package
     </button>
@@ -69,46 +48,43 @@ function isSelected(field: string, value: string): boolean {
   <div class="grid gap-5 sm:grid-cols-2">
     <div>
       <label for="projectType" class="field-label mb-2 block">
-        Project type
-        {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+        Project type <span class="contact-suggested-label hidden font-normal text-muted">(suggested)</span>
       </label>
       <select id="projectType" name="projectType" required class="input-field input-field--light">
         <option value="">Select…</option>
-        <option value="mobile" selected={isSelected(prefillType, 'mobile')}>Mobile app</option>
-        <option value="web" selected={isSelected(prefillType, 'web')}>Website / web app</option>
-        <option value="iot" selected={isSelected(prefillType, 'iot')}>IoT / embedded</option>
-        <option value="cloud" selected={isSelected(prefillType, 'cloud')}>Cloud / backend</option>
-        <option value="engineering" selected={isSelected(prefillType, 'engineering')}>Systems engineering</option>
-        <option value="retainer" selected={isSelected(prefillType, 'retainer')}>Retainer / maintenance</option>
+        <option value="mobile">Mobile app</option>
+        <option value="web">Website / web app</option>
+        <option value="iot">IoT / embedded</option>
+        <option value="cloud">Cloud / backend</option>
+        <option value="engineering">Systems engineering</option>
+        <option value="retainer">Retainer / maintenance</option>
       </select>
     </div>
     <div>
       <label for="budget" class="field-label mb-2 block">
-        Approximate budget
-        {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+        Approximate budget <span class="contact-suggested-label hidden font-normal text-muted">(suggested)</span>
       </label>
       <select id="budget" name="budget" class="input-field input-field--light">
         <option value="">Select range…</option>
-        <option value="under-75k" selected={isSelected(prefillBudget, 'under-75k')}>Under KES 75,000</option>
-        <option value="75k-300k" selected={isSelected(prefillBudget, '75k-300k')}>KES 75,000 – 300,000</option>
-        <option value="300k-plus" selected={isSelected(prefillBudget, '300k-plus')}>KES 300,000+</option>
-        <option value="retainer" selected={isSelected(prefillBudget, 'retainer')}>Monthly retainer</option>
-        <option value="unsure" selected={isSelected(prefillBudget, 'unsure')}>Not sure yet</option>
+        <option value="under-75k">Under KES 75,000</option>
+        <option value="75k-300k">KES 75,000 – 300,000</option>
+        <option value="300k-plus">KES 300,000+</option>
+        <option value="retainer">Monthly retainer</option>
+        <option value="unsure">Not sure yet</option>
       </select>
     </div>
   </div>
 
   <div>
     <label for="timeline" class="field-label mb-2 block">
-      Timeline
-      {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+      Timeline <span class="contact-suggested-label hidden font-normal text-muted">(suggested)</span>
     </label>
     <select id="timeline" name="timeline" class="input-field input-field--light">
       <option value="">Select…</option>
-      <option value="urgent" selected={isSelected(prefillTimeline, 'urgent')}>ASAP (under 4 weeks)</option>
-      <option value="1-3months" selected={isSelected(prefillTimeline, '1-3months')}>1–3 months</option>
-      <option value="3-6months" selected={isSelected(prefillTimeline, '3-6months')}>3–6 months</option>
-      <option value="flexible" selected={isSelected(prefillTimeline, 'flexible')}>Flexible / exploring</option>
+      <option value="urgent">ASAP (under 4 weeks)</option>
+      <option value="1-3months">1–3 months</option>
+      <option value="3-6months">3–6 months</option>
+      <option value="flexible">Flexible / exploring</option>
     </select>
   </div>
 
@@ -121,7 +97,7 @@ function isSelected(field: string, value: string): boolean {
       rows="4"
       class="input-field input-field--light resize-y"
       placeholder="What are you building? Users, integrations, constraints…"
-    >{prefill?.brief ?? ''}</textarea>
+    ></textarea>
   </div>
 
   <div>
@@ -137,20 +113,17 @@ function isSelected(field: string, value: string): boolean {
 
   <div class="flex flex-wrap items-center gap-4 pt-2">
     <button type="submit" class="btn-solid cursor-pointer border-0">Send inquiry</button>
-    {
-      prefill && (
-        <button type="button" class="btn cursor-pointer border-line" id="contact-reset-suggestions">
-          Clear suggestions
-        </button>
-      )
-    }
+    <button type="button" class="btn hidden cursor-pointer border-line" id="contact-reset-suggestions">
+      Clear suggestions
+    </button>
     <p id="form-status" class="text-sm text-muted" role="status" aria-live="polite"></p>
   </div>
 </form>
 
-<script define:vars={{ web3formsKey, prefillMap }}>
+<script define:vars={{ web3formsKey, prefillMap, typeDefaults }}>
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
+  const prefillNote = document.getElementById('contact-prefill-note');
   const offeringSelect = document.getElementById('offeringSlug');
   const priceHint = document.getElementById('offering-price-hint');
   const projectType = document.getElementById('projectType');
@@ -160,22 +133,59 @@ function isSelected(field: string, value: string): boolean {
   const comments = document.getElementById('comments');
   const resetBtn = document.getElementById('contact-reset-suggestions');
   const applyBtn = document.getElementById('apply-offering-suggestion');
+  const suggestedLabels = document.querySelectorAll('.contact-suggested-label');
+  const offeringSuggestedLabel = document.getElementById('offering-suggested-label');
 
   function toggleApplyButton(slug) {
     if (!applyBtn) return;
     applyBtn.classList.toggle('hidden', !slug);
   }
 
+  function showPrefillUi(show) {
+    prefillNote?.classList.toggle('hidden', !show);
+    resetBtn?.classList.toggle('hidden', !show);
+    offeringSuggestedLabel?.classList.toggle('hidden', !show);
+    suggestedLabels.forEach((el) => el.classList.toggle('hidden', !show));
+  }
+
   function applyOfferingSuggestion(slug, updateFields = false) {
-    if (!priceHint) return;
     const data = slug ? prefillMap[slug] : null;
-    priceHint.textContent = data?.priceLabel ?? '';
+    if (priceHint) priceHint.textContent = data?.priceLabel ?? '';
     toggleApplyButton(slug);
     if (!updateFields || !data) return;
+    if (offeringSelect) offeringSelect.value = slug;
     if (projectType) projectType.value = data.projectType ?? '';
     if (budget) budget.value = data.budget ?? '';
     if (timeline) timeline.value = data.timeline ?? '';
     if (message) message.value = data.brief ?? '';
+  }
+
+  function resolveSlugFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('plan') || params.get('product') || params.get('package') || '';
+  }
+
+  function initContactPrefillFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = resolveSlugFromUrl();
+    const type = params.get('type')?.trim() ?? '';
+    const hasPricingParams = Boolean(slug || type);
+
+    if (slug && prefillMap[slug]) {
+      applyOfferingSuggestion(slug, true);
+      showPrefillUi(true);
+      return;
+    }
+
+    if (type && typeDefaults[type]) {
+      const defaults = typeDefaults[type];
+      if (projectType) projectType.value = defaults.projectType ?? type;
+      if (message) message.value = defaults.brief ?? '';
+      if (type === 'retainer' && budget) budget.value = 'retainer';
+      showPrefillUi(true);
+    } else if (hasPricingParams) {
+      showPrefillUi(true);
+    }
   }
 
   offeringSelect?.addEventListener('change', () => {
@@ -186,8 +196,6 @@ function isSelected(field: string, value: string): boolean {
     if (offeringSelect?.value) applyOfferingSuggestion(offeringSelect.value, true);
   });
 
-  toggleApplyButton(offeringSelect?.value ?? '');
-
   resetBtn?.addEventListener('click', () => {
     if (offeringSelect) offeringSelect.value = '';
     if (projectType) projectType.value = '';
@@ -196,7 +204,10 @@ function isSelected(field: string, value: string): boolean {
     if (message) message.value = '';
     if (comments) comments.value = '';
     applyOfferingSuggestion('', false);
+    showPrefillUi(false);
   });
+
+  initContactPrefillFromUrl();
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -262,6 +273,7 @@ function isSelected(field: string, value: string): boolean {
         status.textContent = 'Received. We will reply from hello@versacarte.com.';
         form.reset();
         applyOfferingSuggestion('', false);
+        showPrefillUi(false);
       } else {
         status.textContent = result.message ?? 'Something went wrong. Try again or email directly.';
       }

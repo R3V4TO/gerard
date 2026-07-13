@@ -140,11 +140,21 @@ export function getPrefillMap(): Record<string, ContactPrefill> {
   return prefills;
 }
 
+export function getTypeDefaults(): typeof typeDefaults {
+  return typeDefaults;
+}
+
+export function resolveSlugFromSearchParams(searchParams: URLSearchParams): string {
+  return (
+    searchParams.get('plan')?.trim() ||
+    searchParams.get('product')?.trim() ||
+    searchParams.get('package')?.trim() ||
+    ''
+  );
+}
+
 export function resolveContactPrefill(searchParams: URLSearchParams): ContactPrefill | null {
-  const plan = searchParams.get('plan')?.trim();
-  const product = searchParams.get('product')?.trim();
-  const pkg = searchParams.get('package')?.trim();
-  const key = plan || product || pkg;
+  const key = resolveSlugFromSearchParams(searchParams);
 
   if (key && prefills[key]) {
     return prefills[key];

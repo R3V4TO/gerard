@@ -654,6 +654,10 @@ body.is-menu-open {
   color: var(--color-muted);
 }
 
+.contact-prefill-note.hidden {
+  display: none;
+}
+
 .contact-apply-suggestion {
   margin-top: 0.5rem;
   font-size: 0.75rem;
