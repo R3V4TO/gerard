@@ -37,7 +37,7 @@ import pricing from '../data/pricing.json';
             <ul class="mt-4 space-y-1 text-sm text-muted">
               {item.features.map((f) => <li>{f}</li>)}
             </ul>
-            <a href="/contact?type=retainer" class="btn mt-6">Discuss retainer</a>
+            <a href={`/contact?type=retainer&plan=${item.id}`} class="btn mt-6">Discuss retainer</a>
           </article>
         ))}
       </div>

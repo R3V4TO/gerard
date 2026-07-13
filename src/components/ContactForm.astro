@@ -1,14 +1,58 @@
 ---
-const params = Astro.url.searchParams;
-const prefillType = params.get('type') ?? '';
-const prefillPackage = params.get('package') ?? '';
-const prefillProduct = params.get('product') ?? '';
+import {
+  getOfferingOptions,
+  getPrefillMap,
+  resolveContactPrefill,
+} from '../data/contact-prefill';
+
+const prefill = resolveContactPrefill(Astro.url.searchParams);
+const prefillType = prefill?.projectType ?? Astro.url.searchParams.get('type') ?? '';
+const prefillBudget = prefill?.budget ?? '';
+const prefillTimeline = prefill?.timeline ?? '';
+const selectedOffering = prefill?.offeringSlug ?? '';
+const offeringOptions = getOfferingOptions();
+const prefillMap = getPrefillMap();
 const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+
+function isSelected(field: string, value: string): boolean {
+  return field === value;
+}
 ---
 
 <form id="contact-form" class="space-y-5" novalidate>
   <div class="hidden" aria-hidden="true">
     <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" />
+  </div>
+
+  {
+    prefill && (
+      <p class="contact-prefill-note">
+        Suggested from pricing. Change any field below, including the package, before you send.
+      </p>
+    )
+  }
+
+  <div>
+    <label for="offeringSlug" class="field-label mb-2 block">
+      Interested in
+      {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+    </label>
+    <select id="offeringSlug" name="offeringSlug" class="input-field input-field--light">
+      <option value="" selected={!selectedOffering}>Other or custom project</option>
+      {
+        offeringOptions.map((option) => (
+          <option value={option.slug} selected={isSelected(selectedOffering, option.slug)}>
+            {option.label}
+          </option>
+        ))
+      }
+    </select>
+    <p id="offering-price-hint" class="mt-2 text-xs text-muted">
+      {prefill?.priceLabel ?? ''}
+    </p>
+    <button type="button" class="contact-apply-suggestion hidden" id="apply-offering-suggestion">
+      Apply suggested details for this package
+    </button>
   </div>
 
   <div class="grid gap-5 sm:grid-cols-2">
@@ -24,44 +68,49 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 
   <div class="grid gap-5 sm:grid-cols-2">
     <div>
-      <label for="projectType" class="field-label mb-2 block">Project type</label>
+      <label for="projectType" class="field-label mb-2 block">
+        Project type
+        {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+      </label>
       <select id="projectType" name="projectType" required class="input-field input-field--light">
         <option value="">Select…</option>
-        <option value="mobile" selected={prefillType === 'mobile'}>Mobile app</option>
-        <option value="web" selected={prefillType === 'web'}>Website / web app</option>
-        <option value="iot" selected={prefillType === 'iot'}>IoT / embedded</option>
-        <option value="cloud" selected={prefillType === 'cloud'}>Cloud / backend</option>
-        <option value="engineering" selected={prefillType === 'engineering'}>Systems engineering</option>
-        <option value="retainer" selected={prefillType === 'retainer'}>Retainer / maintenance</option>
+        <option value="mobile" selected={isSelected(prefillType, 'mobile')}>Mobile app</option>
+        <option value="web" selected={isSelected(prefillType, 'web')}>Website / web app</option>
+        <option value="iot" selected={isSelected(prefillType, 'iot')}>IoT / embedded</option>
+        <option value="cloud" selected={isSelected(prefillType, 'cloud')}>Cloud / backend</option>
+        <option value="engineering" selected={isSelected(prefillType, 'engineering')}>Systems engineering</option>
+        <option value="retainer" selected={isSelected(prefillType, 'retainer')}>Retainer / maintenance</option>
       </select>
     </div>
     <div>
-      <label for="budget" class="field-label mb-2 block">Approximate budget</label>
+      <label for="budget" class="field-label mb-2 block">
+        Approximate budget
+        {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+      </label>
       <select id="budget" name="budget" class="input-field input-field--light">
         <option value="">Select range…</option>
-        <option value="under-75k">Under KES 75,000</option>
-        <option value="75k-300k">KES 75,000 – 300,000</option>
-        <option value="300k-plus">KES 300,000+</option>
-        <option value="retainer">Monthly retainer</option>
-        <option value="unsure">Not sure yet</option>
+        <option value="under-75k" selected={isSelected(prefillBudget, 'under-75k')}>Under KES 75,000</option>
+        <option value="75k-300k" selected={isSelected(prefillBudget, '75k-300k')}>KES 75,000 – 300,000</option>
+        <option value="300k-plus" selected={isSelected(prefillBudget, '300k-plus')}>KES 300,000+</option>
+        <option value="retainer" selected={isSelected(prefillBudget, 'retainer')}>Monthly retainer</option>
+        <option value="unsure" selected={isSelected(prefillBudget, 'unsure')}>Not sure yet</option>
       </select>
     </div>
   </div>
 
   <div>
-    <label for="timeline" class="field-label mb-2 block">Timeline</label>
+    <label for="timeline" class="field-label mb-2 block">
+      Timeline
+      {prefill && <span class="font-normal text-muted"> (suggested)</span>}
+    </label>
     <select id="timeline" name="timeline" class="input-field input-field--light">
       <option value="">Select…</option>
-      <option value="urgent">ASAP (under 4 weeks)</option>
-      <option value="1-3months">1–3 months</option>
-      <option value="3-6months">3–6 months</option>
-      <option value="flexible">Flexible / exploring</option>
+      <option value="urgent" selected={isSelected(prefillTimeline, 'urgent')}>ASAP (under 4 weeks)</option>
+      <option value="1-3months" selected={isSelected(prefillTimeline, '1-3months')}>1–3 months</option>
+      <option value="3-6months" selected={isSelected(prefillTimeline, '3-6months')}>3–6 months</option>
+      <option value="flexible" selected={isSelected(prefillTimeline, 'flexible')}>Flexible / exploring</option>
     </select>
   </div>
-
-  {(prefillPackage || prefillProduct) && (
-    <input type="hidden" name="package" value={prefillPackage || prefillProduct} />
-  )}
 
   <div>
     <label for="message" class="field-label mb-2 block">Project brief</label>
@@ -69,21 +118,85 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
       id="message"
       name="message"
       required
-      rows="5"
+      rows="4"
       class="input-field input-field--light resize-y"
       placeholder="What are you building? Users, integrations, constraints…"
-    >{prefillPackage ? `Interested in the ${prefillPackage} package.` : prefillProduct ? `Interested in: ${prefillProduct}` : ''}</textarea>
+    >{prefill?.brief ?? ''}</textarea>
+  </div>
+
+  <div>
+    <label for="comments" class="field-label mb-2 block">Additional comments <span class="font-normal text-muted">(optional)</span></label>
+    <textarea
+      id="comments"
+      name="comments"
+      rows="4"
+      class="input-field input-field--light resize-y"
+      placeholder="Anything else we should know — integrations, deadlines, links, questions…"
+    ></textarea>
   </div>
 
   <div class="flex flex-wrap items-center gap-4 pt-2">
     <button type="submit" class="btn-solid cursor-pointer border-0">Send inquiry</button>
+    {
+      prefill && (
+        <button type="button" class="btn cursor-pointer border-line" id="contact-reset-suggestions">
+          Clear suggestions
+        </button>
+      )
+    }
     <p id="form-status" class="text-sm text-muted" role="status" aria-live="polite"></p>
   </div>
 </form>
 
-<script define:vars={{ web3formsKey }}>
+<script define:vars={{ web3formsKey, prefillMap }}>
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
+  const offeringSelect = document.getElementById('offeringSlug');
+  const priceHint = document.getElementById('offering-price-hint');
+  const projectType = document.getElementById('projectType');
+  const budget = document.getElementById('budget');
+  const timeline = document.getElementById('timeline');
+  const message = document.getElementById('message');
+  const comments = document.getElementById('comments');
+  const resetBtn = document.getElementById('contact-reset-suggestions');
+  const applyBtn = document.getElementById('apply-offering-suggestion');
+
+  function toggleApplyButton(slug) {
+    if (!applyBtn) return;
+    applyBtn.classList.toggle('hidden', !slug);
+  }
+
+  function applyOfferingSuggestion(slug, updateFields = false) {
+    if (!priceHint) return;
+    const data = slug ? prefillMap[slug] : null;
+    priceHint.textContent = data?.priceLabel ?? '';
+    toggleApplyButton(slug);
+    if (!updateFields || !data) return;
+    if (projectType) projectType.value = data.projectType ?? '';
+    if (budget) budget.value = data.budget ?? '';
+    if (timeline) timeline.value = data.timeline ?? '';
+    if (message) message.value = data.brief ?? '';
+  }
+
+  offeringSelect?.addEventListener('change', () => {
+    applyOfferingSuggestion(offeringSelect.value, false);
+  });
+
+  applyBtn?.addEventListener('click', () => {
+    if (offeringSelect?.value) applyOfferingSuggestion(offeringSelect.value, true);
+  });
+
+  toggleApplyButton(offeringSelect?.value ?? '');
+
+  resetBtn?.addEventListener('click', () => {
+    if (offeringSelect) offeringSelect.value = '';
+    if (projectType) projectType.value = '';
+    if (budget) budget.value = '';
+    if (timeline) timeline.value = '';
+    if (message) message.value = '';
+    if (comments) comments.value = '';
+    applyOfferingSuggestion('', false);
+  });
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -101,22 +214,30 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 
     const name = String(data.get('name') ?? '').trim();
     const email = String(data.get('email') ?? '').trim();
-    const message = String(data.get('message') ?? '').trim();
-    const projectType = String(data.get('projectType') ?? '');
-    const budget = String(data.get('budget') ?? '');
-    const timeline = String(data.get('timeline') ?? '');
-    const pkg = String(data.get('package') ?? '');
+    const messageText = String(data.get('message') ?? '').trim();
+    const commentsText = String(data.get('comments') ?? '').trim();
+    const projectTypeVal = String(data.get('projectType') ?? '');
+    const budgetVal = String(data.get('budget') ?? '');
+    const timelineVal = String(data.get('timeline') ?? '');
+    const offeringSlug = String(data.get('offeringSlug') ?? '');
+    const offeringEntry = offeringSlug ? prefillMap[offeringSlug] : null;
+    const offeringLabel =
+      offeringSelect?.selectedOptions?.[0]?.textContent?.trim() ||
+      offeringEntry?.offeringLabel ||
+      'Custom inquiry';
 
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
-      `Project type: ${projectType || 'not specified'}`,
-      `Budget: ${budget || 'not specified'}`,
-      `Timeline: ${timeline || 'not specified'}`,
-      pkg ? `Package/product: ${pkg}` : '',
+      offeringSlug ? `Selected offering: ${offeringLabel}` : 'Selected offering: Custom inquiry',
+      offeringSlug ? `Offering ID: ${offeringSlug}` : '',
+      `Project type: ${projectTypeVal || 'not specified'}`,
+      `Budget: ${budgetVal || 'not specified'}`,
+      `Timeline: ${timelineVal || 'not specified'}`,
       '',
-      'Brief:',
-      message,
+      'Project brief:',
+      messageText,
+      commentsText ? '\nAdditional comments:\n' + commentsText : '',
     ].filter(Boolean).join('\n');
 
     try {
@@ -127,7 +248,7 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
           access_key: web3formsKey,
           name,
           email,
-          subject: `Studio inquiry from ${name} — ${projectType || 'general'}`,
+          subject: `Studio inquiry from ${name}${offeringLabel !== 'Custom inquiry' ? ` — ${offeringLabel}` : projectTypeVal ? ` — ${projectTypeVal}` : ''}`,
           message: body,
           from_name: 'VersaCarte Studio',
           replyto: email,
@@ -140,6 +261,7 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
       if (response.ok && result.success) {
         status.textContent = 'Received. We will reply from hello@versacarte.com.';
         form.reset();
+        applyOfferingSuggestion('', false);
       } else {
         status.textContent = result.message ?? 'Something went wrong. Try again or email directly.';
       }
