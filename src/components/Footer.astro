@@ -8,15 +8,22 @@ import SubscribeForm from './SubscribeForm.astro';
     <div class="footer-studio__grid">
       <div>
         <a href="/" class="footer-studio__logo-link">
-          <img
-            src={company.logo.light}
-            alt={company.name}
-            class="footer-studio__logo-img"
-            width="160"
-            height="46"
-            loading="lazy"
-            decoding="async"
-          />
+          <span class="footer-studio__logo-lockup">
+            <img
+              src={company.logo.markLight}
+              alt=""
+              class="footer-studio__logo-mark"
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              aria-hidden="true"
+            />
+            <span class="footer-studio__wordmark">
+              <span class="footer-studio__wordmark-name">{company.name}</span>
+              <span class="footer-studio__wordmark-tag">{company.category}</span>
+            </span>
+          </span>
         </a>
         <p class="footer-studio__tagline">{company.tagline}</p>
         <p class="mt-2 text-sm text-dark-muted">{company.address}</p>

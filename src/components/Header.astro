@@ -15,29 +15,35 @@ function isNavActive(itemHref: string): boolean {
 
 <header class="site-header" data-header>
   <div class="container-wide site-header__inner">
-    <div class="flex items-center gap-4">
+    <div class="site-header__brand-wrap">
       <a href="/" class="site-header__brand">
-        <img
-          src={company.logo.trimmed}
-          alt=""
-          class="site-header__logo site-header__logo--dark"
-          width="138"
-          height="40"
-          loading="eager"
-          decoding="async"
-          aria-hidden="true"
-        />
-        <img
-          src={company.logo.light}
-          alt={company.name}
-          class="site-header__logo site-header__logo--light"
-          width="138"
-          height="40"
-          loading="eager"
-          decoding="async"
-        />
+        <span class="site-header__logo-stack">
+          <img
+            src={company.logo.markClean}
+            alt=""
+            class="site-header__logo-mark site-header__logo--dark"
+            width="72"
+            height="72"
+            loading="eager"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <img
+            src={company.logo.markLight}
+            alt=""
+            class="site-header__logo-mark site-header__logo--light"
+            width="72"
+            height="72"
+            loading="eager"
+            decoding="async"
+            aria-hidden="true"
+          />
+        </span>
+        <span class="site-header__wordmark">
+          <span class="site-header__wordmark-name">{company.name}</span>
+          <span class="site-header__wordmark-tag">{company.category}</span>
+        </span>
       </a>
-      <span class="site-header__category">{company.category}</span>
     </div>
 
     <nav class="site-header__nav" aria-label="Main">

@@ -5,7 +5,11 @@
     "full": "/images/versacarte-logo.png",
     "trimmed": "/images/versacarte-logo-trimmed.png",
     "light": "/images/versacarte-logo-light.png",
+    "horizontal": "/images/versacarte-logo-horizontal.png",
+    "horizontalLight": "/images/versacarte-logo-horizontal-light.png",
     "mark": "/images/versacarte-logo-mark.png",
+    "markClean": "/images/versacarte-logo-mark-clean.png",
+    "markLight": "/images/versacarte-logo-mark-light.png",
     "icon": "/images/versacarte-logo-icon.png",
     "wordmark": "/images/versacarte-logo-wordmark.png"
   },
