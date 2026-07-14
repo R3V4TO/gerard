@@ -1,8 +1,8 @@
 {
   "name": "VersaCarte",
-  "tagline": "Software studio for apps, web & cloud",
-  "seoDescription": "VersaCarte is a software studio for mobile apps, web platforms and cloud backends. We build production software worldwide — clear, documented and ready to own.",
-  "seoTitle": "VersaCarte | Software studio for apps, web & cloud",
+  "tagline": "Software studio for apps, web and cloud",
+  "seoDescription": "VersaCarte is a software studio for mobile apps, web platforms and cloud backends. We build production software worldwide that is clear, documented and ready to own.",
+  "seoTitle": "VersaCarte | Software studio for apps, web and cloud",
   "logo": {
     "full": "/images/versacarte-logo.png",
     "trimmed": "/images/versacarte-logo-trimmed.png",
@@ -39,7 +39,7 @@
   "about": {
     "label": "About us",
     "title": "A product studio built for global scale",
-    "body": "VersaCarte is a remote-first software studio that ships mobile applications, web platforms and connected systems for clients across continents. We design for clarity, performance and long-term ownership — every deliverable documented so your team can extend it after launch.",
+    "body": "VersaCarte is a remote-first software studio that ships mobile applications, web platforms and connected systems for clients across continents. We design for clarity, performance and long-term ownership. Every deliverable is documented so your team can extend it after launch.",
     "mission": "Our mission is simple: help ambitious businesses turn complex ideas into reliable software that works in the real world, whether that means a consumer app in London, a web platform in Singapore or an internal portal for a growing team in São Paulo.",
     "values": [
       "End-to-end delivery from APIs and cloud backends to polished web and mobile UI",
@@ -50,15 +50,15 @@
     "imageAlt": "Development team collaborating at a desk"
   },
   "hero": {
-    "title": "Business-ready applications and web platforms, built end-to-end",
-    "subtitle": "A software studio for mobile apps, modern web platforms and cloud backends — shipping for clients worldwide.",
+    "title": "Business-ready applications and web platforms that we build end to end",
+    "subtitle": "A software studio for mobile apps, modern web platforms and cloud backends that ships for clients worldwide.",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80&auto=format&fit=crop",
     "imageAlt": "Developer workspace with laptop showing code"
   },
   "vision": {
     "label": "About us",
     "title": "Software that ships. Systems you can own.",
-    "body": "VersaCarte is a software studio for businesses that need mobile apps, web platforms and cloud backends. We build production products with clear architecture and documentation — durable systems, not throwaway MVPs.",
+    "body": "VersaCarte is a software studio for businesses that need mobile apps, web platforms and cloud backends. We build production products with clear architecture and documentation: durable systems, not throwaway MVPs.",
     "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Development team collaborating at a desk"
   },
@@ -101,7 +101,7 @@
       {
         "id": "engineering",
         "title": "Product engineering",
-        "body": "Architecture reviews, technical scoping and delivery plans that keep complex builds on schedule — from discovery through handoff.",
+        "body": "Architecture reviews, technical scoping and delivery plans that keep complex builds on schedule from discovery through handoff.",
         "href": "/services#engineering",
         "cta": "Book product scoping",
         "ctaHref": "/contact?type=engineering"

@@ -9,7 +9,8 @@ import TestimonialsSection from '../components/TestimonialsSection.astro';
 import LeadMagnet from '../components/LeadMagnet.astro';
 import company from '../data/company.json';
 
-const heroLines = company.hero.title.split(', ');
+const heroLead = 'Business-ready applications and web platforms';
+const heroAccent = 'that we build end to end';
 ---
 
 <BaseLayout>
@@ -31,8 +32,8 @@ const heroLines = company.hero.title.split(', ');
         {company.availability}
       </p>
       <h1 class="hero-studio__title">
-        <span class="hero-studio__title-lead" data-hero-line>{heroLines[0]},</span>
-        <span class="hero-studio__title-accent" data-hero-line>{heroLines[1] ?? ''}</span>
+        <span class="hero-studio__title-lead" data-hero-line>{heroLead}</span>
+        <span class="hero-studio__title-accent" data-hero-line>{heroAccent}</span>
       </h1>
       <p class="hero-studio__subtitle" data-hero-line>{company.hero.subtitle}</p>
       <div class="hero-studio__actions" data-hero-line>

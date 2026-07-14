@@ -16,27 +16,23 @@ function isNavActive(itemHref: string): boolean {
 <header class="site-header" data-header>
   <div class="container-wide site-header__inner">
     <div class="site-header__brand-wrap">
-      <a href="/" class="site-header__brand">
-        <span class="site-header__logo-stack">
+      <a href="/" class="site-header__brand" aria-label={company.name}>
+        <span class="site-header__logo-mark" aria-hidden="true">
           <img
-            src={company.logo.markClean}
+            class="site-header__logo-img site-header__logo-img--ink"
+            src={`${company.logo.markClean}?v=4`}
             alt=""
-            class="site-header__logo-mark site-header__logo--dark"
-            width="56"
-            height="72"
-            loading="eager"
+            width="52"
+            height="82"
             decoding="async"
-            aria-hidden="true"
           />
           <img
-            src={company.logo.markLight}
+            class="site-header__logo-img site-header__logo-img--light"
+            src={`${company.logo.markLight}?v=4`}
             alt=""
-            class="site-header__logo-mark site-header__logo--light"
-            width="56"
-            height="72"
-            loading="eager"
+            width="52"
+            height="82"
             decoding="async"
-            aria-hidden="true"
           />
         </span>
         <span class="site-header__wordmark">

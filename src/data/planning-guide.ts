@@ -24,7 +24,7 @@ export const guideChapters = [
       'You have an idea, a budget and a deadline. The first fork in the road is usually platform: should you build a web application or a native mobile app?',
       'There is no universal right answer. The best choice depends on who your users are, how often they need your product, what device capabilities you require and how quickly you need to ship.',
     ],
-    pullQuote: 'Choose the platform your users already live on — then ship where the evidence points.',
+    pullQuote: 'Choose the platform your users already live on and then ship where the evidence points.',
   },
   {
     num: '02',
@@ -66,7 +66,7 @@ export const guideChapters = [
       'Offline-first usage is required in the field',
       'You need polish users expect from top-tier mobile apps',
     ],
-    note: 'React Native and Expo ship iOS and Android from one codebase — far less costly than building twice natively.',
+    note: 'React Native and Expo ship iOS and Android from one codebase and cost far less than building twice natively.',
   },
   {
     num: '04',

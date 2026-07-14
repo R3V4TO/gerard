@@ -10,14 +10,12 @@ import SubscribeForm from './SubscribeForm.astro';
         <a href="/" class="footer-studio__logo-link">
           <span class="footer-studio__logo-lockup">
             <img
-              src={company.logo.markLight}
-              alt=""
               class="footer-studio__logo-mark"
-              width="56"
-              height="72"
-              loading="lazy"
+              src={`${company.logo.markLight}?v=4`}
+              alt={company.name}
+              width="52"
+              height="82"
               decoding="async"
-              aria-hidden="true"
             />
             <span class="footer-studio__wordmark">
               <span class="footer-studio__wordmark-name">{company.name}</span>

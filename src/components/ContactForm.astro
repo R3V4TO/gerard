@@ -107,7 +107,7 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
       name="comments"
       rows="4"
       class="input-field input-field--light resize-y"
-      placeholder="Anything else we should know — integrations, deadlines, links, questions…"
+      placeholder="Anything else we should know: integrations, deadlines, links, questions…"
     ></textarea>
   </div>
 
@@ -259,7 +259,7 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
           access_key: web3formsKey,
           name,
           email,
-          subject: `Studio inquiry from ${name}${offeringLabel !== 'Custom inquiry' ? ` — ${offeringLabel}` : projectTypeVal ? ` — ${projectTypeVal}` : ''}`,
+          subject: `Studio inquiry from ${name}${offeringLabel !== 'Custom inquiry' ? `: ${offeringLabel}` : projectTypeVal ? `: ${projectTypeVal}` : ''}`,
           message: body,
           from_name: 'VersaCarte Studio',
           replyto: email,

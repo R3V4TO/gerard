@@ -11,8 +11,8 @@ export interface ContactPrefill {
 const prefills: Record<string, ContactPrefill> = {
   starter: {
     offeringSlug: 'starter',
-    offeringLabel: 'Starter tier - websites and landing pages',
-    priceLabel: 'KES 25,000 to 75,000 - 2 to 4 weeks',
+    offeringLabel: 'Starter tier for websites and landing pages',
+    priceLabel: 'KES 25,000 to 75,000 over 2 to 4 weeks',
     projectType: 'web',
     budget: 'under-75k',
     timeline: '1-3months',
@@ -21,8 +21,8 @@ const prefills: Record<string, ContactPrefill> = {
   },
   standard: {
     offeringSlug: 'standard',
-    offeringLabel: 'Standard tier - web apps and mobile products',
-    priceLabel: 'KES 100,000 to 300,000 - 6 to 12 weeks',
+    offeringLabel: 'Standard tier for web apps and mobile products',
+    priceLabel: 'KES 100,000 to 300,000 over 6 to 12 weeks',
     projectType: 'mobile',
     budget: '75k-300k',
     timeline: '3-6months',
@@ -31,8 +31,8 @@ const prefills: Record<string, ContactPrefill> = {
   },
   enterprise: {
     offeringSlug: 'enterprise',
-    offeringLabel: 'Custom tier - IoT, full-stack and systems engineering',
-    priceLabel: 'KES 300,000+ - scoped per project',
+    offeringLabel: 'Custom tier for IoT, full-stack and systems engineering',
+    priceLabel: 'KES 300,000+ and scoped per project',
     projectType: 'iot',
     budget: '300k-plus',
     timeline: 'flexible',
@@ -42,7 +42,7 @@ const prefills: Record<string, ContactPrefill> = {
   'landing-page': {
     offeringSlug: 'landing-page',
     offeringLabel: 'Launch Ready Landing Page',
-    priceLabel: 'KES 25,000 - 7 days',
+    priceLabel: 'KES 25,000 in 7 days',
     projectType: 'web',
     budget: 'under-75k',
     timeline: 'urgent',
@@ -52,7 +52,7 @@ const prefills: Record<string, ContactPrefill> = {
   'supabase-setup': {
     offeringSlug: 'supabase-setup',
     offeringLabel: 'Supabase Backend Setup',
-    priceLabel: 'KES 30,000 - 10 days',
+    priceLabel: 'KES 30,000 in 10 days',
     projectType: 'cloud',
     budget: 'under-75k',
     timeline: '1-3months',
@@ -62,7 +62,7 @@ const prefills: Record<string, ContactPrefill> = {
   'iot-dashboard': {
     offeringSlug: 'iot-dashboard',
     offeringLabel: 'IoT Sensor Dashboard',
-    priceLabel: 'KES 40,000 - 14 days',
+    priceLabel: 'KES 40,000 in 14 days',
     projectType: 'iot',
     budget: 'under-75k',
     timeline: '1-3months',
