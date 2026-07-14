@@ -191,21 +191,22 @@
 }
 
 .site-header__logo-stack {
-  @apply relative shrink-0;
+  @apply relative shrink-0 overflow-visible;
+  line-height: 0;
 }
 
 .site-header__logo-mark {
   display: block;
-  height: 3.75rem;
-  width: 3.75rem;
+  height: 3.5rem;
+  width: auto;
+  max-width: none;
   object-fit: contain;
-  aspect-ratio: 1 / 1;
+  background: transparent;
 }
 
 @media (min-width: 640px) {
   .site-header__logo-mark {
-    height: 4.5rem;
-    width: 4.5rem;
+    height: 4.25rem;
   }
 }
 
@@ -790,10 +791,10 @@ body.is-menu-open {
 
 .footer-studio__logo-mark {
   display: block;
-  height: 4.5rem;
-  width: 4.5rem;
+  height: 4.25rem;
+  width: auto;
   object-fit: contain;
-  aspect-ratio: 1 / 1;
+  background: transparent;
 }
 
 .footer-studio__wordmark {
