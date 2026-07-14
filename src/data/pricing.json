@@ -42,7 +42,7 @@
       "range": "KES 300,000+",
       "timeline": "Scoped per project",
       "features": [
-        "IoT telemetry and SCADA-aware dashboards",
+        "Connected device and telemetry dashboards",
         "Multi-service architecture & firmware",
         "Enterprise compliance and SLA options",
         "Dedicated engineering lead"

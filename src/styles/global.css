@@ -535,6 +535,22 @@ body.is-menu-open {
   transform: scale(1.04);
 }
 
+.vision-split__lead {
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  letter-spacing: 0.012em;
+}
+
+.vision-split__support {
+  margin-top: 1rem;
+  max-width: 36rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-muted);
+  letter-spacing: 0.01em;
+}
+
 .why-list {
   @apply mt-8 space-y-3 text-sm text-muted;
 }
