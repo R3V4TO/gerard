@@ -1,6 +1,8 @@
 {
   "name": "VersaCarte",
-  "tagline": "App & web development studio",
+  "tagline": "Software studio for apps, web & cloud",
+  "seoDescription": "VersaCarte is a software studio for mobile apps, web platforms and cloud backends. We build production software worldwide — clear, documented and ready to own.",
+  "seoTitle": "VersaCarte | Software studio for apps, web & cloud",
   "logo": {
     "full": "/images/versacarte-logo.png",
     "trimmed": "/images/versacarte-logo-trimmed.png",
@@ -13,7 +15,7 @@
     "icon": "/images/versacarte-logo-icon.png",
     "wordmark": "/images/versacarte-logo-wordmark.png"
   },
-  "specialization": "The engineering studio for businesses worldwide that need mobile apps, IoT connectivity and modern cloud backends",
+  "specialization": "Mobile apps, web platforms and cloud backends for companies building serious digital products",
   "domain": "versacarte.com",
   "labsUrl": "https://labs.versacarte.com",
   "helpUrl": "https://help.versacarte.com",
@@ -37,10 +39,10 @@
   "about": {
     "label": "About us",
     "title": "A product studio built for global scale",
-    "body": "VersaCarte is a remote-first engineering studio that ships mobile applications, web platforms and connected systems for clients across continents. We combine electrical systems thinking with full-stack development and we document every deliverable so your team can own it long after launch.",
-    "mission": "Our mission is simple: help ambitious businesses turn complex ideas into reliable software that works in the real world, whether that means a consumer app in London, an IoT dashboard in Singapore or an internal portal for a growing team in São Paulo.",
+    "body": "VersaCarte is a remote-first software studio that ships mobile applications, web platforms and connected systems for clients across continents. We design for clarity, performance and long-term ownership — every deliverable documented so your team can extend it after launch.",
+    "mission": "Our mission is simple: help ambitious businesses turn complex ideas into reliable software that works in the real world, whether that means a consumer app in London, a web platform in Singapore or an internal portal for a growing team in São Paulo.",
     "values": [
-      "End to end delivery from firmware and APIs to polished mobile UI",
+      "End-to-end delivery from APIs and cloud backends to polished web and mobile UI",
       "Documented architecture you can audit, extend and hand off",
       "Global perspective with support for local payments, languages and connectivity"
     ],
@@ -49,14 +51,14 @@
   },
   "hero": {
     "title": "Business-ready applications and web platforms, built end-to-end",
-    "subtitle": "Mobile products, modern web apps, IoT telemetry and cloud backends from an engineering studio that ships worldwide.",
+    "subtitle": "A software studio for mobile apps, modern web platforms and cloud backends — shipping for clients worldwide.",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80&auto=format&fit=crop",
     "imageAlt": "Developer workspace with laptop showing code"
   },
   "vision": {
-    "label": "Studio",
-    "title": "Engineering discipline applied to product delivery",
-    "body": "VersaCarte combines electrical systems thinking with full-stack development. We build mobile apps, business web platforms and field-ready IoT systems that are documented like engineering deliverables, not throwaway MVPs.",
+    "label": "About us",
+    "title": "Software that ships. Systems you can own.",
+    "body": "VersaCarte is a software studio for businesses that need mobile apps, web platforms and cloud backends. We build production products with clear architecture and documentation — durable systems, not throwaway MVPs.",
     "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Development team collaborating at a desk"
   },
@@ -98,18 +100,18 @@
       },
       {
         "id": "engineering",
-        "title": "Systems engineering",
-        "body": "SCADA-aware specs, energy monitoring design and BOQ-grade documentation from an electrical engineering background.",
+        "title": "Product engineering",
+        "body": "Architecture reviews, technical scoping and delivery plans that keep complex builds on schedule — from discovery through handoff.",
         "href": "/services#engineering",
-        "cta": "Book engineering scoping",
+        "cta": "Book product scoping",
         "ctaHref": "/contact?type=engineering"
       }
     ]
   },
   "why": {
     "label": "Why VersaCarte",
-    "title": "One team from schematic to App Store review",
-    "body": "Clients get firmware, API and mobile UI under one roof instead of three vendors who hand off blame. We design for real-world conditions including variable connectivity, diverse devices and the payment methods your market expects.",
+    "title": "One team from architecture to App Store review",
+    "body": "Clients get API, web UI and mobile apps under one roof instead of three vendors who hand off blame. We design for real-world conditions including variable connectivity, diverse devices and the payment methods your market expects.",
     "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Developers reviewing work on large monitors"
   },

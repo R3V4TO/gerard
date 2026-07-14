@@ -14,12 +14,14 @@ interface Props {
 }
 
 const {
-  title = `${company.name} | ${company.tagline}`,
-  description = company.hero.subtitle,
+  title = company.seoTitle ?? `${company.name} | ${company.tagline}`,
+  description = company.seoDescription ?? company.hero.subtitle,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const faviconSvg = '/favicon.svg';
+const faviconPng = '/favicon-32.png';
 ---
 
 <!doctype html>
@@ -28,16 +30,21 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href={company.logo.icon} sizes="512x512" />
-    <link rel="apple-touch-icon" href={company.logo.icon} />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href={faviconSvg} type="image/svg+xml" />
+    <link rel="icon" href={faviconPng} type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:image" content={new URL(company.logo.full, Astro.site).href} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={company.name} />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="theme-color" content="#fafafa" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#0a0a0a" />
     <title>{title}</title>
     <PostHog />
   </head>
