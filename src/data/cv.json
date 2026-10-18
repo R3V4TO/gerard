@@ -1,0 +1,103 @@
+{
+  "title": "Curriculum vitae",
+  "name": "Gerard",
+  "role": "Electrical and Telecommunications Engineer",
+  "email": "owner@versacarte.com",
+  "location": "Nairobi, Kenya",
+  "linkedin": "https://www.linkedin.com/in/gerard-kapsowe-7a0b69343",
+  "site": "https://www.versacarte.com",
+  "download": "/cv/Gerard_Kapsowe_CV_Entry_Level_EE.docx",
+  "summary": "Electrical and Telecommunications Engineering graduate with practical experience in power system operations, electrical design for public buildings, and technical site surveys. Currently working on fibre network deployment at Huawei Technologies Kenya, following attachments at Kenya Power and the Ministry of Public Works. Able to combine technical analysis with fieldwork and clear communication with colleagues and stakeholders.",
+  "education": [
+    {
+      "title": "Bachelor of Engineering in Electrical and Telecommunications Engineering",
+      "place": "Moi University, Kenya",
+      "dates": "January 2020 – December 2025",
+      "detail": "Second Class Honours. Coursework: Telecommunications Systems, Signal Transmission, Network Analysis, Digital and Wireless Communications, Power Systems, Control Systems, Microprocessor Systems."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Site Acquisition Specialist",
+      "place": "Huawei Technologies (Kenya) Co., Ltd",
+      "dates": "September 2026 – Present",
+      "bullets": [
+        "Manage the full site acquisition process for fibre optic network deployment across residential estates in Nairobi, from initial approach through to signed Right of Entry and Access Agreements.",
+        "Support deployment of Huawei DQODN technology, a pre-connectorised fibre solution that avoids ground trenching and reduces disruption to residents and shared estate areas.",
+        "Carry out technical field surveys to assess estate infrastructure, map fibre distribution routes, and confirm site feasibility, including joint box locations, FAT and OLT interconnection points, and building entry paths.",
+        "Plan fibre cable routes using existing Kenya Power poles or dedicated poles where existing infrastructure is not available, ensuring continuous and compliant coverage.",
+        "Negotiate access agreements with estate management teams and resident associations, present technical layouts, address concerns, and obtain written authorisation before any installation work begins.",
+        "Prepare formal correspondence, deployment proposals, and access documentation for the site acquisition team, ensuring records remain clear and traceable."
+      ]
+    },
+    {
+      "title": "Design Engineer — Industrial Attachment",
+      "place": "Ministry of Public Works, Nairobi",
+      "dates": "August – November 2025",
+      "bullets": [
+        "Designed electrical and telecommunications systems for public buildings, including load calculations, circuit schematics, and power distribution layouts covering both electrical and telecom infrastructure.",
+        "Performed three-phase load balancing calculations and prepared Bills of Quantities in compliance with Kenya Bureau of Standards and National Construction Authority regulations.",
+        "Collaborated with civil, structural, and mechanical engineering teams on multiple concurrent public building projects from planning through to execution."
+      ]
+    },
+    {
+      "title": "Power Protection Engineer — Industrial Attachment",
+      "place": "Kenya Power and Lighting Company — Network Management, O&M and Customer Service, Nairobi Region",
+      "dates": "March – July 2024",
+      "bullets": [
+        "Monitored substation operations through SCADA systems in real time, supporting fault detection and performance tracking across the Nairobi Region distribution network.",
+        "Conducted fault analysis for earth faults, restricted earth faults, line-to-line, and line-to-ground faults on feeder and transformer systems, contributing to faster fault resolution and system restoration.",
+        "Carried out maintenance and repair of electronic relay cards and circuit breakers across power protection infrastructure.",
+        "Gained practical exposure to power protection schemes, delta-to-star transformer step-down applications, and SCADA implementation in a live utility environment."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Smart Traffic Control System with Emissions Monitoring",
+      "href": "/work/smart-traffic",
+      "note": "Final year project. Designed and built an intelligent traffic monitoring system for a four-lane intersection using Arduino Mega, ultrasonic sensors, ESP8266 wireless modules, a Flask REST API, MongoDB, a live dashboard with Auth0, and the VT-Micro emissions model."
+    },
+    {
+      "name": "Campus Energy Audit and Solar Offset Study",
+      "href": "/cv",
+      "note": "Group project. Full energy audit of campus power systems, a monitoring application with AI-driven efficiency recommendations, and a small solar installation to measure cost offsets for security and flood lighting."
+    },
+    {
+      "name": "Energy Management System (ESIPWR)",
+      "href": "/cv",
+      "note": "Cross-platform mobile application for real-time energy auditing and consumption monitoring in solar-powered buildings and industrial facilities."
+    },
+    {
+      "name": "Resphinx",
+      "href": "https://resphinx.versacarte.com",
+      "note": "Live property management app at resphinx.versacarte.com — rent collection, repairs and tenant chat."
+    },
+    {
+      "name": "VersaRent",
+      "href": "/work/versarent",
+      "note": "Property management app I am building."
+    },
+    {
+      "name": "FileSendNX",
+      "href": "/work/filesendnx",
+      "note": "Secure file transfer app I shipped."
+    }
+  ],
+  "skills": [
+    "Electrical design, load calculations, and power distribution layouts",
+    "Power protection, SCADA monitoring, fault analysis, and relay maintenance",
+    "Fibre optic surveys, route planning, and network deployment",
+    "AutoCAD, technical documentation, and Bill of Quantities preparation",
+    "Compliance with KEBS and NCA standards",
+    "Stakeholder engagement, report writing, and field teamwork"
+  ],
+  "certifications": [
+    "Cisco — Introduction to Networks",
+    "Cisco — Introduction to IoT",
+    "MongoDB University — Database Basics",
+    "Renewable Energy and Sustainable Development"
+  ],
+  "languages": "English (Fluent) · Swahili (Fluent)",
+  "community": "Active participant in the Innovation for Tomorrow STEM outreach programme, mentoring local students and promoting engineering careers among young people in Nairobi."
+}

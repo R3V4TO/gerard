@@ -10,9 +10,10 @@ interface Props {
   imageAlt?: string;
   slug: string;
   caseStudy?: string | null;
+  liveUrl?: string;
 }
 
-const { title, teaser, problem, status, stack, image, cover, imageAlt, slug, caseStudy } = Astro.props;
+const { title, teaser, problem, status, stack, image, cover, imageAlt, slug, caseStudy, liveUrl } = Astro.props;
 const link = caseStudy ?? `/work/${slug}`;
 const alt = imageAlt ?? `${title} project preview`;
 ---
@@ -53,6 +54,11 @@ const alt = imageAlt ?? `${title} project preview`;
     <div class="work-card__stack">
       {stack.map((s) => <span>{s}</span>)}
     </div>
-    <a href={link} class="link-arrow mt-5">{caseStudy ? 'Case study' : 'View project'}</a>
+    <div class="mt-5 flex flex-wrap gap-4">
+      <a href={link} class="link-arrow">{caseStudy ? 'Case study' : 'View project'}</a>
+      {liveUrl && (
+        <a href={liveUrl} class="link-arrow" target="_blank" rel="noopener noreferrer">Open live app</a>
+      )}
+    </div>
   </div>
 </article>

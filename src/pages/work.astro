@@ -5,16 +5,15 @@ import company from '../data/company.json';
 ---
 
 <BaseLayout
-  title={`Work | ${company.name}`}
-  description="VersaRent, FileSendNX and Smart Traffic Control: shipped apps and systems."
+  title={`Works | ${company.personName}`}
+  description="Projects Gerard created: Resphinx, VersaRent, FileSendNX and Smart Traffic Control."
 >
   <section class="section-studio pt-32">
     <div class="container-main">
-      <p class="section-label" data-reveal>Work</p>
-      <h1 class="section-studio__title" data-reveal>Product case studies</h1>
+      <p class="section-label" data-reveal>Works</p>
+      <h1 class="section-studio__title" data-reveal>Projects I created</h1>
       <p class="section-studio__body" data-reveal>
-        Selected work owned or shipped by the studio.
-        <a href={company.portfolioUrl}>Founder portfolio →</a>
+        These are my builds. Use them as the public appendix to a CV.
       </p>
       <div class="work-grid mt-12" data-stagger>
         {
@@ -30,6 +29,7 @@ import company from '../data/company.json';
               imageAlt={item.imageAlt}
               slug={item.slug}
               caseStudy={item.caseStudy}
+              liveUrl={item.liveUrl}
             />
           ))
         }

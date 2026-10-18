@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-label="Resphinx">
+  <rect width="900" height="560" fill="#101214"/>
+  <rect x="48" y="48" width="804" height="464" fill="#1a1d21" stroke="#2c3138"/>
+  <text x="80" y="160" fill="#f4f1ea" font-family="Georgia, serif" font-size="52">Resphinx</text>
+  <text x="80" y="210" fill="#b8b2a8" font-family="Arial, sans-serif" font-size="22">Rent collection, repairs and tenant chat</text>
+  <rect x="80" y="280" width="220" height="88" fill="#0a0a0a"/>
+  <text x="96" y="318" fill="#8a8a8a" font-family="Arial, sans-serif" font-size="12">TOTAL COLLECTED</text>
+  <text x="96" y="348" fill="#f4f1ea" font-family="Georgia, serif" font-size="28">Live</text>
+  <rect x="320" y="280" width="220" height="88" fill="#0a0a0a"/>
+  <text x="336" y="318" fill="#8a8a8a" font-family="Arial, sans-serif" font-size="12">PLATFORMS</text>
+  <text x="336" y="348" fill="#f4f1ea" font-family="Georgia, serif" font-size="22">Web · Android</text>
+</svg>

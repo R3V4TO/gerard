@@ -8,6 +8,7 @@ function isNavActive(itemHref: string): boolean {
   if (itemHref === '/') return path === '/';
   if (itemHref === '/blog') return path.startsWith('/blog');
   if (itemHref === '/work') return path.startsWith('/work');
+  if (itemHref === '/cv') return path === '/cv';
   if (itemHref === '/guide/web-app-vs-mobile') return path.startsWith('/guide');
   return path === itemHref;
 }
@@ -25,6 +26,7 @@ function isNavActive(itemHref: string): boolean {
             width="52"
             height="82"
             decoding="async"
+            fetchpriority="low"
           />
           <img
             class="site-header__logo-img site-header__logo-img--light"
@@ -33,11 +35,12 @@ function isNavActive(itemHref: string): boolean {
             width="52"
             height="82"
             decoding="async"
+            fetchpriority="low"
           />
         </span>
         <span class="site-header__wordmark">
-          <span class="site-header__wordmark-name">{company.name}</span>
-          <span class="site-header__wordmark-tag">{company.category}</span>
+          <span class="site-header__wordmark-name">{company.personName}</span>
+          <span class="site-header__wordmark-tag">{company.tagline}</span>
         </span>
       </a>
     </div>
@@ -54,9 +57,7 @@ function isNavActive(itemHref: string): boolean {
           );
         })
       }
-      <a href="/blog" class:list={[{ 'is-active': path.startsWith('/blog') }]}>Blog</a>
-      <a href="/help" class:list={[{ 'is-active': path === '/help' }]}>Help</a>
-      <a href="/contact" class="btn-solid site-header__cta" data-i18n="hero.cta.start">Start a project</a>
+      <a href="/contact" class="btn-solid site-header__cta">Email me</a>
     </nav>
 
     <button
@@ -88,8 +89,8 @@ function isNavActive(itemHref: string): boolean {
           </a>
         ))
       }
-      <a href="/contact" class="btn-solid site-header__mobile-cta" data-mobile-nav-link data-i18n="hero.cta.start">
-        Start a project
+      <a href={`mailto:${company.email}`} class="btn-solid site-header__mobile-cta" data-mobile-nav-link>
+        Email me
       </a>
     </div>
   </nav>

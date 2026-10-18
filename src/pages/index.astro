@@ -1,158 +1,52 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PhotoPanel from '../components/PhotoPanel.astro';
-import TechMarquee from '../components/TechMarquee.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import WorkCard from '../components/WorkCard.astro';
-import HeroVisual from '../components/HeroVisual.astro';
-import TestimonialsSection from '../components/TestimonialsSection.astro';
-import LeadMagnet from '../components/LeadMagnet.astro';
+import FaqList from '../components/FaqList.astro';
 import company from '../data/company.json';
 
-const heroLead = 'Business-ready applications and web platforms';
-const heroAccent = 'that we build end to end';
+const featured = company.work.items;
 ---
 
 <BaseLayout>
-  <section id="hero" class="hero-studio scroll-mt-24">
-    <PhotoPanel
-      src={company.hero.image}
-      alt={company.hero.imageAlt}
-      overlay="hero"
-      class="hero-studio__bg"
-    />
-    <HeroVisual />
-    <div class="container-wide hero-studio__content">
-      <p
-        class="hero-studio__chip"
-        data-hero-line
-        data-availability
-        data-availability-default={company.availability}
-      >
-        {company.availability}
-      </p>
-      <h1 class="hero-studio__title">
-        <span class="hero-studio__title-lead" data-hero-line>{heroLead}</span>
-        <span class="hero-studio__title-accent" data-hero-line>{heroAccent}</span>
-      </h1>
-      <p class="hero-studio__subtitle" data-hero-line>{company.hero.subtitle}</p>
-      <div class="hero-studio__actions" data-hero-line>
-        <a href="/contact" class="btn-solid" data-i18n="hero.cta.start">Start a project</a>
-        <a href="#work" class="btn-light" data-i18n="hero.cta.work">See our work</a>
-      </div>
-      <div data-waitlist hidden class="mt-6 max-w-md">
-        <form class="waitlist-form" id="waitlist-form">
-          <input type="email" name="email" required class="input-field" placeholder="Email for waitlist" />
-          <input type="hidden" name="formType" value="waitlist" />
-          <button type="submit" class="btn-light cursor-pointer border-0">Join waitlist</button>
-        </form>
-      </div>
-    </div>
-    <div class="hero-studio__scroll" aria-hidden="true">
-      <span class="hero-studio__scroll-line"></span>
-    </div>
-  </section>
-
-  <TechMarquee />
-
-  <section id="vision" class="section-studio scroll-mt-24">
-    <div class="container-wide vision-split">
-      <div class="vision-split__photo" data-reveal>
-        <PhotoPanel
-          src={company.vision.image}
-          alt={company.vision.imageAlt}
-          overlay="section"
+  <section id="hero" class="luzia-hero scroll-mt-24">
+    <div class="container-wide luzia-hero__grid">
+      <div class="luzia-hero__photo" data-hero-line>
+        <img
+          src={company.hero.image}
+          alt={company.hero.imageAlt}
+          width="960"
+          height="768"
+          fetchpriority="high"
+          decoding="async"
         />
+        <div class="luzia-hero__mark">
+          <img src={`${company.logo.markLight}?v=4`} alt="" width="72" height="114" decoding="async" />
+        </div>
       </div>
-      <div class="vision-split__copy">
-        <p class="section-label" data-reveal>{company.vision.label}</p>
-        <h2 class="section-studio__title" data-reveal>{company.vision.title}</h2>
-        <p class="section-studio__body vision-split__lead" data-reveal>{company.vision.body}</p>
-        <p class="vision-split__support" data-reveal>{company.specialization}</p>
-        <a href="/about" class="btn-solid mt-8" data-reveal>About us</a>
+      <div class="luzia-hero__copy">
+        <h1 class="luzia-hero__title" data-hero-line>{company.hero.title}</h1>
+        <p class="luzia-hero__body" data-hero-line>{company.hero.subtitle}</p>
+        <div class="luzia-hero__actions" data-hero-line>
+          <a href={`mailto:${company.email}`} class="btn-solid">Email me</a>
+          <a href="/cv" class="btn">View CV</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="section-studio section-studio--gray scroll-mt-24">
+  <section id="work" class="section-studio scroll-mt-24">
     <div class="container-wide">
-      <p class="section-label" data-reveal>{company.services.label}</p>
-      <h2 class="section-studio__title" data-reveal>{company.services.title}</h2>
-      <div class="service-grid service-grid--five" data-stagger data-stagger-motion>
-        {
-          company.services.items.map((item, i) => (
-            <ServiceCard
-              id={item.id}
-              title={item.title}
-              body={item.body}
-              href={item.href}
-              cta={item.cta}
-              ctaHref={item.ctaHref}
-              index={i}
-            />
-          ))
-        }
+      <div class="luzia-section-head" data-reveal>
+        <div>
+          <p class="section-label">{company.work.label}</p>
+          <h2 class="section-studio__title">{company.work.title}</h2>
+        </div>
+        <a href="/work" class="btn">All works</a>
       </div>
-      <p class="mt-10 text-center" data-reveal>
-        <a href="/services" class="link-arrow">Full services breakdown</a>
-        <span class="mx-3 text-muted">·</span>
-        <a href="/pricing" class="link-arrow">View pricing</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="why" class="section-studio scroll-mt-24">
-    <div class="container-wide why-split">
-      <div>
-        <p class="section-label" data-reveal>{company.why.label}</p>
-        <h2 class="section-studio__title" data-reveal>{company.why.title}</h2>
-        <p class="section-studio__body" data-reveal>{company.why.body}</p>
-        <ul class="why-list" data-reveal>
-          {company.about.values.map((value) => <li>{value}</li>)}
-        </ul>
-      </div>
-      <div class="why-split__photo" data-reveal>
-        <PhotoPanel
-          src={company.why.image}
-          alt={company.why.imageAlt}
-          overlay="section"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section id="numbers" class="section-studio section-studio--stats scroll-mt-24">
-    <PhotoPanel
-      src={company.stats.image}
-      alt=""
-      overlay="stats"
-      class="section-studio__stats-bg"
-    />
-    <div class="container-wide section-studio__stats-content">
-      <h2 class="section-studio__title section-studio__title--light" data-reveal>{company.stats.title}</h2>
-      <div class="stats-grid" data-stagger>
-        {
-          company.stats.items.map((item) => (
-            <div class="stat-item stat-item--light">
-              <p class="stat-item__value">
-                <span data-count={item.value} data-suffix={item.suffix}>0{item.suffix}</span>
-              </p>
-              <p class="stat-item__label">{item.label}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section id="work" class="section-studio section-studio--gray scroll-mt-24">
-    <div class="container-wide">
-      <p class="section-label" data-reveal>{company.work.label}</p>
-      <h2 class="section-studio__title" data-reveal>{company.work.title}</h2>
       <p class="section-studio__body" data-reveal>{company.work.body}</p>
-      <div class="work-grid" data-stagger-motion>
+      <div class="work-grid luzia-work-grid" data-stagger-motion>
         {
-          company.work.items.map((item) => (
+          featured.map((item) => (
             <WorkCard
               title={item.title}
               teaser={item.teaser}
@@ -164,6 +58,7 @@ const heroAccent = 'that we build end to end';
               imageAlt={item.imageAlt}
               slug={item.slug}
               caseStudy={item.caseStudy}
+              liveUrl={item.liveUrl}
             />
           ))
         }
@@ -171,39 +66,66 @@ const heroAccent = 'that we build end to end';
     </div>
   </section>
 
-  <TestimonialsSection />
-
-  <section id="contact" class="section-studio scroll-mt-24 pb-24">
+  <section id="services" class="section-studio section-studio--gray scroll-mt-24">
     <div class="container-wide">
-      <div class="contact-panel" data-reveal-scale>
-        <p class="section-label">Contact</p>
-        <h2 class="section-studio__title mt-4" data-i18n="contact.title">Tell us what you're building</h2>
-        <p class="section-studio__body mt-4">
-          Discovery calls for mobile, web, IoT and backend scope. Based in {company.location}.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/contact" class="btn-solid" data-i18n="contact.cta">Book a discovery call</a>
-          <a href={`mailto:${company.email}`} class="btn">{company.email}</a>
-        </div>
-        <LeadMagnet />
+      <p class="section-label" data-reveal>{company.services.label}</p>
+      <h2 class="section-studio__title" data-reveal>{company.services.title}</h2>
+      <div class="luzia-services" data-stagger-motion>
+        {
+          company.services.items.map((item) => (
+            <article class="luzia-service" id={item.id}>
+              <div class="luzia-service__top">
+                <h3>{item.title}</h3>
+                <a href={item.ctaHref} class="btn">{item.cta}</a>
+              </div>
+              <p>{item.body}</p>
+              <div class="luzia-service__tags">
+                {item.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section-studio scroll-mt-24">
+    <div class="container-wide luzia-process">
+      <div>
+        <p class="section-label" data-reveal>{company.process.label}</p>
+        <h2 class="section-studio__title" data-reveal>{company.process.title}</h2>
+        <ol class="luzia-process__steps">
+          {
+            company.process.steps.map((step) => (
+              <li data-reveal>
+                <span>{step.n}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+      <div class="luzia-process__photo" data-reveal>
+        <img src={company.process.image} alt={company.process.imageAlt} width="800" height="800" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <FaqList />
+
+  <section class="luzia-close scroll-mt-24">
+    <div class="luzia-close__media" aria-hidden="true">
+      <img src={company.why.image} alt="" width="900" height="600" loading="lazy" decoding="async" />
+    </div>
+    <div class="container-wide luzia-close__content">
+      <h2 data-reveal>Write to me, and I will take it from there</h2>
+      <div class="mt-8 flex flex-wrap gap-3" data-reveal>
+        <a href={`mailto:${company.email}`} class="btn-light">Email me</a>
+        <a href="/cv" class="btn-light">Open CV</a>
       </div>
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  const waitlistForm = document.getElementById('waitlist-form') as HTMLFormElement | null;
-  waitlistForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(waitlistForm),
-      });
-      waitlistForm.reset();
-      const btn = waitlistForm.querySelector('button');
-      if (btn) btn.textContent = 'On the list ✓';
-    } catch { /* silent */ }
-  });
-</script>

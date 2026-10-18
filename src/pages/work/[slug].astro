@@ -24,7 +24,7 @@ const { study } = Astro.props;
   <section class="case-hero">
     <div class="container-wide">
       <div class="case-hero__visual" data-reveal>
-        <img src={study.cover ?? study.hero} alt={study.tagline} class="case-hero__img" loading="eager" width="1200" height="500" />
+        <img src={study.cover ?? study.hero} alt={study.tagline} class="case-hero__img" loading="eager" decoding="async" width="900" height="560" />
         <div class="case-hero__logo">
           <img src={study.hero} alt="" width="64" height="40" />
         </div>
@@ -66,8 +66,11 @@ const { study } = Astro.props;
       <p class="section-studio__body" data-reveal>{study.outcome.body}</p>
 
       <div class="mt-12 flex flex-wrap gap-4" data-reveal>
-        <a href="/contact" class="btn-solid">Start a similar project</a>
-        <a href="/work" class="btn">All work</a>
+        {study.liveUrl && (
+          <a href={study.liveUrl} class="btn-solid" target="_blank" rel="noopener noreferrer">Open live app</a>
+        )}
+        <a href="/contact" class="btn-solid">Email me</a>
+        <a href="/work" class="btn">All works</a>
       </div>
     </div>
   </section>

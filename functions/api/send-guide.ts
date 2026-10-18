@@ -37,7 +37,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const siteUrl = (env.SITE_URL ?? 'https://versacarte.com').replace(/\/$/, '');
   const guideUrl = `${siteUrl}${GUIDE_PATH}`;
   const downloadUrl = `${siteUrl}/downloads/versacarte-web-vs-mobile-guide.html`;
-  const from = env.CONTACT_FROM ?? 'hello@versacarte.com';
+  const from = env.CONTACT_FROM ?? 'owner@versacarte.com';
 
   try {
     await fetch('https://api.resend.com/emails', {

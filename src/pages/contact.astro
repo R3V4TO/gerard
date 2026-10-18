@@ -5,16 +5,21 @@ import company from '../data/company.json';
 ---
 
 <BaseLayout
-  title={`Contact | ${company.name}`}
-  description="Book a discovery call for mobile, web, IoT and backend projects."
+  title={`Contact | ${company.personName}`}
+  description={`Email ${company.personName} about engineering or software work.`}
 >
   <section class="section-studio pt-32">
     <div class="container-main">
       <p class="section-label" data-reveal>Contact</p>
-      <h1 class="section-studio__title" data-reveal>Start a project</h1>
+      <h1 class="section-studio__title" data-reveal>Email me</h1>
       <p class="section-studio__body" data-reveal>
-        Tell us what you're building, including platform, timeline and budget range. We reply from {company.email}.
+        I read every note. Include the problem, timeline and how you found this site — including if you came from a CV.
+        I reply from {company.email}.
       </p>
+      <div class="mt-8 flex flex-wrap gap-3" data-reveal>
+        <a href={`mailto:${company.email}`} class="btn-solid">Open email</a>
+        <a href="/cv" class="btn">View CV</a>
+      </div>
       <div class="mt-12 max-w-2xl" data-reveal>
         <ContactForm />
       </div>

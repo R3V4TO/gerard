@@ -5,14 +5,6 @@ export async function initSiteMotion(): Promise<void> {
 
   const { animate, scroll, stagger } = await import('motion');
 
-  document.querySelectorAll<HTMLElement>('[data-hero-line]').forEach((line, i) => {
-    animate(
-      line,
-      { opacity: [0, 1], y: [32, 0], filter: ['blur(8px)', 'blur(0px)'] },
-      { duration: 0.9, delay: 0.15 + i * 0.12, ease: [0.22, 1, 0.36, 1] },
-    );
-  });
-
   document.querySelectorAll<HTMLElement>('[data-parallax-img]').forEach((img) => {
     const panel = img.closest<HTMLElement>('[data-photo-panel]');
     if (!panel) return;

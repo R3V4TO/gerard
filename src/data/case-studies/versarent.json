@@ -2,17 +2,18 @@
   "slug": "versarent",
   "title": "VersaRent",
   "status": "In development",
+  "liveUrl": "",
   "tagline": "Mobile property management for landlords and tenants",
   "stack": ["React Native", "Expo", "Supabase", "Payments"],
   "hero": "/images/versarent.svg",
-  "cover": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop",
+  "cover": "/images/versarent-cover.webp",
   "problem": {
     "title": "The problem",
     "body": "Landlords managing multiple units still rely on messaging threads, paper receipts and manual rent tracking. Tenants miss payment deadlines and landlords lose visibility into arrears until it is too late to act."
   },
   "approach": {
-    "title": "Our approach",
-    "body": "We designed VersaRent as a mobile-first platform where landlords onboard properties from their phone, tenants receive push reminders and payments reconcile automatically against unit ledgers. Supabase RLS ensures each landlord only sees their own portfolio."
+    "title": "How I approached it",
+    "body": "I designed VersaRent as a mobile-first platform I am building myself: landlords onboard properties from their phone, tenants receive push reminders and payments reconcile against unit ledgers. Supabase RLS keeps each landlord to their own portfolio."
   },
   "technologies": {
     "title": "Technologies",

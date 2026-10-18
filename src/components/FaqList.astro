@@ -1,0 +1,24 @@
+---
+import faq from '../data/faq.json';
+import company from '../data/company.json';
+---
+
+<section id="faq" class="section-studio scroll-mt-24">
+  <div class="container-wide luzia-faq">
+    <div class="luzia-faq__intro">
+      <p class="section-label" data-reveal>FAQs</p>
+      <h2 class="section-studio__title" data-reveal>{faq.title}</h2>
+      <a href={`mailto:${company.email}`} class="btn-solid mt-8" data-reveal>Email me</a>
+    </div>
+    <div class="luzia-faq__list" data-reveal>
+      {
+        faq.items.map((item, i) => (
+          <details class="luzia-faq__item" open={i === 0}>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

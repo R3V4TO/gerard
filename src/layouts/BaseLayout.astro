@@ -14,7 +14,7 @@ interface Props {
 }
 
 const {
-  title = company.seoTitle ?? `${company.name} | ${company.tagline}`,
+  title = company.seoTitle ?? `${company.personName} | ${company.tagline}`,
   description = company.seoDescription ?? company.hero.subtitle,
 } = Astro.props;
 
@@ -37,7 +37,7 @@ const faviconPng = '/favicon-32.png';
     <meta property="og:image" content={new URL(company.logo.full, Astro.site).href} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={company.name} />
+    <meta property="og:site_name" content={company.personName} />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -46,7 +46,7 @@ const faviconPng = '/favicon-32.png';
     <meta name="twitter:description" content={description} />
     <meta name="theme-color" content="#0a0a0a" />
     <title>{title}</title>
-    <PostHog />
+    {isHome && <link rel="preload" as="image" href={company.hero.image} fetchpriority="high" />}
   </head>
   <body data-home={isHome || undefined}>
     <Header />
@@ -57,8 +57,9 @@ const faviconPng = '/favicon-32.png';
     <SiteUtilities />
     <EmailButton />
     <ClientMotion />
+    <PostHog />
     <script is:inline>
-      (function(){try{var t=localStorage.getItem('versacarte-theme');if(t)document.documentElement.dataset.theme=t;var l=localStorage.getItem('versacarte-lang');if(l){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr'}}catch(e){}})();
+      (function(){try{var t=localStorage.getItem('versacarte-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}})();
     </script>
   </body>
 </html>

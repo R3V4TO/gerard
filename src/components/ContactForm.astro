@@ -214,7 +214,7 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
     if (!status) return;
 
     if (!web3formsKey) {
-      status.textContent = 'Form is not configured. Email hello@versacarte.com directly.';
+      status.textContent = 'Form is not configured. Email owner@versacarte.com directly.';
       return;
     }
 
@@ -270,7 +270,7 @@ const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
       const result = await response.json();
 
       if (response.ok && result.success) {
-        status.textContent = 'Received. We will reply from hello@versacarte.com.';
+        status.textContent = 'Received. I will reply from owner@versacarte.com.';
         form.reset();
         applyOfferingSuggestion('', false);
         showPrefillUi(false);

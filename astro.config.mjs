@@ -8,6 +8,10 @@ const web3formsKey =
 
 export default defineConfig({
   site: process.env.SITE_URL ?? 'https://versacarte.com',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
   vite: {
     plugins: [tailwindcss()],
     define: {

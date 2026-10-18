@@ -1,32 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import company from '../data/company.json';
 ---
 
 <BaseLayout
-  title={`Services | ${company.name}`}
-  description="Mobile apps, web platforms, IoT, cloud backends and systems engineering."
+  title={`What I do | ${company.personName}`}
+  description="Electrical and telecommunications engineering plus software Gerard designs and ships."
 >
-  <section class="section-studio pt-32">
+  <section class="section-studio pt-32 pb-24">
     <div class="container-main">
-      <p class="section-label" data-reveal>Services</p>
-      <h1 class="section-studio__title" data-reveal>Pick from the menu</h1>
-      <p class="section-studio__body" data-reveal>
-        Engagements are scoped per product and include discovery, build and handoff with documentation you can audit.
-      </p>
-      <div class="service-grid service-grid--five mt-12" data-stagger>
+      <p class="section-label" data-reveal>What I do</p>
+      <h1 class="section-studio__title" data-reveal>{company.services.title}</h1>
+      <div class="luzia-services mt-12" data-stagger>
         {
-          company.services.items.map((item, i) => (
-            <ServiceCard
-              id={item.id}
-              title={item.title}
-              body={item.body}
-              href={`#${item.id}`}
-              cta={item.cta}
-              ctaHref={item.ctaHref}
-              index={i}
-            />
+          company.services.items.map((item) => (
+            <article class="luzia-service" id={item.id}>
+              <div class="luzia-service__top">
+                <h3>{item.title}</h3>
+                <a href={item.ctaHref} class="btn">{item.cta}</a>
+              </div>
+              <p>{item.body}</p>
+              <div class="luzia-service__tags">
+                {item.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </article>
           ))
         }
       </div>

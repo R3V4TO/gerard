@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource/inter/latin-400.css";
-@import "@fontsource/inter/latin-500.css";
 @import "@fontsource/inter/latin-600.css";
-@import "@fontsource/inter/latin-700.css";
 @import "@fontsource/instrument-serif/latin-400.css";
 
 @theme {
@@ -138,7 +136,24 @@
 }
 
 [data-hero-line] {
-  opacity: 0;
+  animation: hero-in 0.55s var(--ease-studio) both;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.85rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-line] {
+    animation: none;
+  }
 }
 
 /* Header */
@@ -227,12 +242,10 @@
   }
 }
 
-body[data-home] .site-header:not(.is-scrolled) .site-header__logo-img--ink,
 [data-theme="dark"] .site-header .site-header__logo-img--ink {
   opacity: 0;
 }
 
-body[data-home] .site-header:not(.is-scrolled) .site-header__logo-img--light,
 [data-theme="dark"] .site-header .site-header__logo-img--light {
   opacity: 1;
 }
@@ -260,12 +273,10 @@ body[data-home] .site-header:not(.is-scrolled) .site-header__logo-img--light,
   white-space: nowrap;
 }
 
-body[data-home] .site-header:not(.is-scrolled) .site-header__wordmark-name,
 [data-theme="dark"] .site-header .site-header__wordmark-name {
   color: #fff;
 }
 
-body[data-home] .site-header:not(.is-scrolled) .site-header__wordmark-tag,
 [data-theme="dark"] .site-header .site-header__wordmark-tag {
   color: rgb(255 255 255 / 0.7);
 }
@@ -1838,6 +1849,268 @@ body.is-menu-open {
 
 .footer-bar {
   @apply border-t border-white/10 py-6 text-center text-xs text-dark-muted;
+}
+
+.footer-bar__row {
+  @apply flex flex-col items-center justify-between gap-2 sm:flex-row;
+}
+
+/* Luzia-inspired personal layout — fonts stay Inter + Instrument Serif */
+.luzia-hero {
+  @apply bg-canvas pt-28 pb-16 sm:pt-32 sm:pb-24;
+}
+
+.luzia-hero__grid {
+  @apply grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16;
+}
+
+.luzia-hero__photo {
+  @apply relative overflow-hidden rounded-[1.75rem];
+  aspect-ratio: 5 / 4;
+}
+
+.luzia-hero__photo img {
+  @apply h-full w-full object-cover;
+}
+
+.luzia-hero__mark {
+  @apply absolute bottom-5 left-5 flex h-20 w-14 items-center justify-center rounded-xl bg-dark/70 p-2 backdrop-blur-sm;
+}
+
+.luzia-hero__mark img {
+  @apply h-full w-full object-contain;
+}
+
+.luzia-hero__chip {
+  @apply mb-5 inline-block rounded-full border border-line px-3 py-1.5 text-xs uppercase tracking-widest text-muted;
+}
+
+.luzia-hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+}
+
+.luzia-hero__body {
+  @apply mt-6 max-w-xl text-base text-muted sm:text-lg;
+}
+
+.luzia-hero__actions {
+  @apply mt-8 flex flex-wrap gap-3;
+}
+
+.luzia-section-head {
+  @apply mb-4 flex flex-wrap items-end justify-between gap-4;
+}
+
+.luzia-work-grid {
+  @apply mt-10;
+}
+
+.luzia-credential {
+  @apply border-y border-line py-10;
+}
+
+.luzia-credential__inner {
+  @apply text-center;
+}
+
+.luzia-credential__kicker {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.luzia-credential__note {
+  @apply mt-2 text-sm text-muted;
+}
+
+.luzia-proof {
+  @apply border-y border-line bg-surface py-14;
+}
+
+.luzia-proof__inner {
+  @apply flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center;
+}
+
+.luzia-proof__stats {
+  @apply grid grid-cols-3 gap-6;
+}
+
+.luzia-proof__faces {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.luzia-proof__chip {
+  @apply -ml-2 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-line bg-canvas first:ml-0;
+}
+
+.luzia-proof__chip img {
+  @apply h-7 w-auto;
+}
+
+.luzia-proof__trusted {
+  @apply ml-3 text-xs font-semibold uppercase tracking-widest text-muted;
+}
+
+.luzia-services {
+  @apply mt-12 grid gap-5;
+}
+
+.luzia-service {
+  @apply rounded-3xl border border-line bg-canvas p-8 sm:p-10;
+}
+
+.luzia-service__top {
+  @apply mb-4 flex flex-wrap items-center justify-between gap-4;
+}
+
+.luzia-service h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+}
+
+.luzia-service p {
+  @apply max-w-2xl text-muted;
+}
+
+.luzia-service__tags {
+  @apply mt-6 flex flex-wrap gap-2;
+}
+
+.luzia-service__tags span {
+  @apply rounded-full border border-line px-3 py-1 text-[0.65rem] uppercase tracking-wider text-muted;
+}
+
+.luzia-process {
+  @apply grid items-start gap-12 lg:grid-cols-2;
+}
+
+.luzia-process__steps {
+  @apply mt-10 space-y-8;
+}
+
+.luzia-process__steps li {
+  @apply grid grid-cols-[3rem_1fr] gap-4;
+}
+
+.luzia-process__steps span {
+  font-family: var(--font-display);
+  @apply text-2xl text-muted;
+}
+
+.luzia-process__steps h3 {
+  @apply text-lg font-semibold;
+}
+
+.luzia-process__steps p {
+  @apply mt-1 text-sm text-muted;
+}
+
+.luzia-process__photo {
+  @apply overflow-hidden rounded-[1.75rem];
+}
+
+.luzia-process__photo img {
+  @apply h-full w-full object-cover;
+  min-height: 28rem;
+}
+
+.luzia-faq {
+  @apply grid gap-12 lg:grid-cols-[0.9fr_1.1fr];
+}
+
+.luzia-faq__item {
+  @apply border-b border-line py-5;
+}
+
+.luzia-faq__item summary {
+  @apply cursor-pointer list-none text-lg font-medium;
+}
+
+.luzia-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.luzia-faq__item p {
+  @apply mt-3 text-sm text-muted;
+}
+
+.luzia-close {
+  @apply relative min-h-[28rem] overflow-hidden;
+}
+
+.luzia-close__media img {
+  @apply absolute inset-0 h-full w-full object-cover;
+  filter: brightness(0.38);
+}
+
+.luzia-close__content {
+  @apply relative z-10 flex min-h-[28rem] flex-col justify-end pb-16 pt-32 text-white;
+}
+
+.luzia-close__content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  color: #fff;
+  max-width: 18ch;
+}
+
+.cv-page__role {
+  @apply mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-muted;
+}
+
+.cv-page__meta {
+  @apply mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm;
+}
+
+.cv-page__actions {
+  @apply mt-8 flex flex-wrap gap-3;
+}
+
+.cv-page__hint {
+  @apply mt-3 text-xs text-muted;
+}
+
+.cv-block {
+  @apply mt-14 border-t border-line pt-8;
+}
+
+.cv-block h2 {
+  font-family: var(--font-display);
+  @apply mb-5 text-2xl font-normal;
+}
+
+.cv-block h3 {
+  @apply text-base font-semibold;
+}
+
+.cv-block__place {
+  @apply text-sm text-muted;
+}
+
+.cv-block p,
+.cv-block li {
+  @apply mt-1 text-sm text-muted;
+}
+
+.cv-block ul {
+  @apply space-y-2;
+}
+
+.cv-block a {
+  @apply font-medium no-underline;
+}
+
+.cv-job {
+  @apply mb-8;
+}
+
+.cv-block__dates {
+  @apply mb-2 text-xs uppercase tracking-widest text-muted;
 }
 
 @media print {

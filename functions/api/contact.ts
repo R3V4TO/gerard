@@ -142,7 +142,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       return json(
         {
           success: false,
-          message: 'Unexpected response from mail service. Try hello@versacarte.com directly.',
+          message: 'Unexpected response from mail service. Try owner@versacarte.com directly.',
         },
         502,
       );
@@ -156,7 +156,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return json({ success: true, message: 'Message sent.' });
   } catch {
     return json(
-      { success: false, message: 'Server error. Email hello@versacarte.com directly.' },
+      { success: false, message: 'Server error. Email owner@versacarte.com directly.' },
       500,
     );
   }

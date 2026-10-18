@@ -1,8 +1,10 @@
 {
   "name": "VersaCarte",
-  "tagline": "Software studio for apps, web and cloud",
-  "seoDescription": "VersaCarte is a software studio for mobile apps, web platforms and cloud backends. We build production software worldwide that is clear, documented and ready to own.",
-  "seoTitle": "VersaCarte | Software studio for apps, web and cloud",
+  "personName": "Gerard",
+  "firstName": "Gerard",
+  "tagline": "Electrical and telecommunications engineer",
+  "seoDescription": "Gerard is an electrical and telecommunications engineer who designs and builds mobile apps, web platforms, IoT systems and cloud backends. This is his personal reference site and CV.",
+  "seoTitle": "Gerard | Electrical & Telecommunications Engineer",
   "logo": {
     "full": "/images/versacarte-logo.png",
     "trimmed": "/images/versacarte-logo-trimmed.png",
@@ -15,21 +17,23 @@
     "icon": "/images/versacarte-logo-icon.png",
     "wordmark": "/images/versacarte-logo-wordmark.png"
   },
-  "specialization": "Mobile apps, web platforms and cloud backends for companies building serious digital products",
+  "specialization": "Electrical and telecommunications engineering, with software I design and ship myself — apps, platforms and connected systems.",
   "domain": "versacarte.com",
   "labsUrl": "https://labs.versacarte.com",
   "helpUrl": "https://help.versacarte.com",
   "portfolioUrl": "https://owner.versacarte.com",
-  "email": "hello@versacarte.com",
-  "phone": "",
-  "address": "Remote-first, serving clients globally",
-  "location": "Remote-first, worldwide",
+  "email": "owner@versacarte.com",
+  "address": "Nairobi, Kenya",
+  "location": "Nairobi, Kenya",
   "founder": "Gerard",
-  "category": "App & Web Studio",
-  "availability": "Accepting select engagements for Q3 2026",
+  "category": "Engineer & builder",
+  "availability": "",
+  "cvPath": "/cv/Gerard_Kapsowe_CV_Entry_Level_EE.docx",
+  "cvNote": "",
+  "degree": "BEng Electrical and Telecommunications Engineering — Moi University, Second Class Honours (2020–2025)",
   "social": {
-    "linkedin": "https://linkedin.com/company/versacarte",
-    "github": "https://github.com/versacarte"
+    "linkedin": "https://www.linkedin.com/in/gerard-kapsowe-7a0b69343",
+    "github": "https://github.com/R3V4TO"
   },
   "partnerships": [
     { "name": "Supabase", "label": "Supabase" },
@@ -37,165 +41,192 @@
     { "name": "Cloudflare", "label": "Cloudflare" }
   ],
   "about": {
-    "label": "About us",
-    "title": "A product studio built for global scale",
-    "body": "VersaCarte is a remote-first software studio that ships mobile applications, web platforms and connected systems for clients across continents. We design for clarity, performance and long-term ownership. Every deliverable is documented so your team can extend it after launch.",
-    "mission": "Our mission is simple: help ambitious businesses turn complex ideas into reliable software that works in the real world, whether that means a consumer app in London, a web platform in Singapore or an internal portal for a growing team in São Paulo.",
+    "label": "About",
+    "title": "Engineer by training. Builder by practice.",
+    "body": "I am Gerard, an electrical and telecommunications engineer. VersaCarte is my personal practice — the name I ship under — not a company that makes the work for me. I design, build and document the projects you see here.",
+    "mission": "I work across power, telecoms, firmware and full-stack software so a system can be understood from the sensor or circuit through to the interface people use.",
     "values": [
-      "End-to-end delivery from APIs and cloud backends to polished web and mobile UI",
-      "Documented architecture you can audit, extend and hand off",
-      "Global perspective with support for local payments, languages and connectivity"
+      "I own the work from schematic, firmware or API through to the product people touch",
+      "I document architecture so others can audit, extend and hand it on",
+      "I design for real conditions: variable power, connectivity, devices and payments"
     ],
-    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
-    "imageAlt": "Development team collaborating at a desk"
+    "image": "/images/hero.webp",
+    "imageAlt": "Engineering workspace with electronics and a laptop"
   },
   "hero": {
-    "title": "Business-ready applications and web platforms that we build end to end",
-    "subtitle": "A software studio for mobile apps, modern web platforms and cloud backends that ships for clients worldwide.",
-    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80&auto=format&fit=crop",
-    "imageAlt": "Developer workspace with laptop showing code"
+    "title": "Gerard is solving problems through electrical engineering, telecoms and software he builds himself",
+    "subtitle": "As an electrical and telecommunications engineer with a strong focus on mobile apps, web platforms and connected systems, he designs end-to-end work you can put on a CV and stand behind.",
+    "image": "/images/hero.webp",
+    "imageAlt": "Engineering workspace used as a portrait stand-in until a personal photo is added"
   },
   "vision": {
-    "label": "About us",
-    "title": "Software that ships. Systems you can own.",
-    "body": "VersaCarte is a software studio for businesses that need mobile apps, web platforms and cloud backends. We build production products with clear architecture and documentation: durable systems, not throwaway MVPs.",
-    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
-    "imageAlt": "Development team collaborating at a desk"
+    "label": "About",
+    "title": "Engineer by training. Builder by practice.",
+    "body": "I am Gerard. The projects on this site are work I created — Resphinx, VersaRent, FileSendNX, Smart Traffic Control and related systems — not studio output from a company team.",
+    "image": "/images/hero.webp",
+    "imageAlt": "Engineering workspace with electronics and a laptop"
   },
   "services": {
-    "label": "Services",
-    "title": "Pick what your product needs from the menu",
+    "label": "What I do",
+    "title": "Engineering and software I take from brief to working system",
     "items": [
       {
-        "id": "mobile",
-        "title": "Mobile applications",
-        "body": "React Native and Expo for iOS and Android, including marketplaces, field tools and consumer apps with Supabase or custom backends.",
-        "href": "/services#mobile",
-        "cta": "Get a mobile quote",
-        "ctaHref": "/contact?type=mobile"
+        "id": "electrical",
+        "title": "Electrical & telecoms",
+        "body": "Protection thinking, field documentation, networking and systems that have to hold up outside a lab.",
+        "href": "/about",
+        "cta": "Read the CV",
+        "ctaHref": "/cv",
+        "tags": ["Power systems", "Telecoms", "Documentation", "Field work"]
       },
       {
-        "id": "web",
-        "title": "Web platforms",
-        "body": "Astro and React sites, dashboards and internal portals with performance, SEO and conversion-focused architecture.",
-        "href": "/services#web",
-        "cta": "Get a web quote",
-        "ctaHref": "/contact?type=web"
+        "id": "software",
+        "title": "Apps & web platforms",
+        "body": "React Native, Expo, Astro and React products I design and ship with clear architecture.",
+        "href": "/work",
+        "cta": "See the work",
+        "ctaHref": "/work",
+        "tags": ["React Native", "Web apps", "Dashboards", "TypeScript"]
       },
       {
-        "id": "iot",
-        "title": "IoT & embedded",
-        "body": "ESP8266/32 telemetry, ultrasonic sensing and MQTT ingest using the same patterns behind traffic monitoring and tank-level prototypes.",
-        "href": "/services#iot",
-        "cta": "Get an IoT quote",
-        "ctaHref": "/contact?type=iot"
-      },
-      {
-        "id": "cloud",
-        "title": "Cloud & backend",
-        "body": "PostgreSQL, serverless APIs and Cloudflare Pages Functions that keep clients thin and business rules server-side.",
-        "href": "/services#cloud",
-        "cta": "Discuss your backend",
-        "ctaHref": "/contact?type=cloud"
-      },
-      {
-        "id": "engineering",
-        "title": "Product engineering",
-        "body": "Architecture reviews, technical scoping and delivery plans that keep complex builds on schedule from discovery through handoff.",
-        "href": "/services#engineering",
-        "cta": "Book product scoping",
-        "ctaHref": "/contact?type=engineering"
+        "id": "connected",
+        "title": "IoT & cloud",
+        "body": "Firmware, telemetry and backends that connect hardware to software people can actually use.",
+        "href": "/work",
+        "cta": "See connected systems",
+        "ctaHref": "/work/smart-traffic",
+        "tags": ["ESP8266", "MQTT", "Supabase", "Cloudflare"]
       }
     ]
   },
   "why": {
-    "label": "Why VersaCarte",
-    "title": "One team from architecture to App Store review",
-    "body": "Clients get API, web UI and mobile apps under one roof instead of three vendors who hand off blame. We design for real-world conditions including variable connectivity, diverse devices and the payment methods your market expects.",
-    "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&auto=format&fit=crop",
-    "imageAlt": "Developers reviewing work on large monitors"
+    "label": "How I work",
+    "title": "One person from schematic to shipped interface",
+    "body": "You work with me directly. Hardware, firmware, APIs and mobile or web UI stay in one thread instead of three vendors handing off blame.",
+    "image": "/images/close.webp",
+    "imageAlt": "Laptop and monitors during a build"
+  },
+  "process": {
+    "label": "How it works",
+    "title": "A simple path from first conversation to something you can use",
+    "image": "/images/process.webp",
+    "imageAlt": "Workbench with tools and electronics",
+    "steps": [
+      {
+        "n": "01",
+        "title": "Start a conversation",
+        "body": "We talk about the problem, constraints and whether I am the right engineer for it."
+      },
+      {
+        "n": "02",
+        "title": "Brief",
+        "body": "Scope, timeline and deliverables written down so the work stays honest."
+      },
+      {
+        "n": "03",
+        "title": "Build",
+        "body": "I design, implement and refine with feedback — firmware, software or both."
+      },
+      {
+        "n": "04",
+        "title": "Deliver",
+        "body": "Working system, source, and notes your team can pick up without me in the room."
+      },
+      {
+        "n": "05",
+        "title": "Support",
+        "body": "A short window after handoff for questions and small corrections."
+      }
+    ]
   },
   "stats": {
-    "title": "VersaCarte in numbers",
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80&auto=format&fit=crop",
+    "title": "In numbers",
+    "image": "/images/close.webp",
     "items": [
-      { "value": 3, "suffix": "+", "label": "Products shipped" },
-      { "value": 5, "suffix": "", "label": "Service lines" },
-      { "value": 48, "suffix": "hr", "label": "Discovery turnaround" },
-      { "value": 100, "suffix": "%", "label": "Documented handoffs" }
+      { "value": 3, "suffix": "+", "label": "Products I built" },
+      { "value": 1, "suffix": "", "label": "BEng, Electrical & Telecoms" },
+      { "value": 20, "suffix": "+", "label": "Projects completed" }
     ]
   },
   "work": {
-    "label": "Work",
-    "title": "Apps and systems we've shipped or are building",
-    "body": "Proof the studio builds and does not only advise. Detailed case studies are available for selected projects.",
+    "label": "Featured works",
+    "title": "Projects I created",
+    "body": "Selected systems I designed and built. Use them as proof of work on a CV, not as a company brochure.",
     "items": [
+      {
+        "slug": "resphinx",
+        "title": "Resphinx",
+        "status": "Live",
+        "teaser": "Property management I shipped for rent collection, repairs and tenant chat.",
+        "problem": "Rent, repairs and tenant talk were scattered across messages and spreadsheets.",
+        "stack": ["Web", "Android", "Payments"],
+        "image": "/images/resphinx-mark.png",
+        "cover": "/images/resphinx-cover.svg",
+        "imageAlt": "Resphinx property management app",
+        "caseStudy": "/work/resphinx",
+        "liveUrl": "https://resphinx.versacarte.com"
+      },
       {
         "slug": "versarent",
         "title": "VersaRent",
         "status": "In development",
-        "teaser": "Mobile property management for landlords and tenants.",
-        "problem": "Landlords were losing track of rent arrears across messaging apps and paper receipts.",
+        "teaser": "Mobile property management I am building for landlords and tenants.",
+        "problem": "Rent, units and arrears were scattered across messages and paper.",
         "stack": ["React Native", "Expo", "Supabase"],
         "image": "/images/versarent.svg",
-        "cover": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&auto=format&fit=crop",
-        "imageAlt": "Modern residential property managed through VersaRent",
-        "caseStudy": "/work/versarent"
+        "cover": "/images/versarent-cover.webp",
+        "imageAlt": "Residential property related to VersaRent",
+        "caseStudy": "/work/versarent",
+        "liveUrl": ""
       },
       {
         "slug": "filesendnx",
         "title": "FileSendNX",
         "status": "Shipped",
-        "teaser": "Secure file transfer so you can upload, share and track without friction.",
-        "problem": "Consultants needed secure file sharing without enterprise overhead.",
+        "teaser": "A secure file-transfer app I built so people can upload, share and track without friction.",
+        "problem": "Consultants needed sharing without enterprise overhead.",
         "stack": ["React Native", "TypeScript"],
         "image": "/images/filesendnx.svg",
         "cover": "/images/filesendnx-cover.svg",
-        "imageAlt": "FileSendNX secure file transfer app",
-        "caseStudy": "/work/filesendnx"
+        "imageAlt": "FileSendNX app",
+        "caseStudy": "/work/filesendnx",
+        "liveUrl": ""
       },
       {
         "slug": "smart-traffic",
         "title": "Smart Traffic Control",
         "status": "Shipped",
-        "teaser": "Sensor-driven intersection monitoring with a live analytics dashboard.",
-        "problem": "City planners lacked real-time intersection flow data for signal optimization.",
+        "teaser": "Sensor-driven intersection monitoring I built with a live analytics dashboard.",
+        "problem": "Planners lacked live flow data for signal decisions.",
         "stack": ["Arduino", "ESP8266", "Python"],
         "image": "/images/smart-traffic.svg",
-        "cover": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=80&auto=format&fit=crop",
-        "imageAlt": "Urban intersection monitored by Smart Traffic Control sensors",
-        "caseStudy": "/work/smart-traffic"
+        "cover": "/images/traffic-cover.webp",
+        "imageAlt": "Urban intersection related to Smart Traffic Control",
+        "caseStudy": "/work/smart-traffic",
+        "liveUrl": ""
       }
     ]
   },
   "stack": [
-    "React Native", "Expo", "TypeScript", "Astro", "React", "Supabase",
+    "Electrical engineering", "Telecoms", "React Native", "Expo", "TypeScript", "Astro", "React", "Supabase",
     "PostgreSQL", "Cloudflare", "ESP8266", "MQTT", "Python", ".NET"
   ],
   "footer": {
-    "newsletterTitle": "Get the free Web App vs Mobile App Decision Guide",
-    "newsletterSubtitle": "Not ready to book yet? Subscribe and we will add you to our list and send the planning guide built for teams evaluating their first digital product.",
-    "newsletterConsent": "Send me the guide and occasional VersaCarte updates."
+    "newsletterTitle": "Occasional notes on engineering and the products I am building",
+    "newsletterSubtitle": "No studio pitch. Just updates if you want them.",
+    "newsletterConsent": "Send me occasional notes from Gerard."
   },
   "nav": [
+    { "href": "#work", "label": "Works", "pageHref": "/work" },
     { "href": "/about", "label": "About", "pageHref": "/about" },
-    { "href": "#services", "label": "Services", "pageHref": "/#services" },
-    { "href": "#work", "label": "Work", "pageHref": "/#work" },
-    { "href": "/pricing", "label": "Pricing", "pageHref": "/pricing" },
-    { "href": "#contact", "label": "Contact", "pageHref": "/#contact" }
+    { "href": "/cv", "label": "CV", "pageHref": "/cv" },
+    { "href": "/contact", "label": "Contact", "pageHref": "/contact" }
   ],
   "mobileNav": [
     { "label": "Home", "href": "/" },
+    { "label": "Works", "href": "/work" },
     { "label": "About", "href": "/about" },
-    { "label": "Services", "href": "/services" },
-    { "label": "Work", "href": "/work" },
-    { "label": "Pricing", "href": "/pricing" },
-    { "label": "Blog", "href": "/blog" },
-    { "label": "Help", "href": "/help" },
-    { "label": "Labs", "href": "/labs" },
-    { "label": "Contact", "href": "/contact" },
-    { "label": "Planning guide", "href": "/guide/web-app-vs-mobile" },
-    { "label": "Terms", "href": "/terms" },
-    { "label": "Privacy", "href": "/privacy" }
+    { "label": "CV", "href": "/cv" },
+    { "label": "Contact", "href": "/contact" }
   ]
 }

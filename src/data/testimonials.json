@@ -1,18 +1,18 @@
 {
-  "label": "Testimonials",
+  "label": "Testimonial",
   "title": "What collaborators say",
   "items": [
     {
-      "quote": "Gerard approaches software the way a good electrical engineer approaches a panel. Every connection is documented and every failure mode is considered. The Smart Traffic prototype showed production-grade thinking in a university project.",
+      "quote": "Gerard approaches software the way a good electrical engineer approaches a panel. Every connection is documented and every failure mode is considered. The Smart Traffic prototype showed production-grade thinking.",
       "author": "Project Supervisor",
-      "role": "Electrical Engineering, JKUAT",
-      "context": "Smart Traffic Control system"
+      "role": "Electrical Engineering",
+      "context": "Smart Traffic Control"
     },
     {
-      "quote": "Clear communication, realistic timelines and code I could actually read during handoff. VersaCarte delivered FileSendNX with the kind of polish you expect from a much larger team.",
+      "quote": "Clear communication, realistic timelines and code I could actually read during handoff. Gerard delivered FileSendNX with the polish you expect from a much larger team — and he built it himself.",
       "author": "Early Adopter",
       "role": "Freelance consultant",
-      "context": "FileSendNX mobile app"
+      "context": "FileSendNX"
     }
   ]
 }
