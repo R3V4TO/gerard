@@ -1980,26 +1980,6 @@ body.is-menu-open {
   @apply mt-6 max-w-xl text-base text-muted sm:text-lg;
 }
 
-.hero-live {
-  @apply mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted;
-}
-
-.hero-live__rule {
-  @apply hidden h-px w-8 bg-line sm:block;
-}
-
-.hero-live__word {
-  display: inline-block;
-  min-width: 9.5rem;
-  color: var(--color-ink);
-  transition: opacity 180ms var(--ease-studio), transform 180ms var(--ease-studio);
-}
-
-.hero-live__word.is-out {
-  opacity: 0;
-  transform: translateY(0.25rem);
-}
-
 .luzia-hero__actions {
   @apply mt-8 flex flex-wrap gap-3;
 }
