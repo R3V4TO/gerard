@@ -3,7 +3,7 @@
   "personName": "Gerard",
   "firstName": "Gerard",
   "tagline": "Electrical and telecommunications engineer",
-  "seoDescription": "VersaCarte is Gerard's platform. He is an electrical and telecommunications engineer who designs and builds mobile apps, web platforms, IoT systems and cloud backends.",
+  "seoDescription": "Gerard's personal site. Electrical and telecommunications engineering in Nairobi, with Resphinx, FileSendNX and a traffic project.",
   "seoTitle": "VersaCarte | Gerard",
   "logo": {
     "full": "/images/versacarte-logo.png",
@@ -17,7 +17,7 @@
     "icon": "/images/versacarte-logo-icon.png",
     "wordmark": "/images/versacarte-logo-wordmark.png"
   },
-  "specialization": "Electrical and telecommunications engineering, with software I design and ship myself, including apps, platforms and connected systems.",
+  "specialization": "Electrical and telecommunications engineer. This is my personal site.",
   "domain": "versacarte.com",
   "labsUrl": "https://labs.versacarte.com",
   "helpUrl": "https://help.versacarte.com",
@@ -54,8 +54,8 @@
     "imageAlt": "Gerard in a suit"
   },
   "hero": {
-    "title": "Gerard is solving problems through electrical engineering, telecoms and software he builds himself",
-    "subtitle": "As an electrical and telecommunications engineer with a strong focus on mobile apps, web platforms and connected systems, he designs end-to-end work you can put on a CV and stand behind.",
+    "title": "I keep my engineering work here",
+    "subtitle": "I trained in electrical and telecommunications engineering. VersaCarte is my personal site. Resphinx, FileSendNX and the traffic monitor are the three projects on it.",
     "image": "/images/stock/laptop-work.jpg",
     "imageAlt": ""
   },
@@ -67,13 +67,13 @@
     "imageAlt": "Hands writing code on a laptop"
   },
   "services": {
-    "label": "What I do",
-    "title": "Engineering and software I take from brief to working system",
+    "label": "Background",
+    "title": "The engineering came first",
     "items": [
       {
         "id": "electrical",
         "title": "Electrical & telecoms",
-        "body": "Protection thinking, field documentation, networking and systems that have to hold up outside a lab.",
+        "body": "Most of my training is power and telecoms. Attachment work was at Kenya Power and in public-works design.",
         "href": "/about",
         "cta": "About me",
         "ctaHref": "/about",
@@ -81,21 +81,21 @@
       },
       {
         "id": "software",
-        "title": "Apps & web platforms",
-        "body": "React Native, Expo, Astro and React products I design and ship with clear architecture.",
-        "href": "/work",
-        "cta": "See the work",
-        "ctaHref": "/work",
-        "tags": ["React Native", "Web apps", "Dashboards", "TypeScript"]
+        "title": "Software when a project needs it",
+        "body": "I write a screen or a phone app when the engineering needs one. It sits next to the rest of the work.",
+        "href": "/#work",
+        "cta": "The three projects",
+        "ctaHref": "/#work",
+        "tags": ["Resphinx", "FileSendNX", "TypeScript", "Python"]
       },
       {
         "id": "connected",
-        "title": "IoT & cloud",
-        "body": "Firmware, telemetry and backends that connect hardware to software people can actually use.",
-        "href": "/work",
-        "cta": "See connected systems",
+        "title": "Hardware that reports back",
+        "body": "The traffic project is sensors at a junction, a radio link and a dashboard on the other end.",
+        "href": "/work/smart-traffic",
+        "cta": "Traffic project",
         "ctaHref": "/work/smart-traffic",
-        "tags": ["ESP8266", "MQTT", "Supabase", "Cloudflare"]
+        "tags": ["ESP8266", "Arduino", "Python", "MQTT"]
       }
     ]
   },
@@ -107,35 +107,35 @@
     "imageAlt": "Hands writing code on a laptop"
   },
   "process": {
-    "label": "How it works",
-    "title": "A simple path from first conversation to something you can use",
+    "label": "Context",
+    "title": "How these three came about",
     "image": "/images/stock/motherboard.jpg",
     "imageAlt": "Close-up of a computer motherboard",
     "steps": [
       {
         "n": "01",
-        "title": "Start a conversation",
-        "body": "We talk about the problem, constraints and whether I am the right engineer for it."
+        "title": "Training",
+        "body": "BEng Electrical and Telecommunications at Moi University, 2020 to 2025."
       },
       {
         "n": "02",
-        "title": "Brief",
-        "body": "Scope, timeline and deliverables written down so the work stays honest."
+        "title": "Field",
+        "body": "Kenya Power, public-works design, then fibre surveys."
       },
       {
         "n": "03",
-        "title": "Build",
-        "body": "I design, implement and refine with feedback for firmware, software or both."
+        "title": "Resphinx",
+        "body": "Property management I built for rent, repairs and tenant chat."
       },
       {
         "n": "04",
-        "title": "Deliver",
-        "body": "Working system, source and notes your team can pick up without me in the room."
+        "title": "FileSendNX",
+        "body": "A small file app so I could send something and see that it arrived."
       },
       {
         "n": "05",
-        "title": "Support",
-        "body": "A short support window after handoff for questions and small corrections."
+        "title": "Traffic",
+        "body": "Final-year monitor. Sensors at a junction and a Python dashboard."
       }
     ]
   },
@@ -149,14 +149,14 @@
     ]
   },
   "work": {
-    "label": "Featured works",
-    "title": "Projects I created",
-    "body": "Selected systems I designed and built.",
+    "label": "Projects",
+    "title": "Three things I built",
+    "body": "They are here so you can see the work. Resphinx is the one you can open.",
     "items": [
       {
         "slug": "resphinx",
         "title": "Resphinx",
-        "teaser": "Property management for rent collection, repairs and tenant chat.",
+        "teaser": "Rent, repairs and tenant chat. This one has a public address.",
         "problem": "Rent, repairs and tenant talk were scattered across messages and spreadsheets.",
         "stack": ["Web", "Android", "Payments"],
         "image": "/images/resphinx-mark.png",
@@ -167,7 +167,7 @@
       {
         "slug": "filesendnx",
         "title": "FileSendNX",
-        "teaser": "A secure file-transfer app I built so people can upload, share and track without friction.",
+        "teaser": "Send a file and see that it arrived.",
         "problem": "Consultants needed sharing without enterprise overhead.",
         "stack": ["React Native", "TypeScript"],
         "image": "/images/filesendnx.svg",
@@ -178,7 +178,7 @@
       {
         "slug": "smart-traffic",
         "title": "Smart Traffic Control",
-        "teaser": "Sensor-driven intersection monitoring I built with a live analytics dashboard.",
+        "teaser": "Sensors at a junction and a dashboard. My final-year project.",
         "problem": "Planners lacked live flow data for signal decisions.",
         "stack": ["Arduino", "ESP8266", "Python"],
         "image": "/images/smart-traffic.svg",

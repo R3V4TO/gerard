@@ -31,7 +31,14 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -657,7 +664,7 @@ body.is-menu-open {
 
 /* Work */
 .work-grid {
-  @apply mt-14 grid gap-5 sm:grid-cols-2;
+  @apply mt-14 grid gap-5 md:grid-cols-3;
 }
 
 .work-card {

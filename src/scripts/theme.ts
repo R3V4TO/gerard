@@ -1,25 +1,15 @@
-const STORAGE_KEY = 'versacarte-theme';
-const MANUAL_KEY = 'versacarte-theme-manual';
-
-function systemTheme(): 'light' | 'dark' {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
+const STORAGE_KEY = 'versacarte-theme-choice';
+const MANUAL_KEY = 'versacarte-theme-choice-set';
 
 function chosenTheme(): 'light' | 'dark' {
   const manual = localStorage.getItem(MANUAL_KEY) === '1';
   const stored = localStorage.getItem(STORAGE_KEY);
   if (manual && (stored === 'light' || stored === 'dark')) return stored;
-  return systemTheme();
+  return 'light';
 }
 
 export function initTheme(): void {
   applyTheme(chosenTheme());
-
-  const media = window.matchMedia('(prefers-color-scheme: dark)');
-  media.addEventListener('change', () => {
-    if (localStorage.getItem(MANUAL_KEY) === '1') return;
-    applyTheme(systemTheme());
-  });
 
   document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
     btn.addEventListener('click', () => {
