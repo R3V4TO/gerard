@@ -5,8 +5,8 @@
   "liveUrl": "",
   "tagline": "Sensor-driven intersection monitoring with live analytics",
   "stack": ["Arduino", "ESP8266", "Python", "MQTT"],
-  "hero": "/images/smart-traffic.svg",
-  "cover": "/images/smart-traffic.svg",
+  "hero": "/images/smart-traffic-control/logo.svg",
+  "cover": "/images/smart-traffic-control/logo.svg",
   "problem": {
     "title": "The problem",
     "body": "Urban intersections in growing East African cities lack real-time traffic data. Manual counts are expensive and outdated within weeks. City planners need continuous flow metrics to justify signal timing changes."

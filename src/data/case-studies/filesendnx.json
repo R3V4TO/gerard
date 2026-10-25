@@ -5,8 +5,8 @@
   "liveUrl": "",
   "tagline": "Secure file transfer so you can upload, share and track without friction",
   "stack": ["React Native", "TypeScript", "Secure storage"],
-  "hero": "/images/filesendnx.svg",
-  "cover": "/images/filesendnx.svg",
+  "hero": "/images/filesendnx/logo.svg",
+  "cover": "/images/filesendnx/logo.svg",
   "problem": {
     "title": "The problem",
     "body": "Consultants and small teams needed a way to move sensitive files between clients without enterprise file-sharing contracts, messy email attachments or links that expire without notice. Existing tools were either too heavy, too expensive or too opaque for everyday use."

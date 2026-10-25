@@ -11,6 +11,7 @@ export default defineConfig({
   redirects: {
     '/cv': '/about',
     '/work/versarent': '/work/resphinx',
+    '/work/sendfile': '/work/filesendnx',
   },
   prefetch: {
     prefetchAll: true,

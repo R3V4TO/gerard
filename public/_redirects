@@ -3,3 +3,5 @@
 /cv/ /about 301
 /work/versarent /work/resphinx 301
 /work/versarent/ /work/resphinx 301
+/work/sendfile /work/filesendnx 301
+/work/sendfile/ /work/filesendnx 301

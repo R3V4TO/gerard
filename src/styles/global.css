@@ -695,7 +695,12 @@ body.is-menu-open {
 }
 
 .work-card__icon {
-  @apply flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-line bg-surface;
+  @apply flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-line bg-[#fafafa] p-2.5;
+}
+
+[data-theme="dark"] .work-card__icon {
+  background: #fafafa;
+  border-color: #dcdcdc;
 }
 
 .work-card__icon img {
@@ -1261,7 +1266,12 @@ body.is-menu-open {
 }
 
 .case-mark {
-  @apply flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl border border-line bg-white;
+  @apply flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl border border-line bg-[#fafafa] p-2.5;
+}
+
+[data-theme="dark"] .case-mark {
+  background: #fafafa;
+  border-color: #dcdcdc;
 }
 
 .case-mark img {

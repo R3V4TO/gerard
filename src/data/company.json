@@ -55,7 +55,7 @@
   },
   "hero": {
     "title": "I keep my engineering work here",
-    "subtitle": "I trained in electrical and telecommunications engineering. VersaCarte is my personal site. Resphinx, FileSendNX and the traffic monitor are the three projects on it.",
+    "subtitle": "I trained in electrical and telecommunications engineering. VersaCarte is my personal site. Resphinx, FileSendNX and the traffic monitor are the projects on it.",
     "image": "/images/stock/laptop-work.jpg",
     "imageAlt": ""
   },
@@ -84,9 +84,9 @@
         "title": "Software when a project needs it",
         "body": "I write a screen or a phone app when the engineering needs one. It sits next to the rest of the work.",
         "href": "/#work",
-        "cta": "The three projects",
+        "cta": "The projects",
         "ctaHref": "/#work",
-        "tags": ["Resphinx", "FileSendNX", "TypeScript", "Python"]
+        "tags": ["Resphinx", "FileSendNX", "Traffic", "Python"]
       },
       {
         "id": "connected",
@@ -108,7 +108,7 @@
   },
   "process": {
     "label": "Context",
-    "title": "How these three came about",
+    "title": "How the projects came about",
     "image": "/images/stock/motherboard.jpg",
     "imageAlt": "Close-up of a computer motherboard",
     "steps": [
@@ -130,7 +130,7 @@
       {
         "n": "04",
         "title": "FileSendNX",
-        "body": "A small file app so I could send something and see that it arrived."
+        "body": "The sendfile app. Pass a file and see that it arrived."
       },
       {
         "n": "05",
@@ -150,8 +150,8 @@
   },
   "work": {
     "label": "Projects",
-    "title": "Three things I built",
-    "body": "They are here so you can see the work. Resphinx is the one you can open.",
+    "title": "What I have built",
+    "body": "Each card leads with the project logo. Resphinx is the one you can open.",
     "items": [
       {
         "slug": "resphinx",
@@ -167,11 +167,11 @@
       {
         "slug": "filesendnx",
         "title": "FileSendNX",
-        "teaser": "Send a file and see that it arrived.",
-        "problem": "Consultants needed sharing without enterprise overhead.",
+        "teaser": "The sendfile app. Pass a file and see that it arrived.",
+        "problem": "Email threads were a poor place to check that a file arrived.",
         "stack": ["React Native", "TypeScript"],
-        "image": "/images/filesendnx.svg",
-        "imageAlt": "FileSendNX app",
+        "image": "/images/filesendnx/logo.svg",
+        "imageAlt": "FileSendNX logo",
         "caseStudy": "/work/filesendnx",
         "liveUrl": ""
       },
@@ -181,8 +181,8 @@
         "teaser": "Sensors at a junction and a dashboard. My final-year project.",
         "problem": "Planners lacked live flow data for signal decisions.",
         "stack": ["Arduino", "ESP8266", "Python"],
-        "image": "/images/smart-traffic.svg",
-        "imageAlt": "Urban intersection related to Smart Traffic Control",
+        "image": "/images/smart-traffic-control/logo.svg",
+        "imageAlt": "Smart Traffic Control folder mark",
         "caseStudy": "/work/smart-traffic",
         "liveUrl": ""
       }
