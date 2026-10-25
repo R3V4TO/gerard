@@ -1,1 +1,5 @@
-# www → apex: add both hostnames in Cloudflare Pages → Custom domains for versacarte-company.
+# www → apex: add both hostnames on Worker versacarte-company → Domains & Routes.
+/cv /about 301
+/cv/ /about 301
+/work/versarent /work/resphinx 301
+/work/versarent/ /work/resphinx 301

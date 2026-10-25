@@ -6,7 +6,7 @@
   "tagline": "Secure file transfer so you can upload, share and track without friction",
   "stack": ["React Native", "TypeScript", "Secure storage"],
   "hero": "/images/filesendnx.svg",
-  "cover": "/images/filesendnx-cover.svg",
+  "cover": "/images/filesendnx.svg",
   "problem": {
     "title": "The problem",
     "body": "Consultants and small teams needed a way to move sensitive files between clients without enterprise file-sharing contracts, messy email attachments or links that expire without notice. Existing tools were either too heavy, too expensive or too opaque for everyday use."
@@ -27,10 +27,9 @@
   },
   "outcome": {
     "title": "Outcome",
-    "body": "I shipped FileSendNX as a production-ready mobile app. Transfers stay simple for non-technical users and the codebase is documented for later work."
+    "body": "FileSendNX is a mobile app for transfers. The flow stays simple for non-technical users and the codebase is documented for later work."
   },
   "metrics": [
-    { "value": "Shipped", "label": "Production app" },
     { "value": "2", "label": "Platforms" },
     { "value": "1", "label": "Unified codebase" }
   ]

@@ -3,51 +3,26 @@ interface Props {
   title: string;
   teaser: string;
   problem?: string;
-  status: string;
   stack: string[];
   image: string;
-  cover?: string;
   imageAlt?: string;
   slug: string;
   caseStudy?: string | null;
   liveUrl?: string;
 }
 
-const { title, teaser, problem, status, stack, image, cover, imageAlt, slug, caseStudy, liveUrl } = Astro.props;
+const { title, teaser, problem, stack, image, imageAlt, slug, caseStudy, liveUrl } = Astro.props;
 const link = caseStudy ?? `/work/${slug}`;
-const alt = imageAlt ?? `${title} project preview`;
+const alt = imageAlt ?? `${title} icon`;
 ---
 
 <article class="work-card" id={slug} data-reveal-scale>
-  <div class="work-card__media">
-    {
-      cover ? (
-        <img
-          src={cover}
-          alt={alt}
-          class="work-card__cover"
-          loading="lazy"
-          width="640"
-          height="400"
-        />
-      ) : (
-        <img src={image} alt={alt} class="work-card__cover work-card__cover--logo" loading="lazy" />
-      )
-    }
-    <div class="work-card__shade" aria-hidden="true"></div>
-    {cover && (
-      <div class="work-card__logo-badge">
-        <img src={image} alt="" class="work-card__logo" loading="lazy" width="48" height="32" />
-      </div>
-    )}
-    {caseStudy && (
-      <div class="work-card__preview">
-        <a href={caseStudy} class="link-arrow text-white no-underline">Read case study →</a>
-      </div>
-    )}
+  <div class="work-card__top">
+    <div class="work-card__icon">
+      <img src={image} alt={alt} width="72" height="72" loading="lazy" decoding="async" />
+    </div>
   </div>
   <div class="work-card__body">
-    <span class="work-card__status">{status}</span>
     <h3 class="work-card__title">{title}</h3>
     {problem && <p class="work-card__problem">{problem}</p>}
     <p class="work-card__teaser">{teaser}</p>
@@ -57,7 +32,7 @@ const alt = imageAlt ?? `${title} project preview`;
     <div class="mt-5 flex flex-wrap gap-4">
       <a href={link} class="link-arrow">{caseStudy ? 'Case study' : 'View project'}</a>
       {liveUrl && (
-        <a href={liveUrl} class="link-arrow" target="_blank" rel="noopener noreferrer">Open live app</a>
+        <a href={liveUrl} class="link-arrow" target="_blank" rel="noopener noreferrer">Open the app</a>
       )}
     </div>
   </div>

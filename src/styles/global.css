@@ -251,7 +251,7 @@
 }
 
 .site-header__wordmark {
-  @apply flex min-w-0 flex-col justify-center gap-0.5;
+  @apply flex min-w-0 items-baseline gap-2;
 }
 
 .site-header__wordmark-name {
@@ -259,26 +259,25 @@
   font-size: clamp(1.15rem, 2.4vw, 1.45rem);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink);
 }
 
-.site-header__wordmark-tag {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.site-header__wordmark-kind {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
   color: var(--color-muted);
-  white-space: nowrap;
 }
 
 [data-theme="dark"] .site-header .site-header__wordmark-name {
   color: #fff;
 }
 
-[data-theme="dark"] .site-header .site-header__wordmark-tag {
-  color: rgb(255 255 255 / 0.7);
+[data-theme="dark"] .site-header .site-header__wordmark-kind {
+  color: rgb(255 255 255 / 0.62);
 }
 
 .site-header__mark {
@@ -405,6 +404,10 @@ body.is-menu-open {
   background: linear-gradient(135deg, rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.28));
 }
 
+.photo-panel--portrait .photo-panel__shade {
+  background: linear-gradient(180deg, transparent 62%, rgb(0 0 0 / 0.12));
+}
+
 .photo-panel--stats .photo-panel__shade {
   background: rgb(0 0 0 / 0.72);
 }
@@ -486,7 +489,7 @@ body.is-menu-open {
 
 /* Marquee */
 .tech-marquee {
-  @apply overflow-hidden border-y border-line bg-ink py-4 text-white;
+  @apply overflow-hidden border-y border-line bg-canvas py-4;
 }
 
 .tech-marquee__track {
@@ -494,12 +497,20 @@ body.is-menu-open {
 }
 
 .tech-marquee__item {
-  @apply text-xs font-semibold uppercase tracking-[0.2em] text-white/70;
+  @apply text-xs font-semibold uppercase tracking-[0.2em] text-muted;
 }
 
 .tech-marquee__item::after {
   content: "·";
-  @apply ml-10 text-white/30;
+  @apply ml-10 text-line;
+}
+
+[data-theme="dark"] .tech-marquee {
+  @apply bg-dark text-white;
+}
+
+[data-theme="dark"] .tech-marquee__item {
+  color: rgb(255 255 255 / 0.7);
 }
 
 /* Sections */
@@ -646,50 +657,46 @@ body.is-menu-open {
 
 /* Work */
 .work-grid {
-  @apply mt-14 grid gap-6 lg:grid-cols-3;
+  @apply mt-14 grid gap-5 sm:grid-cols-2;
 }
 
 .work-card {
-  @apply overflow-hidden border border-line bg-white transition-all duration-300;
+  @apply flex flex-col border border-line bg-white p-6 transition-all duration-300;
 }
 
 .work-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgb(0 0 0 / 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgb(0 0 0 / 0.08);
 }
 
-.work-card__media {
-  @apply relative aspect-[16/10] overflow-hidden bg-surface;
+@media (hover: hover) and (pointer: fine) {
+  .work-grid:hover .work-card {
+    opacity: 0.48;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .work-grid:hover .work-card:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgb(0 0 0 / 0.08);
+  }
 }
 
-.work-card__cover {
-  @apply absolute inset-0 h-full w-full object-cover transition-transform duration-700;
-  transition-timing-function: var(--ease-studio);
+.work-card__top {
+  @apply flex items-start justify-between gap-4;
 }
 
-.work-card__cover--logo {
-  @apply object-contain p-10;
+.work-card__icon {
+  @apply flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-line bg-surface;
 }
 
-.work-card:hover .work-card__cover {
-  transform: scale(1.06);
-}
-
-.work-card__shade {
-  @apply absolute inset-0;
-  background: linear-gradient(180deg, transparent 40%, rgb(0 0 0 / 0.35) 100%);
-}
-
-.work-card__logo-badge {
-  @apply absolute bottom-4 left-4 z-10 flex items-center justify-center rounded border border-white/30 bg-white/95 p-2 shadow-lg backdrop-blur-sm;
-}
-
-.work-card__logo {
-  @apply h-8 w-auto max-w-[4.5rem] object-contain;
+.work-card__icon img {
+  @apply h-full w-full object-contain;
 }
 
 .work-card__body {
-  @apply p-6;
+  @apply pt-5;
 }
 
 .work-card__status {
@@ -836,12 +843,21 @@ body.is-menu-open {
   color: #fff;
 }
 
-.footer-studio__wordmark-tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgb(255 255 255 / 0.65);
+.footer-studio__wordmark-name span {
+  margin-left: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgb(255 255 255 / 0.62);
+}
+
+.footer-studio__domain {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgb(255 255 255 / 0.55);
 }
 
 .footer-studio__logo {
@@ -1237,21 +1253,12 @@ body.is-menu-open {
   @apply border-b border-line bg-surface py-20 pt-36;
 }
 
-.case-hero__visual {
-  @apply relative overflow-hidden border border-line;
-  aspect-ratio: 21 / 9;
+.case-mark {
+  @apply flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl border border-line bg-white;
 }
 
-.case-hero__img {
-  @apply h-full w-full object-cover;
-}
-
-.case-hero__logo {
-  @apply absolute bottom-5 left-5 flex items-center justify-center rounded border border-white/30 bg-white/95 p-3 shadow-lg;
-}
-
-.case-hero__logo img {
-  @apply h-10 w-auto;
+.case-mark img {
+  @apply h-full w-full object-contain;
 }
 
 .case-metrics {
@@ -1290,12 +1297,13 @@ body.is-menu-open {
   @apply mt-2 text-xs text-accent-warm;
 }
 
-.work-card__preview {
-  @apply absolute inset-0 z-20 flex items-end bg-ink/75 p-6 opacity-0 transition-opacity duration-300;
+.about-layout {
+  @apply grid items-start gap-8 md:grid-cols-[auto_1fr] md:items-center md:gap-12;
 }
 
-.work-card:hover .work-card__preview {
-  @apply opacity-100;
+.about-person {
+  @apply h-32 w-[6.5rem] rounded-2xl border border-line object-cover;
+  object-position: center 16%;
 }
 
 /* Service CTA */
@@ -1857,20 +1865,45 @@ body.is-menu-open {
 
 /* Luzia-inspired personal layout — fonts stay Inter + Instrument Serif */
 .luzia-hero {
-  @apply bg-canvas pt-28 pb-16 sm:pt-32 sm:pb-24;
+  @apply relative isolate overflow-hidden bg-canvas pt-28 pb-16 sm:pt-32 sm:pb-24;
 }
 
-.luzia-hero__grid {
-  @apply grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16;
+.luzia-hero__copy {
+  @apply relative z-10 max-w-3xl;
 }
 
-.luzia-hero__photo {
-  @apply relative overflow-hidden rounded-[1.75rem];
-  aspect-ratio: 5 / 4;
+.blend-section,
+.luzia-hero {
+  isolation: isolate;
 }
 
-.luzia-hero__photo img {
+.blend-wash {
+  @apply pointer-events-none absolute inset-0 z-0;
+}
+
+.blend-wash img {
   @apply h-full w-full object-cover;
+  opacity: 0.2;
+  object-position: right center;
+  filter: grayscale(0.25) saturate(0.75);
+}
+
+.blend-wash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, var(--color-canvas) 0%, color-mix(in srgb, var(--color-canvas) 42%, transparent) 22%, color-mix(in srgb, var(--color-canvas) 42%, transparent) 74%, var(--color-canvas) 100%),
+    linear-gradient(90deg, var(--color-canvas) 0%, color-mix(in srgb, var(--color-canvas) 72%, transparent) 46%, color-mix(in srgb, var(--color-canvas) 18%, transparent) 100%);
+}
+
+.blend-section {
+  @apply relative overflow-hidden;
+}
+
+.blend-section .container-wide,
+.luzia-hero .container-wide {
+  @apply relative z-10;
 }
 
 .luzia-hero__mark {
@@ -1885,6 +1918,10 @@ body.is-menu-open {
   @apply mb-5 inline-block rounded-full border border-line px-3 py-1.5 text-xs uppercase tracking-widest text-muted;
 }
 
+.luzia-hero__note {
+  @apply mb-6 text-xs font-semibold uppercase tracking-[0.16em] text-muted;
+}
+
 .luzia-hero__title {
   font-family: var(--font-display);
   font-weight: 400;
@@ -1897,8 +1934,69 @@ body.is-menu-open {
   @apply mt-6 max-w-xl text-base text-muted sm:text-lg;
 }
 
+.hero-live {
+  @apply mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted;
+}
+
+.hero-live__rule {
+  @apply hidden h-px w-8 bg-line sm:block;
+}
+
+.hero-live__word {
+  display: inline-block;
+  min-width: 9.5rem;
+  color: var(--color-ink);
+  transition: opacity 180ms var(--ease-studio), transform 180ms var(--ease-studio);
+}
+
+.hero-live__word.is-out {
+  opacity: 0;
+  transform: translateY(0.25rem);
+}
+
 .luzia-hero__actions {
   @apply mt-8 flex flex-wrap gap-3;
+}
+
+.practice {
+  @apply mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16;
+}
+
+.practice__list {
+  @apply flex flex-col;
+}
+
+.practice__tab {
+  @apply flex items-baseline gap-4 border-b border-line py-4 text-left text-muted;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  background: transparent;
+  cursor: pointer;
+}
+
+.practice__tab span {
+  @apply text-xs font-semibold tracking-[0.18em] text-muted;
+  font-family: var(--font-sans);
+}
+
+.practice__tab.is-active {
+  color: var(--color-ink);
+}
+
+.practice__panel h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+}
+
+.practice__panel p {
+  @apply mt-4 max-w-xl text-muted;
+}
+
+.practice__panel .btn {
+  @apply mt-8;
 }
 
 .luzia-section-head {
@@ -1985,7 +2083,7 @@ body.is-menu-open {
 }
 
 .luzia-process {
-  @apply grid items-start gap-12 lg:grid-cols-2;
+  @apply relative z-10 max-w-3xl;
 }
 
 .luzia-process__steps {
@@ -1993,7 +2091,11 @@ body.is-menu-open {
 }
 
 .luzia-process__steps li {
-  @apply grid grid-cols-[3rem_1fr] gap-4;
+  @apply grid grid-cols-[3rem_1fr] gap-4 rounded-2xl px-2 py-1 transition-colors duration-300;
+}
+
+.luzia-process__steps li:hover {
+  background: color-mix(in srgb, var(--color-ink) 4%, transparent);
 }
 
 .luzia-process__steps span {
@@ -2007,15 +2109,6 @@ body.is-menu-open {
 
 .luzia-process__steps p {
   @apply mt-1 text-sm text-muted;
-}
-
-.luzia-process__photo {
-  @apply overflow-hidden rounded-[1.75rem];
-}
-
-.luzia-process__photo img {
-  @apply h-full w-full object-cover;
-  min-height: 28rem;
 }
 
 .luzia-faq {
@@ -2039,23 +2132,18 @@ body.is-menu-open {
 }
 
 .luzia-close {
-  @apply relative min-h-[28rem] overflow-hidden;
-}
-
-.luzia-close__media img {
-  @apply absolute inset-0 h-full w-full object-cover;
-  filter: brightness(0.38);
+  @apply relative overflow-hidden;
 }
 
 .luzia-close__content {
-  @apply relative z-10 flex min-h-[28rem] flex-col justify-end pb-16 pt-32 text-white;
+  @apply relative z-10 flex min-h-[22rem] flex-col justify-end pb-16 pt-24;
 }
 
 .luzia-close__content h2 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 400;
-  color: #fff;
+  color: var(--color-ink);
   max-width: 18ch;
 }
 

@@ -6,7 +6,7 @@
   "tagline": "Mobile property management for landlords and tenants",
   "stack": ["React Native", "Expo", "Supabase", "Payments"],
   "hero": "/images/versarent.svg",
-  "cover": "/images/versarent-cover.webp",
+  "cover": "/images/versarent.svg",
   "problem": {
     "title": "The problem",
     "body": "Landlords managing multiple units still rely on messaging threads, paper receipts and manual rent tracking. Tenants miss payment deadlines and landlords lose visibility into arrears until it is too late to act."

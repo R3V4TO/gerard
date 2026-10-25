@@ -8,8 +8,7 @@ export const guideMeta = {
   updated: 'July 2026',
   path: '/guide/web-app-vs-mobile',
   downloadPath: '/downloads/versacarte-web-vs-mobile-guide.html',
-  coverImage:
-    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80&auto=format&fit=crop',
+  coverImage: '/images/stock/laptop-work.jpg',
 };
 
 export const guideChapters = [

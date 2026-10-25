@@ -13,12 +13,11 @@ import company from '../data/company.json';
       <p class="section-label" data-reveal>Contact</p>
       <h1 class="section-studio__title" data-reveal>Email me</h1>
       <p class="section-studio__body" data-reveal>
-        I read every note. Include the problem, timeline and how you found this site — including if you came from a CV.
+        I read every note. Include the problem, timeline and how you found this site.
         I reply from {company.email}.
       </p>
       <div class="mt-8 flex flex-wrap gap-3" data-reveal>
         <a href={`mailto:${company.email}`} class="btn-solid">Open email</a>
-        <a href="/cv" class="btn">View CV</a>
       </div>
       <div class="mt-12 max-w-2xl" data-reveal>
         <ContactForm />

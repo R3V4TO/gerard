@@ -3,8 +3,8 @@
   "personName": "Gerard",
   "firstName": "Gerard",
   "tagline": "Electrical and telecommunications engineer",
-  "seoDescription": "Gerard is an electrical and telecommunications engineer who designs and builds mobile apps, web platforms, IoT systems and cloud backends. This is his personal reference site and CV.",
-  "seoTitle": "Gerard | Electrical & Telecommunications Engineer",
+  "seoDescription": "VersaCarte is Gerard's platform. He is an electrical and telecommunications engineer who designs and builds mobile apps, web platforms, IoT systems and cloud backends.",
+  "seoTitle": "VersaCarte | Gerard",
   "logo": {
     "full": "/images/versacarte-logo.png",
     "trimmed": "/images/versacarte-logo-trimmed.png",
@@ -17,7 +17,7 @@
     "icon": "/images/versacarte-logo-icon.png",
     "wordmark": "/images/versacarte-logo-wordmark.png"
   },
-  "specialization": "Electrical and telecommunications engineering, with software I design and ship myself — apps, platforms and connected systems.",
+  "specialization": "Electrical and telecommunications engineering, with software I design and ship myself, including apps, platforms and connected systems.",
   "domain": "versacarte.com",
   "labsUrl": "https://labs.versacarte.com",
   "helpUrl": "https://help.versacarte.com",
@@ -30,7 +30,7 @@
   "availability": "",
   "cvPath": "/cv/Gerard_Kapsowe_CV_Entry_Level_EE.docx",
   "cvNote": "",
-  "degree": "BEng Electrical and Telecommunications Engineering — Moi University, Second Class Honours (2020–2025)",
+  "degree": "BEng Electrical and Telecommunications Engineering, Moi University, Second Class Honours (2020-2025)",
   "social": {
     "linkedin": "https://www.linkedin.com/in/gerard-kapsowe-7a0b69343",
     "github": "https://github.com/R3V4TO"
@@ -43,28 +43,28 @@
   "about": {
     "label": "About",
     "title": "Engineer by training. Builder by practice.",
-    "body": "I am Gerard, an electrical and telecommunications engineer. VersaCarte is my personal practice — the name I ship under — not a company that makes the work for me. I design, build and document the projects you see here.",
+    "body": "I am Gerard, an electrical and telecommunications engineer. VersaCarte is my personal practice and the name I ship under. It is not a company that makes the work for me. I design, build and document the projects you see here.",
     "mission": "I work across power, telecoms, firmware and full-stack software so a system can be understood from the sensor or circuit through to the interface people use.",
     "values": [
       "I own the work from schematic, firmware or API through to the product people touch",
       "I document architecture so others can audit, extend and hand it on",
       "I design for real conditions: variable power, connectivity, devices and payments"
     ],
-    "image": "/images/hero.webp",
-    "imageAlt": "Engineering workspace with electronics and a laptop"
+    "image": "/images/portraits/suit.jpg",
+    "imageAlt": "Gerard in a suit"
   },
   "hero": {
     "title": "Gerard is solving problems through electrical engineering, telecoms and software he builds himself",
     "subtitle": "As an electrical and telecommunications engineer with a strong focus on mobile apps, web platforms and connected systems, he designs end-to-end work you can put on a CV and stand behind.",
-    "image": "/images/hero.webp",
-    "imageAlt": "Engineering workspace used as a portrait stand-in until a personal photo is added"
+    "image": "/images/stock/laptop-work.jpg",
+    "imageAlt": ""
   },
   "vision": {
     "label": "About",
     "title": "Engineer by training. Builder by practice.",
-    "body": "I am Gerard. The projects on this site are work I created — Resphinx, VersaRent, FileSendNX, Smart Traffic Control and related systems — not studio output from a company team.",
-    "image": "/images/hero.webp",
-    "imageAlt": "Engineering workspace with electronics and a laptop"
+    "body": "I am Gerard. The projects on this site are work I created, including Resphinx, FileSendNX, Smart Traffic Control and related systems. They are not studio output from a company team.",
+    "image": "/images/stock/laptop-desk.jpg",
+    "imageAlt": "Hands writing code on a laptop"
   },
   "services": {
     "label": "What I do",
@@ -75,8 +75,8 @@
         "title": "Electrical & telecoms",
         "body": "Protection thinking, field documentation, networking and systems that have to hold up outside a lab.",
         "href": "/about",
-        "cta": "Read the CV",
-        "ctaHref": "/cv",
+        "cta": "About me",
+        "ctaHref": "/about",
         "tags": ["Power systems", "Telecoms", "Documentation", "Field work"]
       },
       {
@@ -103,14 +103,14 @@
     "label": "How I work",
     "title": "One person from schematic to shipped interface",
     "body": "You work with me directly. Hardware, firmware, APIs and mobile or web UI stay in one thread instead of three vendors handing off blame.",
-    "image": "/images/close.webp",
-    "imageAlt": "Laptop and monitors during a build"
+    "image": "/images/stock/laptop-desk.jpg",
+    "imageAlt": "Hands writing code on a laptop"
   },
   "process": {
     "label": "How it works",
     "title": "A simple path from first conversation to something you can use",
-    "image": "/images/process.webp",
-    "imageAlt": "Workbench with tools and electronics",
+    "image": "/images/stock/motherboard.jpg",
+    "imageAlt": "Close-up of a computer motherboard",
     "steps": [
       {
         "n": "01",
@@ -125,69 +125,52 @@
       {
         "n": "03",
         "title": "Build",
-        "body": "I design, implement and refine with feedback — firmware, software or both."
+        "body": "I design, implement and refine with feedback for firmware, software or both."
       },
       {
         "n": "04",
         "title": "Deliver",
-        "body": "Working system, source, and notes your team can pick up without me in the room."
+        "body": "Working system, source and notes your team can pick up without me in the room."
       },
       {
         "n": "05",
         "title": "Support",
-        "body": "A short window after handoff for questions and small corrections."
+        "body": "A short support window after handoff for questions and small corrections."
       }
     ]
   },
   "stats": {
     "title": "In numbers",
-    "image": "/images/close.webp",
+    "image": "/images/stock/laptop-desk.jpg",
     "items": [
       { "value": 3, "suffix": "+", "label": "Products I built" },
       { "value": 1, "suffix": "", "label": "BEng, Electrical & Telecoms" },
-      { "value": 20, "suffix": "+", "label": "Projects completed" }
+      { "value": 2025, "suffix": "", "label": "Graduated, Moi University" }
     ]
   },
   "work": {
     "label": "Featured works",
     "title": "Projects I created",
-    "body": "Selected systems I designed and built. Use them as proof of work on a CV, not as a company brochure.",
+    "body": "Selected systems I designed and built.",
     "items": [
       {
         "slug": "resphinx",
         "title": "Resphinx",
-        "status": "Live",
-        "teaser": "Property management I shipped for rent collection, repairs and tenant chat.",
+        "teaser": "Property management for rent collection, repairs and tenant chat.",
         "problem": "Rent, repairs and tenant talk were scattered across messages and spreadsheets.",
         "stack": ["Web", "Android", "Payments"],
         "image": "/images/resphinx-mark.png",
-        "cover": "/images/resphinx-cover.svg",
         "imageAlt": "Resphinx property management app",
         "caseStudy": "/work/resphinx",
         "liveUrl": "https://resphinx.versacarte.com"
       },
       {
-        "slug": "versarent",
-        "title": "VersaRent",
-        "status": "In development",
-        "teaser": "Mobile property management I am building for landlords and tenants.",
-        "problem": "Rent, units and arrears were scattered across messages and paper.",
-        "stack": ["React Native", "Expo", "Supabase"],
-        "image": "/images/versarent.svg",
-        "cover": "/images/versarent-cover.webp",
-        "imageAlt": "Residential property related to VersaRent",
-        "caseStudy": "/work/versarent",
-        "liveUrl": ""
-      },
-      {
         "slug": "filesendnx",
         "title": "FileSendNX",
-        "status": "Shipped",
         "teaser": "A secure file-transfer app I built so people can upload, share and track without friction.",
         "problem": "Consultants needed sharing without enterprise overhead.",
         "stack": ["React Native", "TypeScript"],
         "image": "/images/filesendnx.svg",
-        "cover": "/images/filesendnx-cover.svg",
         "imageAlt": "FileSendNX app",
         "caseStudy": "/work/filesendnx",
         "liveUrl": ""
@@ -195,12 +178,10 @@
       {
         "slug": "smart-traffic",
         "title": "Smart Traffic Control",
-        "status": "Shipped",
         "teaser": "Sensor-driven intersection monitoring I built with a live analytics dashboard.",
         "problem": "Planners lacked live flow data for signal decisions.",
         "stack": ["Arduino", "ESP8266", "Python"],
         "image": "/images/smart-traffic.svg",
-        "cover": "/images/traffic-cover.webp",
         "imageAlt": "Urban intersection related to Smart Traffic Control",
         "caseStudy": "/work/smart-traffic",
         "liveUrl": ""
@@ -219,14 +200,12 @@
   "nav": [
     { "href": "#work", "label": "Works", "pageHref": "/work" },
     { "href": "/about", "label": "About", "pageHref": "/about" },
-    { "href": "/cv", "label": "CV", "pageHref": "/cv" },
     { "href": "/contact", "label": "Contact", "pageHref": "/contact" }
   ],
   "mobileNav": [
     { "label": "Home", "href": "/" },
     { "label": "Works", "href": "/work" },
     { "label": "About", "href": "/about" },
-    { "label": "CV", "href": "/cv" },
     { "label": "Contact", "href": "/contact" }
   ]
 }

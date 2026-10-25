@@ -2,37 +2,38 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WorkCard from '../components/WorkCard.astro';
 import FaqList from '../components/FaqList.astro';
+import TechMarquee from '../components/TechMarquee.astro';
 import company from '../data/company.json';
 
 const featured = company.work.items;
+const focuses = ['power systems', 'mobile apps', 'firmware', 'web platforms'];
 ---
 
 <BaseLayout>
   <section id="hero" class="luzia-hero scroll-mt-24">
-    <div class="container-wide luzia-hero__grid">
-      <div class="luzia-hero__photo" data-hero-line>
-        <img
-          src={company.hero.image}
-          alt={company.hero.imageAlt}
-          width="960"
-          height="768"
-          fetchpriority="high"
-          decoding="async"
-        />
-        <div class="luzia-hero__mark">
-          <img src={`${company.logo.markLight}?v=4`} alt="" width="72" height="114" decoding="async" />
-        </div>
-      </div>
-      <div class="luzia-hero__copy">
-        <h1 class="luzia-hero__title" data-hero-line>{company.hero.title}</h1>
-        <p class="luzia-hero__body" data-hero-line>{company.hero.subtitle}</p>
-        <div class="luzia-hero__actions" data-hero-line>
-          <a href={`mailto:${company.email}`} class="btn-solid">Email me</a>
-          <a href="/cv" class="btn">View CV</a>
-        </div>
+    <div class="blend-wash" aria-hidden="true">
+      <img src={company.hero.image} alt="" width="1600" height="1000" fetchpriority="high" decoding="async" />
+    </div>
+    <div class="container-wide luzia-hero__copy">
+      <p class="luzia-hero__note" data-hero-line>{company.tagline}, {company.location}</p>
+      <h1 class="luzia-hero__title" data-hero-line>{company.hero.title}</h1>
+      <p class="luzia-hero__body" data-hero-line>{company.hero.subtitle}</p>
+      <p class="hero-live" data-hero-line>
+        <time data-nairobi-clock datetime="">Nairobi</time>
+        <span class="hero-live__rule" aria-hidden="true"></span>
+        <span>
+          Focused on
+          <span class="hero-live__word" data-rotate>{focuses[0]}</span>
+        </span>
+      </p>
+      <div class="luzia-hero__actions" data-hero-line>
+        <a href={`mailto:${company.email}`} class="btn-solid">Email me</a>
+        <a href="/work" class="btn">See the work</a>
       </div>
     </div>
   </section>
+
+  <TechMarquee />
 
   <section id="work" class="section-studio scroll-mt-24">
     <div class="container-wide">
@@ -51,10 +52,8 @@ const featured = company.work.items;
               title={item.title}
               teaser={item.teaser}
               problem={item.problem}
-              status={item.status}
               stack={item.stack}
               image={item.image}
-              cover={item.cover}
               imageAlt={item.imageAlt}
               slug={item.slug}
               caseStudy={item.caseStudy}
@@ -70,26 +69,54 @@ const featured = company.work.items;
     <div class="container-wide">
       <p class="section-label" data-reveal>{company.services.label}</p>
       <h2 class="section-studio__title" data-reveal>{company.services.title}</h2>
-      <div class="luzia-services" data-stagger-motion>
-        {
-          company.services.items.map((item) => (
-            <article class="luzia-service" id={item.id}>
-              <div class="luzia-service__top">
+      <div class="practice" data-practice>
+        <div class="practice__list" role="tablist" aria-label="What I do">
+          {
+            company.services.items.map((item, index) => (
+              <button
+                type="button"
+                class:list={['practice__tab', { 'is-active': index === 0 }]}
+                role="tab"
+                id={`practice-tab-${item.id}`}
+                aria-selected={index === 0 ? 'true' : 'false'}
+                aria-controls={`practice-panel-${item.id}`}
+                data-practice-tab
+              >
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                {item.title}
+              </button>
+            ))
+          }
+        </div>
+        <div class="practice__stage">
+          {
+            company.services.items.map((item, index) => (
+              <article
+                class="practice__panel"
+                role="tabpanel"
+                id={`practice-panel-${item.id}`}
+                aria-labelledby={`practice-tab-${item.id}`}
+                hidden={index === 0 ? undefined : true}
+                data-practice-panel
+              >
                 <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <div class="luzia-service__tags">
+                  {item.tags.map((tag) => <span>{tag}</span>)}
+                </div>
                 <a href={item.ctaHref} class="btn">{item.cta}</a>
-              </div>
-              <p>{item.body}</p>
-              <div class="luzia-service__tags">
-                {item.tags.map((tag) => <span>{tag}</span>)}
-              </div>
-            </article>
-          ))
-        }
+              </article>
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="process" class="section-studio scroll-mt-24">
+  <section id="process" class="section-studio blend-section scroll-mt-24">
+    <div class="blend-wash" aria-hidden="true">
+      <img src={company.process.image} alt="" width="1600" height="1000" loading="lazy" decoding="async" />
+    </div>
     <div class="container-wide luzia-process">
       <div>
         <p class="section-label" data-reveal>{company.process.label}</p>
@@ -108,24 +135,77 @@ const featured = company.work.items;
           }
         </ol>
       </div>
-      <div class="luzia-process__photo" data-reveal>
-        <img src={company.process.image} alt={company.process.imageAlt} width="800" height="800" loading="lazy" decoding="async" />
-      </div>
     </div>
   </section>
 
   <FaqList />
 
-  <section class="luzia-close scroll-mt-24">
-    <div class="luzia-close__media" aria-hidden="true">
-      <img src={company.why.image} alt="" width="900" height="600" loading="lazy" decoding="async" />
+  <section class="luzia-close blend-section scroll-mt-24">
+    <div class="blend-wash" aria-hidden="true">
+      <img src={company.why.image} alt="" width="1600" height="1000" loading="lazy" decoding="async" />
     </div>
     <div class="container-wide luzia-close__content">
-      <h2 data-reveal>Write to me, and I will take it from there</h2>
+      <h2 data-reveal>Write to me and I will take it from there</h2>
       <div class="mt-8 flex flex-wrap gap-3" data-reveal>
-        <a href={`mailto:${company.email}`} class="btn-light">Email me</a>
-        <a href="/cv" class="btn-light">Open CV</a>
+        <a href={`mailto:${company.email}`} class="btn-solid">Email me</a>
+        <a href="/contact" class="btn">Contact</a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const clock = document.querySelector<HTMLTimeElement>('[data-nairobi-clock]');
+  const word = document.querySelector<HTMLElement>('[data-rotate]');
+  const focuses = ['power systems', 'mobile apps', 'firmware', 'web platforms'];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const paintClock = (): void => {
+    if (!clock) return;
+    const now = new Date();
+    const time = new Intl.DateTimeFormat('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23',
+      timeZone: 'Africa/Nairobi',
+    }).format(now);
+    clock.dateTime = now.toISOString();
+    clock.textContent = `Nairobi · ${time}`;
+  };
+
+  paintClock();
+  window.setInterval(paintClock, 30_000);
+
+  if (word && !reduced) {
+    let index = 0;
+    window.setInterval(() => {
+      index = (index + 1) % focuses.length;
+      word.classList.add('is-out');
+      window.setTimeout(() => {
+        word.textContent = focuses[index];
+        word.classList.remove('is-out');
+      }, 180);
+    }, 2400);
+  }
+
+  const practice = document.querySelector<HTMLElement>('[data-practice]');
+  if (practice) {
+    const tabs = [...practice.querySelectorAll<HTMLButtonElement>('[data-practice-tab]')];
+    const panels = [...practice.querySelectorAll<HTMLElement>('[data-practice-panel]')];
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    const activate = (index: number): void => {
+      tabs.forEach((tab, i) => {
+        const on = i === index;
+        tab.classList.toggle('is-active', on);
+        tab.setAttribute('aria-selected', String(on));
+        panels[i].hidden = !on;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(index));
+      if (canHover) tab.addEventListener('mouseenter', () => activate(index));
+    });
+  }
+</script>

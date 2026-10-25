@@ -19,7 +19,8 @@ Related: [DOMAINS.md](../../DOMAINS.md) · Help center: `sites/help/` → `help.
 | Contact API | `functions/api/contact.ts` → `POST /api/contact` |
 | Cache headers | `public/_headers` |
 | Node version | `.node-version` → `22` |
-| Wrangler project | `wrangler.toml` → **versacarte-company** |
+| Wrangler project | `wrangler.toml` → **versacarte-company** (Worker + static assets) |
+| Deploy command | `npx wrangler deploy` |
 | Local secrets | `.dev.vars.example` → copy to `.dev.vars` |
 | Sitemap | Auto via `@astrojs/sitemap` |
 | Help page | `/help` → links to `help.versacarte.com` |
@@ -33,21 +34,20 @@ Related: [DOMAINS.md](../../DOMAINS.md) · Help center: `sites/help/` → `help.
 
 ---
 
-## 2. Create Pages project (Git)
+## 2. Workers Builds (Git)
 
-1. [Cloudflare dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
-2. Select this repo
-3. Build settings:
+Deploy with Workers Builds. `npx wrangler deploy` publishes the Worker in `wrangler.toml` and the static files in `dist/`. `pages_build_output_dir` makes that command fail with “Missing entry-point to Worker script”.
+
+1. [Cloudflare dashboard](https://dash.cloudflare.com) → **Workers & Pages** → the **versacarte-company** Worker → **Settings** → **Builds**
+2. Build settings:
 
    | Field | Value |
    |-------|-------|
    | **Production branch** | `main` |
-   | **Framework preset** | Astro |
-   | **Root directory** | `sites/company` |
    | **Build command** | `npm run build` |
-   | **Build output directory** | `dist` |
+   | **Deploy command** | `npx wrangler deploy` |
 
-4. **Variables and secrets** (repo has `wrangler.toml`):
+3. **Variables and secrets** (repo has `wrangler.toml`). Secrets already stored on a Pages project are not copied to this Worker.
 
    | Name | Where | Type |
    |------|-------|------|
@@ -59,24 +59,24 @@ Related: [DOMAINS.md](../../DOMAINS.md) · Help center: `sites/help/` → `help.
    **CLI:**
    ```bash
    cd sites/company
-   npx wrangler pages secret put WEB3FORMS_ACCESS_KEY --project-name=versacarte-company
+   npx wrangler secret put WEB3FORMS_ACCESS_KEY
    ```
 
-5. **Save and Deploy**
+4. **Save and Deploy**
 
 ---
 
 ## 3. Custom domains
 
-1. Pages project → **Custom domains** → add **`versacarte.com`** and **`www.versacarte.com`**
+1. Worker **versacarte-company** → **Domains & Routes** → add **`versacarte.com`** and **`www.versacarte.com`**
 2. **SSL/TLS** → **Full (strict)** + **Always Use HTTPS**
 
 DNS (if not auto-configured):
 
 | Record | Target |
 |--------|--------|
-| `versacarte.com` | Pages CNAME |
-| `www` | Pages CNAME |
+| `versacarte.com` | Worker custom domain |
+| `www` | Worker custom domain |
 
 ---
 
@@ -127,6 +127,7 @@ npm run cf:deploy
 
 | Problem | Fix |
 |---------|-----|
+| `Missing entry-point to Worker script or to assets directory` | Keep the deploy command as `npx wrangler deploy`. `wrangler.toml` needs `main` and `[assets] directory = "./dist"`. Do not set `pages_build_output_dir`. |
 | `ENOENT: no such file or directory, open '.../package.json'` | See **Build fails with ENOENT** below |
 | Build fails on Node | Ensure `.node-version` is `22` or set `NODE_VERSION=22` in Pages |
 | Contact form 503 | Add `WEB3FORMS_ACCESS_KEY` secret, redeploy |

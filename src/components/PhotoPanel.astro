@@ -4,20 +4,23 @@ interface Props {
   alt?: string;
   overlay?: 'hero' | 'section' | 'stats';
   parallax?: boolean;
+  portrait?: boolean;
+  focus?: string;
   class?: string;
 }
 
-const { src, alt = '', overlay = 'section', parallax = true, class: className = '' } = Astro.props;
+const { src, alt = '', overlay = 'section', parallax = true, portrait = false, focus, class: className = '' } = Astro.props;
 ---
 
 <div
-  class:list={['photo-panel', `photo-panel--${overlay}`, className]}
+  class:list={['photo-panel', `photo-panel--${overlay}`, portrait && 'photo-panel--portrait', className]}
   data-photo-panel={parallax ? '' : undefined}
 >
   <img
     src={src}
     alt={alt}
     class="photo-panel__img"
+    style={focus ? `object-position: ${focus}` : undefined}
     data-parallax-img
     loading={overlay === 'hero' ? 'eager' : 'lazy'}
     decoding="async"

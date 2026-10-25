@@ -23,17 +23,13 @@ const { study } = Astro.props;
 >
   <section class="case-hero">
     <div class="container-wide">
-      <div class="case-hero__visual" data-reveal>
-        <img src={study.cover ?? study.hero} alt={study.tagline} class="case-hero__img" loading="eager" decoding="async" width="900" height="560" />
-        <div class="case-hero__logo">
-          <img src={study.hero} alt="" width="64" height="40" />
-        </div>
+      <div class="case-mark" data-reveal>
+        <img src={study.hero} alt="" width="88" height="88" decoding="async" />
       </div>
       <p class="section-label mt-10" data-reveal>Case study</p>
       <h1 class="section-studio__title" data-reveal>{study.title}</h1>
       <p class="section-studio__body" data-reveal>{study.tagline}</p>
       <div class="mt-4 flex flex-wrap gap-2" data-reveal>
-        <span class="text-xs font-semibold uppercase tracking-widest text-muted">{study.status}</span>
         {study.stack.map((s) => (
           <span class="border border-line px-2 py-0.5 text-[0.65rem] uppercase tracking-wider text-muted">{s}</span>
         ))}
@@ -67,7 +63,7 @@ const { study } = Astro.props;
 
       <div class="mt-12 flex flex-wrap gap-4" data-reveal>
         {study.liveUrl && (
-          <a href={study.liveUrl} class="btn-solid" target="_blank" rel="noopener noreferrer">Open live app</a>
+          <a href={study.liveUrl} class="btn-solid" target="_blank" rel="noopener noreferrer">Open the app</a>
         )}
         <a href="/contact" class="btn-solid">Email me</a>
         <a href="/work" class="btn">All works</a>

@@ -12,8 +12,8 @@
     "images:png": "node scripts/svg-to-png.mjs",
     "logos:build": "node scripts/build-logos.mjs",
     "preview": "astro preview",
-    "cf:preview": "npm run build && wrangler pages dev dist --compatibility-date=2024-12-01",
-    "cf:deploy": "npm run build && wrangler pages deploy dist --project-name=versacarte"
+    "cf:preview": "npm run build && wrangler dev --port 8788",
+    "cf:deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

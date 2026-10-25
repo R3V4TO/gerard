@@ -17,8 +17,8 @@ import company from '../data/company.json';
               decoding="async"
             />
             <span class="footer-studio__wordmark">
-              <span class="footer-studio__wordmark-name">{company.personName}</span>
-              <span class="footer-studio__wordmark-tag">{company.tagline}</span>
+              <span class="footer-studio__wordmark-name">{company.name} <span>platform</span></span>
+              <span class="footer-studio__domain">{company.domain}</span>
             </span>
           </span>
         </a>
@@ -35,7 +35,6 @@ import company from '../data/company.json';
             <li><a href="/">Home</a></li>
             <li><a href="/work">Works</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/cv">CV</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -55,8 +54,7 @@ import company from '../data/company.json';
 
   <div class="footer-bar">
     <div class="container-wide footer-bar__row">
-      <p>© {new Date().getFullYear()} {company.personName}. Personal reference site.</p>
-      <p class="text-dark-muted">{company.name}</p>
+      <p>© {new Date().getFullYear()} {company.personName}</p>
     </div>
   </div>
 </footer>

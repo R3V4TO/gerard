@@ -6,14 +6,14 @@
   "tagline": "Property management for rent collection, repairs and tenant chat",
   "stack": ["Web", "Android", "Payments", "Chat"],
   "hero": "/images/resphinx-mark.png",
-  "cover": "/images/resphinx-cover.svg",
+  "cover": "/images/resphinx-mark.png",
   "problem": {
     "title": "The problem",
-    "body": "Landlords, caretakers and agencies still chase rent over messaging threads and spreadsheets. Tenants cannot see what they owe, repair tickets disappear, and payment status is reconstructed by hand each month."
+    "body": "Landlords, caretakers and agencies still chase rent over messaging threads and spreadsheets. Tenants cannot see what they owe, repair tickets disappear and payment status is reconstructed by hand each month."
   },
   "approach": {
     "title": "How I approached it",
-    "body": "I built Resphinx as a live product at resphinx.versacarte.com. Managers add properties and units, tenants pay through hosted checkout, ledgers update when rent lands, and chat stays tied to the unit instead of personal inboxes."
+    "body": "I built Resphinx at resphinx.versacarte.com. Managers add properties and units, tenants pay through hosted checkout, ledgers update when rent lands and chat stays tied to the unit instead of personal inboxes."
   },
   "technologies": {
     "title": "Technologies",
@@ -27,10 +27,9 @@
   },
   "outcome": {
     "title": "Outcome",
-    "body": "Resphinx is live. Open it at resphinx.versacarte.com to collect rent, track balances, manage repairs and message tenants in one place."
+    "body": "Open it at resphinx.versacarte.com to collect rent, track balances, manage repairs and message tenants in one place."
   },
   "metrics": [
-    { "value": "Live", "label": "resphinx.versacarte.com" },
     { "value": "3", "label": "Web, Android, desktop" },
     { "value": "1", "label": "Ledger, repairs, chat" }
   ]

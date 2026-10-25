@@ -6,14 +6,14 @@ import company from '../data/company.json';
 
 <BaseLayout
   title={`Works | ${company.personName}`}
-  description="Projects Gerard created: Resphinx, VersaRent, FileSendNX and Smart Traffic Control."
+  description="Projects Gerard created: Resphinx, FileSendNX and Smart Traffic Control."
 >
   <section class="section-studio pt-32">
     <div class="container-main">
       <p class="section-label" data-reveal>Works</p>
       <h1 class="section-studio__title" data-reveal>Projects I created</h1>
       <p class="section-studio__body" data-reveal>
-        These are my builds. Use them as the public appendix to a CV.
+        These are my builds.
       </p>
       <div class="work-grid mt-12" data-stagger>
         {
@@ -22,10 +22,8 @@ import company from '../data/company.json';
               title={item.title}
               teaser={item.teaser}
               problem={item.problem}
-              status={item.status}
               stack={item.stack}
               image={item.image}
-              cover={item.cover}
               imageAlt={item.imageAlt}
               slug={item.slug}
               caseStudy={item.caseStudy}

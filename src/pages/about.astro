@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PhotoPanel from '../components/PhotoPanel.astro';
 import company from '../data/company.json';
 ---
 
@@ -19,24 +18,29 @@ import company from '../data/company.json';
 
   <section class="section-studio section-studio--gray">
     <div class="container-wide">
-      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div data-reveal>
+      <div class="about-layout" data-reveal>
+        <img
+          class="about-person"
+          src={company.about.image}
+          alt={company.about.imageAlt}
+          width="160"
+          height="200"
+          decoding="async"
+        />
+        <div>
           <h2 class="text-2xl font-semibold">How I work</h2>
           <p class="section-studio__body mt-4">
             I am {company.personName}, an electrical and telecommunications engineer.
-            I also write software. The products on this site are ones I created — not a company
-            delivery team. If you reached this page from a CV, this is the public record of that work.
+            I also write software. The products on this site are ones I created. They are not a company
+            delivery team.
           </p>
           <ul class="why-list mt-8">
             {company.about.values.map((value) => <li>{value}</li>)}
           </ul>
           <div class="mt-10 flex flex-wrap gap-3">
-            <a href="/cv" class="btn-solid">Open CV</a>
-            <a href="/contact" class="btn">Contact me</a>
+            <a href="/contact" class="btn-solid">Contact me</a>
+            <a href="/work" class="btn">See the work</a>
           </div>
-        </div>
-        <div class="overflow-hidden" data-reveal>
-          <PhotoPanel src={company.about.image} alt={company.about.imageAlt} overlay="section" />
         </div>
       </div>
     </div>
@@ -46,12 +50,10 @@ import company from '../data/company.json';
     <div class="container-wide">
       <h2 class="text-2xl font-semibold" data-reveal>What I have built</h2>
       <p class="section-studio__body mt-4" data-reveal>
-        Resphinx, VersaRent, FileSendNX and Smart Traffic Control sit on this site as case studies.
-        They are the same projects a recruiter or hiring manager should be able to open from a CV link.
+        Resphinx, FileSendNX and Smart Traffic Control sit on this site as case studies.
       </p>
       <div class="mt-10 flex flex-wrap gap-4" data-reveal>
         <a href="/work" class="btn">Works</a>
-        <a href="/cv" class="btn">CV</a>
         <a href={`mailto:${company.email}`} class="btn">Email</a>
       </div>
     </div>

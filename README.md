@@ -22,11 +22,11 @@ npm run cf:deploy    # Cloudflare project: versacarte-company
 
 Full checklist: **[CLOUDFLARE.md](./CLOUDFLARE.md)**
 
-| Pages setting | Value |
-|---------------|-------|
-| Root directory | `sites/company` |
+| Workers Builds setting | Value |
+|------------------------|-------|
 | Build command | `npm run build` |
-| Output | `dist` |
+| Deploy command | `npx wrangler deploy` |
+| Assets | `dist` (set in `wrangler.toml`) |
 | Secret | `WEB3FORMS_ACCESS_KEY` (required), `RESEND_API_KEY` (optional, sends guide by email) |
 
 ## Pages

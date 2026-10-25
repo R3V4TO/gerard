@@ -8,6 +8,10 @@ const web3formsKey =
 
 export default defineConfig({
   site: process.env.SITE_URL ?? 'https://versacarte.com',
+  redirects: {
+    '/cv': '/about',
+    '/work/versarent': '/work/resphinx',
+  },
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
