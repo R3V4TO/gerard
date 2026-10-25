@@ -56,14 +56,14 @@
   "hero": {
     "title": "I keep my engineering work here",
     "subtitle": "I trained in electrical and telecommunications engineering. VersaCarte is my personal site. Resphinx, FileSendNX and the traffic monitor are the projects on it.",
-    "image": "/images/stock/laptop-work.jpg",
+    "image": "/images/stock/code.webp",
     "imageAlt": ""
   },
   "vision": {
     "label": "About",
     "title": "Engineer by training. Builder by practice.",
     "body": "I am Gerard. The projects on this site are work I created, including Resphinx, FileSendNX, Smart Traffic Control and related systems. They are not studio output from a company team.",
-    "image": "/images/stock/laptop-desk.jpg",
+    "image": "/images/stock/laptop-desk.webp",
     "imageAlt": "Hands writing code on a laptop"
   },
   "services": {
@@ -103,14 +103,14 @@
     "label": "How I work",
     "title": "One person from schematic to shipped interface",
     "body": "You work with me directly. Hardware, firmware, APIs and mobile or web UI stay in one thread instead of three vendors handing off blame.",
-    "image": "/images/stock/laptop-desk.jpg",
+    "image": "/images/stock/laptop-desk.webp",
     "imageAlt": "Hands writing code on a laptop"
   },
   "process": {
     "label": "Context",
     "title": "How the projects came about",
-    "image": "/images/stock/motherboard.jpg",
-    "imageAlt": "Close-up of a computer motherboard",
+    "image": "/images/stock/panel.webp",
+    "imageAlt": "Electrical distribution board",
     "steps": [
       {
         "n": "01",
@@ -141,7 +141,7 @@
   },
   "stats": {
     "title": "In numbers",
-    "image": "/images/stock/laptop-desk.jpg",
+    "image": "/images/stock/laptop-desk.webp",
     "items": [
       { "value": 3, "suffix": "+", "label": "Products I built" },
       { "value": 1, "suffix": "", "label": "BEng, Electrical & Telecoms" },

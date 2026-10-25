@@ -7,7 +7,10 @@ import company from '../data/company.json';
   title={`About | ${company.personName}`}
   description={company.about.body}
 >
-  <section class="section-studio pt-32">
+  <section class="section-studio blend-section pt-32">
+    <div class="blend-wash blend-wash--right" aria-hidden="true">
+      <img src="/images/stock/panel.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async" />
+    </div>
     <div class="container-wide">
       <p class="section-label" data-reveal>{company.about.label}</p>
       <h1 class="section-studio__title" data-reveal>{company.about.title}</h1>

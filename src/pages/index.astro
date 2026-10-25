@@ -10,8 +10,8 @@ const focuses = ['fibre surveys', 'Resphinx', 'firmware', 'the traffic project']
 
 <BaseLayout>
   <section id="hero" class="luzia-hero scroll-mt-24">
-    <div class="blend-wash" aria-hidden="true">
-      <img src={company.hero.image} alt="" width="1600" height="1000" fetchpriority="high" decoding="async" />
+    <div class="blend-wash blend-wash--right" aria-hidden="true">
+      <img src={company.hero.image} alt="" width="1920" height="1080" fetchpriority="high" decoding="async" />
     </div>
     <div class="container-wide luzia-hero__copy">
       <p class="luzia-hero__note" data-hero-line>{company.tagline}, {company.location}</p>
@@ -34,7 +34,10 @@ const focuses = ['fibre surveys', 'Resphinx', 'firmware', 'the traffic project']
 
   <TechMarquee />
 
-  <section id="work" class="section-studio scroll-mt-24">
+  <section id="work" class="section-studio blend-section scroll-mt-24">
+    <div class="blend-wash blend-wash--left" aria-hidden="true">
+      <img src="/images/stock/cables.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async" />
+    </div>
     <div class="container-wide">
       <div class="luzia-section-head" data-reveal>
         <div>
@@ -63,7 +66,10 @@ const focuses = ['fibre surveys', 'Resphinx', 'firmware', 'the traffic project']
     </div>
   </section>
 
-  <section id="services" class="section-studio section-studio--gray scroll-mt-24">
+  <section id="services" class="section-studio section-studio--gray blend-section blend-on-surface scroll-mt-24">
+    <div class="blend-wash" aria-hidden="true">
+      <img src="/images/stock/panel.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async" />
+    </div>
     <div class="container-wide">
       <p class="section-label" data-reveal>{company.services.label}</p>
       <h2 class="section-studio__title" data-reveal>{company.services.title}</h2>
@@ -112,8 +118,8 @@ const focuses = ['fibre surveys', 'Resphinx', 'firmware', 'the traffic project']
   </section>
 
   <section id="process" class="section-studio blend-section scroll-mt-24">
-    <div class="blend-wash" aria-hidden="true">
-      <img src={company.process.image} alt="" width="1600" height="1000" loading="lazy" decoding="async" />
+    <div class="blend-wash blend-wash--low" aria-hidden="true">
+      <img src="/images/stock/laptop-desk.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async" />
     </div>
     <div class="container-wide luzia-process">
       <div>
@@ -137,8 +143,8 @@ const focuses = ['fibre surveys', 'Resphinx', 'firmware', 'the traffic project']
   </section>
 
   <section class="luzia-close blend-section scroll-mt-24">
-    <div class="blend-wash" aria-hidden="true">
-      <img src={company.why.image} alt="" width="1600" height="1000" loading="lazy" decoding="async" />
+    <div class="blend-wash blend-wash--right" aria-hidden="true">
+      <img src="/images/stock/laptop-work.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async" />
     </div>
     <div class="container-wide luzia-close__content">
       <h2 data-reveal>Email is enough if you want to talk about the work</h2>
