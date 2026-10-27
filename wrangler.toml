@@ -1,4 +1,5 @@
-name = "versacarte-company"
+# wrangler.toml
+name = 'versacarteplatform'
 # Newest date this Wrangler 4.107 workerd accepts. A later date fails to boot.
 compatibility_date = "2026-07-08"
 main = "worker/index.ts"
